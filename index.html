@@ -338,9 +338,8 @@ const DEFS = {
 
     // ── Baño María ──────────────────────────────────────────────────────────
     {type:'subgroup', label:'♨️ Baño María'},
-    {id:'eq_b1', type:'scored3', t:'¿Cuenta con baño maría?', h:'Cumple: sí cuenta y está funcionando. Cumple parcialmente: tienen uno improvisado en estufa. No cumple: no tienen (o el que tienen no funciona).', scored:true},
-    {id:'eq_b2', type:'textarea',t:'¿Por qué no cuenta con baño maría?', h:'Responder solo si la pregunta anterior es No.'},
-    {id:'eq_b3', type:'scored2', t:'¿El baño maría da la temperatura correcta?', h:'Tomar temperatura del producto con termómetro. Agregar rango al estandarizar.', scored:true},
+    {id:'eq_b1', type:'scored3', t:'¿Cuenta con baño maría?', h:'Cumple: sí cuenta y da la temperatura correcta (60-80°C). Cumple parcialmente: tienen uno improvisado en estufa. No cumple: no tienen (o el que tienen no funciona).', scored:true},
+    {id:'eq_b2', type:'textarea',t:'¿Por qué no cuenta con baño maría?', h:'Responder solo si la pregunta anterior es No. (si no aplica colocar "Na")'},
     {id:'eq_b5', type:'textarea',t:'Notas de baño maría'},
 
     // ── Plancha ─────────────────────────────────────────────────────────────
@@ -363,7 +362,7 @@ const DEFS = {
     {id:'eq_f3', type:'text',    t:'¿Cuántos utilizan para la operación?'},
     {id:'eq_f4', type:'textarea',t:'Comentarios del funcionamiento / uso de los freidores'},
     {id:'eq_f5', type:'scored2', t:'¿Cuenta con timer funcionando?', scored:true},
-    {id:'eq_f6', type:'text',    t:'¿Cuenta con termómetro para medir continuamente la temperatura del freidor?'},
+    {id:'eq_f6', type:'scored2', t:'¿Cuenta con termómetro para medir continuamente la temperatura del aceite?', scored:true},
     {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true},
   ],
 
@@ -372,7 +371,7 @@ const DEFS = {
     {type:'subgroup', label:'🐔 Pollo Ensalada'},
     {id:'cu_po1', type:'scored2', t:'¿Regenera las pechugas en su bolsa y en agua caliente?', scored:true, foco:true},
     {id:'cu_po3', type:'scored2', t:'¿Mantienen el pollo correctamente en baño maría?', h:'Asegurar que todas las pechugas estén humectadas en todo momento.', scored:true, foco:true},
-    {id:'cu_po5', type:'scored2', t:'¿Sellan el pollo en plancha de un lado?', scored:true, foco:true},
+    {id:'cu_po5', type:'scored2', t:'¿Sellan el pollo en plancha de un sólo lado?', scored:true, foco:true},
     {id:'cu_po6', type:'scored2', t:'¿Cortan la pechuga en tiras para colocar sobre el producto y mantienen forma?', scored:true, foco:true},
     {id:'cu_po7', type:'textarea',t:'Comentarios adicionales del pollo ensalada', foco:true},
 
@@ -383,60 +382,65 @@ const DEFS = {
     {id:'cu_h3', type:'scored2', t:'¿Mueven constantemente el huevo para no hacer omelette?', scored:true},
     {id:'cu_h4', type:'scored2', t:'¿Usan aro para hacer huevo estrellado?', scored:true},
     {id:'cu_h5', type:'scored2', t:'¿Le ponen sal al huevo estrellado?', scored:true},
-    {id:'cu_h6', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_h6', type:'textarea',t:'Comentarios adicionales sobre el huevo'},
 
     // ── Arroz ────────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🍚 Arroz'},
     {id:'cu_a1', type:'scored2', t:'¿Regeneran arroz conforme al proceso definido?', scored:true, foco:true},
     {id:'cu_a2', type:'scored3', t:'¿Mantienen el arroz en baño maría y tapado?', h:'Cumple: sí en baño maría y tapado. Cumple parcialmente: no está en baño maría porque no cuentan con el equipo, pero sí regeneran al momento con fondo. No cumple: no está en baño maría ni regeneran bien.', scored:true, foco:true},
-    {id:'cu_a3', type:'textarea',t:'Comentario / corrección', foco:true},
+    {id:'cu_a3', type:'textarea',t:'Comentarios adicionales sobre el arroz'},
 
     // ── Carne hamburguesa ────────────────────────────────────────────────────
     {type:'subgroup', label:'🍔 Carne Hamburguesa'},
     {id:'cu_ca1', type:'info2', t:'¿Colocan aceite en plancha antes de smashear la carne?', scored:false},
     {id:'cu_ca2', type:'scored2', t:'¿Smashean correctamente la carne?', h:'Dar más peso al resultado final de la carne que a la técnica.', scored:true},
     {id:'cu_ca3', type:'scored2', t:'¿La carne está correctamente almacenada?', scored:true},
-    {id:'cu_ca4', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_ca4', type:'textarea',t:'Comentarios adicionales sobre la carne de hamburguesa'},
 
     // ── Corte lechuga orejona ────────────────────────────────────────────────
     {type:'subgroup', label:'🥬 Corte Lechuga Orejona'},
     {id:'cu_le1', type:'scored2', t:'¿El corte de la lechuga orejona es el correcto?', scored:true},
-    {id:'cu_le2', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_le2', type:'textarea',t:'Comentarios adicionales sobre la lechuga'},
 
     // ── Fruta (para porción) ─────────────────────────────────────────────────
     {type:'subgroup', label:'🍓 Fruta (para porción)'},
     {id:'cu_fr1', type:'scored2', t:'¿El corte de la fruta de la porción es correcto?', scored:true},
-    {id:'cu_fr2', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_fr2', type:'textarea',t:'Comentarios adicionales sobre la porción de fruta'},
 
     // ── Pescado ──────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🐟 Pescado'},
     {id:'cu_pe1', type:'scored2', t:'¿Los pescados se cocinan en sartén?', scored:true},
-    {id:'cu_pe2', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_pe2', type:'textarea',t:'Comentarios adicionales sobre el pescado'},
 
     // ── Mezcla Pancakes ──────────────────────────────────────────────────────
     {type:'subgroup', label:'🥞 Mezcla Pancakes'},
     {id:'cu_mp1', type:'scored2', t:'¿La almacenan en refrigeración mientras no está en uso?', scored:true},
     {id:'cu_mp3', type:'info2',   t:'¿El envase en donde se encuentra es hermético?', scored:false},
-    {id:'cu_mp4', type:'textarea',t:'Comentario / corrección'},
+    {id:'cu_mp4', type:'textarea',t:'Comentarios adicionales sobre las mezclas de pancakes'},
 
     // ── Cebolla Mr. Beast ────────────────────────────────────────────────────
     {type:'subgroup', label:'🧅 Cebolla Mr. Beast'},
-    {id:'cu_cb1', type:'scored2', t:'¿Tiene el corte correcto?', scored:true},
-    {id:'cu_cb2', type:'scored2', t:'¿El proceso de caramelización se realizó correctamente?', scored:true},
+    {id:'cu_cb1', type:'info2', t:'¿Tiene el corte correcto?', scored:false},
+    {id:'cu_cb2', type:'info2', t:'¿El proceso de caramelización se realizó correctamente?', scored:false},
 
     // ── Burritos ─────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🌯 Burritos'},
-    {id:'cu_bu1', type:'scored2', t:'¿Sellan correctamente la tortilla en burritos y wraps?', scored:true},
+    {id:'cu_bu1', type:'info2', t:'¿Sellan correctamente la tortilla en burritos y wraps?', scored:false},
 
     // ── Frituras ─────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🍗 Frituras'},
     {id:'cu_ft1', type:'scored2', t:'¿Revisan la temperatura interna de la pechuga Nashville después de cocción?', scored:true, foco:true},
-    {id:'cu_ft2', type:'scored2', t:'¿En el timer tienen programados los tiempos definidos de fritura de los distintos productos?', scored:true},
-    {id:'cu_ft3', type:'scored2', t:'¿Utilizan el timer para medir el tiempo de fritura?', h:'Si no tienen timer, evaluar como Sí.', scored:true},
+    {id:'cu_ft2', type:'info2', t:'¿En el timer tienen programados los tiempos definidos de fritura de los distintos productos?', scored:false},
+    {id:'cu_ft3', type:'info2', t:'¿Utilizan el timer para medir el tiempo de fritura?', h:'Si no tienen timer, evaluar como No.', scored:false},
 
     // ── Tocino ───────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🥓 Tocino'},
-    {id:'cu_to1', type:'scored2', t:'¿El tocino tiene la textura correcta en el MEP?', scored:true},
+    {id:'cu_to1', type:'info2', t:'¿El tocino tiene la textura correcta en el MEP?', scored:false},
+
+    // ── General ──────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'📝 General'},
+    {id:'cu_otros', type:'textarea', t:'Otros puntos culinarios a verificar y corregir si es necesario', h:'Proceso puré/guacamole (bien preparado, porcionado, congelado) · Preparación de Karls (pasos correctos, correcto tostado del pan) · Envoltura de Pitas.'},
+    {id:'cu_gen1',  type:'textarea', t:'CORRECCIONES INMEDIATAS CULINARIAS', h:'Adicionar todas las acciones inmediatas que se corrigieron que no estén indicadas en ningún rubro anterior.'},
   ],
 
   practicas: [
@@ -474,7 +478,7 @@ const DEFS = {
     {type:'calc', id:'calc_sart', t:'Sartenes en buen estado', num:'pr_mn4', den:'pr_mn3'},
     {id:'pr_mn5', type:'textarea', t:'¿Aros de pancakes en buen estado? — Observaciones'},
     {id:'pr_mn6', type:'textarea', t:'¿Aros de huevo en buen estado? — Observaciones'},
-    {id:'pr_mn7', type:'textarea', t:'Comentarios de menaje'},
+    {id:'pr_mn7', type:'textarea', t:'Comentarios o acciones inmediatas realizadas conforme a las prácticas observadas.'},
   ],
 
 };
