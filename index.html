@@ -114,6 +114,8 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 .af-tag{display:inline-block;font-size:10px;font-weight:700;background:#1f2937;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle;}
 .no-score-tag{display:inline-block;font-size:9px;font-weight:700;background:var(--gray-200);color:var(--gray-500);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;text-transform:uppercase;letter-spacing:.3px;}
 .foco-tag{display:inline-block;font-size:9px;font-weight:700;background:#fef9c3;color:#92400e;border:1px solid #fcd34d;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
+.foco-tag-ai{display:inline-block;font-size:9px;font-weight:700;background:#e0f2fe;color:#075985;border:1px solid #7dd3fc;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
+.foco-tag-cm{display:inline-block;font-size:9px;font-weight:700;background:#f0fdf4;color:#166534;border:1px solid #86efac;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
 .crit-detail{display:none;padding:10px 14px 14px;background:var(--gray-50);border-top:1px solid var(--gray-100);flex-direction:column;gap:8px;}
 .crit-detail.open{display:flex;}
 .detail-row{display:flex;gap:8px;align-items:flex-start;}
@@ -323,7 +325,7 @@ const DEFS = {
     {id:'eq_r1', type:'text',    t:'¿Cuántos refrigeradores tiene la cocina?'},
     {id:'eq_r2', type:'text',    t:'¿Cuántos se encuentran en rango de 0 °C a 4 °C?', h:'Tomar temperatura con termómetro de aguja dentro del equipo.'},
     {type:'calc', id:'calc_ref', t:'Refrigeradores funcionando correctamente', num:'eq_r2', den:'eq_r1'},
-    {id:'eq_r3', type:'scored3', t:'Funcionamiento del equipo de refrigeración', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true},
+    {id:'eq_r3', type:'scored3', t:'Funcionamiento del equipo de refrigeración', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true, foco:'CM'},
     {id:'eq_r4', type:'text',    t:'¿Cuántos refrigeradores tienen completos los empaques?'},
     {id:'eq_r5', type:'textarea',t:'Comentarios de refrigeradores'},
 
@@ -332,13 +334,13 @@ const DEFS = {
     {id:'eq_c1', type:'text',    t:'¿Cuántos congeladores tiene la cocina?'},
     {id:'eq_c2', type:'text',    t:'¿Cuántos se encuentran a -18 °C?', h:'Tomar temperatura con termómetro de aguja dentro del equipo.'},
     {type:'calc', id:'calc_con', t:'Congeladores funcionando correctamente', num:'eq_c2', den:'eq_c1'},
-    {id:'eq_c3', type:'scored3', t:'Funcionamiento del equipo de congelación', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true},
+    {id:'eq_c3', type:'scored3', t:'Funcionamiento del equipo de congelación', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true, foco:'CM'},
     {id:'eq_c4', type:'text',    t:'¿Cuántos congeladores tienen completos los empaques?'},
     {id:'eq_c5', type:'textarea',t:'Comentarios de congeladores'},
 
     // ── Baño María ──────────────────────────────────────────────────────────
     {type:'subgroup', label:'♨️ Baño María'},
-    {id:'eq_b1', type:'scored3', t:'¿Cuenta con baño maría?', h:'Cumple: sí cuenta y da la temperatura correcta (60-80°C). Cumple parcialmente: tienen uno improvisado en estufa. No cumple: no tienen (o el que tienen no funciona).', scored:true},
+    {id:'eq_b1', type:'scored3', t:'¿Cuenta con baño maría?', h:'Cumple: sí cuenta y da la temperatura correcta (60-80°C). Cumple parcialmente: tienen uno improvisado en estufa. No cumple: no tienen (o el que tienen no funciona).', scored:true, foco:'CM'},
     {id:'eq_b2', type:'textarea',t:'¿Por qué no cuenta con baño maría?', h:'Responder solo si la pregunta anterior es No. (si no aplica colocar "Na")'},
     {id:'eq_b5', type:'textarea',t:'Notas de baño maría'},
 
@@ -351,7 +353,7 @@ const DEFS = {
 
     // ── Estufa ──────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🍳 Estufa'},
-    {id:'eq_e4', type:'scored3', t:'Funcionamiento de la estufa', h:'Cumple: todas las hornillas son fáciles de regular. Cumple parcialmente: al menos 1 hornilla se puede regular. No cumple: ninguna hornilla se puede calibrar.', scored:true},
+    {id:'eq_e4', type:'scored3', t:'Funcionamiento de la estufa', h:'Cumple: todas las hornillas son fáciles de regular. Cumple parcialmente: al menos 1 hornilla se puede regular. No cumple: ninguna hornilla se puede calibrar.', scored:true, foco:'CM'},
     {id:'eq_e5', type:'textarea',t:'Notas de estufa'},
 
     // ── Freidor ─────────────────────────────────────────────────────────────
@@ -361,9 +363,9 @@ const DEFS = {
     {type:'calc', id:'calc_frei', t:'Freidores funcionando correctamente', num:'eq_f2', den:'eq_f1'},
     {id:'eq_f3', type:'text',    t:'¿Cuántos utilizan para la operación?'},
     {id:'eq_f4', type:'textarea',t:'Comentarios del funcionamiento / uso de los freidores'},
-    {id:'eq_f5', type:'scored2', t:'¿Cuenta con timer funcionando?', scored:true},
-    {id:'eq_f6', type:'scored2', t:'¿Cuenta con termómetro para medir continuamente la temperatura del aceite?', scored:true},
-    {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true},
+    {id:'eq_f5', type:'scored2', t:'¿Cuenta con timer funcionando?', scored:true, foco:'CM'},
+    {id:'eq_f6', type:'scored2', t:'¿Cuenta con termómetro para medir continuamente la temperatura del aceite?', scored:true, foco:'CM'},
+    {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true, foco:'CM'},
   ],
 
   culinario: [
@@ -378,10 +380,10 @@ const DEFS = {
     // ── Huevo ────────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🥚 Huevo'},
     {id:'cu_h1', type:'scored2', t:'¿Colocan sal al batir los huevos?', scored:true, foco:true},
-    {id:'cu_h2', type:'scored2', t:'¿Cocinan el huevo revuelto en sartén?', scored:true},
-    {id:'cu_h3', type:'scored2', t:'¿Mueven constantemente el huevo para no hacer omelette?', scored:true},
-    {id:'cu_h4', type:'scored2', t:'¿Usan aro para hacer huevo estrellado?', scored:true},
-    {id:'cu_h5', type:'scored2', t:'¿Le ponen sal al huevo estrellado?', scored:true},
+    {id:'cu_h2', type:'scored2', t:'¿Cocinan el huevo revuelto en sartén?', scored:true, foco:'AI'},
+    {id:'cu_h3', type:'scored2', t:'¿Mueven constantemente el huevo para no hacer omelette?', scored:true, foco:'AI'},
+    {id:'cu_h4', type:'scored2', t:'¿Usan aro para hacer huevo estrellado?', scored:true, foco:'AI'},
+    {id:'cu_h5', type:'scored2', t:'¿Le ponen sal al huevo estrellado?', scored:true, foco:'AI'},
     {id:'cu_h6', type:'textarea',t:'Comentarios adicionales sobre el huevo'},
 
     // ── Arroz ────────────────────────────────────────────────────────────────
@@ -393,28 +395,28 @@ const DEFS = {
     // ── Carne hamburguesa ────────────────────────────────────────────────────
     {type:'subgroup', label:'🍔 Carne Hamburguesa'},
     {id:'cu_ca1', type:'info2', t:'¿Colocan aceite en plancha antes de smashear la carne?', scored:false},
-    {id:'cu_ca2', type:'scored2', t:'¿Smashean correctamente la carne?', h:'Dar más peso al resultado final de la carne que a la técnica.', scored:true},
-    {id:'cu_ca3', type:'scored2', t:'¿La carne está correctamente almacenada?', scored:true},
+    {id:'cu_ca2', type:'scored2', t:'¿Smashean correctamente la carne?', h:'Dar más peso al resultado final de la carne que a la técnica.', scored:true, foco:'AI'},
+    {id:'cu_ca3', type:'scored2', t:'¿La carne está correctamente almacenada?', scored:true, foco:'AI'},
     {id:'cu_ca4', type:'textarea',t:'Comentarios adicionales sobre la carne de hamburguesa'},
 
     // ── Corte lechuga orejona ────────────────────────────────────────────────
     {type:'subgroup', label:'🥬 Corte Lechuga Orejona'},
-    {id:'cu_le1', type:'scored2', t:'¿El corte de la lechuga orejona es el correcto?', scored:true},
+    {id:'cu_le1', type:'scored2', t:'¿El corte de la lechuga orejona es el correcto?', scored:true, foco:'AI'},
     {id:'cu_le2', type:'textarea',t:'Comentarios adicionales sobre la lechuga'},
 
     // ── Fruta (para porción) ─────────────────────────────────────────────────
     {type:'subgroup', label:'🍓 Fruta (para porción)'},
-    {id:'cu_fr1', type:'scored2', t:'¿El corte de la fruta de la porción es correcto?', scored:true},
+    {id:'cu_fr1', type:'scored2', t:'¿El corte de la fruta de la porción es correcto?', scored:true, foco:'AI'},
     {id:'cu_fr2', type:'textarea',t:'Comentarios adicionales sobre la porción de fruta'},
 
     // ── Pescado ──────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🐟 Pescado'},
-    {id:'cu_pe1', type:'scored2', t:'¿Los pescados se cocinan en sartén?', scored:true},
+    {id:'cu_pe1', type:'scored2', t:'¿Los pescados se cocinan en sartén?', scored:true, foco:'AI'},
     {id:'cu_pe2', type:'textarea',t:'Comentarios adicionales sobre el pescado'},
 
     // ── Mezcla Pancakes ──────────────────────────────────────────────────────
     {type:'subgroup', label:'🥞 Mezcla Pancakes'},
-    {id:'cu_mp1', type:'scored2', t:'¿La almacenan en refrigeración mientras no está en uso?', scored:true},
+    {id:'cu_mp1', type:'scored2', t:'¿La almacenan en refrigeración mientras no está en uso?', scored:true, foco:'AI'},
     {id:'cu_mp3', type:'info2',   t:'¿El envase en donde se encuentra es hermético?', scored:false},
     {id:'cu_mp4', type:'textarea',t:'Comentarios adicionales sobre las mezclas de pancakes'},
 
@@ -453,16 +455,16 @@ const DEFS = {
 
     // ── Panadería ────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🍞 Panadería'},
-    {id:'pr_pan1', type:'scored3', t:'¿La cocina procura acomodar el pan para evitar que se aplaste?', h:'Cumple: ningún pan se aplasta. Cumple parcialmente: buscan la manera pero los espacios/volumen/herramientas no lo logran. No cumple: no se preocupan por el pan.', scored:true},
+    {id:'pr_pan1', type:'scored3', t:'¿La cocina procura acomodar el pan para evitar que se aplaste?', h:'Cumple: ningún pan se aplasta. Cumple parcialmente: buscan la manera pero los espacios/volumen/herramientas no lo logran. No cumple: no se preocupan por el pan.', scored:true, foco:'AI'},
 
     // ── Prueba de Calidad ────────────────────────────────────────────────────
     {type:'subgroup', label:'🔬 Prueba de Calidad'},
-    {id:'pr_pc6', type:'scored2', t:'¿Todos los insumos que están para servicio están en buenas condiciones?', h:'Con encontrar 1 insumo que no está en buenas condiciones selecciona No. En hallazgo indica todos los insumos que no estén bien (toma evidencia).', scored:true},
-    {id:'pr_pc7', type:'scored2', t:'¿Encontraste algún insumo caduco?', h:'En hallazgos indicar todos los insumos que se encontraron caducos durante la visita.', scored:true},
+    {id:'pr_pc6', type:'scored2', t:'¿Todos los insumos que están para servicio están en buenas condiciones?', h:'Con encontrar 1 insumo que no está en buenas condiciones selecciona No. En hallazgo indica todos los insumos que no estén bien (toma evidencia).', scored:true, foco:'AI'},
+    {id:'pr_pc7', type:'scored2', t:'¿Encontraste algún insumo caduco?', h:'En hallazgos indicar todos los insumos que se encontraron caducos durante la visita.', scored:true, foco:true},
 
     // ── Ensamblaje ───────────────────────────────────────────────────────────
     {type:'subgroup', label:'🥗 Ensamblaje'},
-    {id:'pr_en1', type:'scored3', t:'¿Los Foodies utilizan las cucharas para porcionar los ingredientes?', h:'Cumple: sí, siempre. Cumple parcialmente: de repente se observó que algunos ingredientes no. No cumple: nunca se usan.', scored:true},
+    {id:'pr_en1', type:'scored3', t:'¿Los Foodies utilizan las cucharas para porcionar los ingredientes?', h:'Cumple: sí, siempre. Cumple parcialmente: de repente se observó que algunos ingredientes no. No cumple: nunca se usan.', scored:true, foco:'AI'},
 
     // ── Fruver ───────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🥦 Fruver'},
@@ -540,7 +542,10 @@ function buildRow(c, num, block) {
   // ── Scored / info button rows ───────────────────────────────────────────
   const af      = c.autofail ? '<span class="af-tag">AUTOFAIL</span>' : '';
   const nsTag   = !c.scored  ? '<span class="no-score-tag">informativo</span>' : '';
-  const focoTag = c.foco     ? '<span class="foco-tag">⭐ Foco</span>' : '';
+  const focoTag = c.foco === true  ? '<span class="foco-tag">⭐ Foco</span>'
+               : c.foco === 'AI' ? '<span class="foco-tag-ai">⚡ AI</span>'
+               : c.foco === 'CM' ? '<span class="foco-tag-cm">🔧 CM</span>'
+               : '';
   const del  = block === 'varios' ? `<button class="del-btn" onclick="deleteVarios('${c.id}')" title="Eliminar">✕</button>` : '';
 
   let btns = '';
@@ -550,10 +555,20 @@ function buildRow(c, num, block) {
     btns = `<button class="sc-btn" data-v="2" onclick="setScore('${c.id}',2,'${block}')">✅ Sí</button><button class="sc-btn" data-v="0" onclick="setScore('${c.id}',0,'${block}')">🔴 No</button>`;
   }
 
-  // Detail panel only for scored items
-  const detail = c.scored
-    ? `<div class="crit-detail" id="detail-${c.id}"><div class="detail-row"><label>Hallazgo</label><textarea placeholder="Describe el hallazgo…" id="hal-${c.id}" oninput="saveField('${c.id}')"></textarea></div><div class="detail-row"><label>Acción inmediata</label><textarea placeholder="¿Qué se corrigió durante la visita?" id="acc-${c.id}" oninput="saveField('${c.id}')"></textarea></div><div class="detail-row"><label>Acción C/M plazo</label><textarea placeholder="Acción correctiva a corto / mediano plazo" id="acc2-${c.id}" oninput="saveField('${c.id}')"></textarea></div><div class="detail-row"><label>Responsable</label><input type="text" placeholder="Nombre o puesto" id="res-${c.id}" oninput="saveField('${c.id}')"></div><div class="detail-row"><label>Fecha límite</label><input type="date" id="fec-${c.id}" oninput="saveField('${c.id}')"></div></div>`
-    : '';
+  // Detail panel — campos según tipo de foco
+  const detail = (() => {
+    if (!c.scored) return '';
+    const fHal  = `<div class="detail-row"><label>Hallazgo</label><textarea placeholder="Describe el hallazgo…" id="hal-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fAI   = `<div class="detail-row"><label>Acción inmediata</label><textarea placeholder="¿Qué se corrigió durante la visita?" id="acc-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fCM   = `<div class="detail-row"><label>Acción C/M plazo</label><textarea placeholder="Acción correctiva a corto / mediano plazo" id="acc2-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fResp = `<div class="detail-row"><label>Responsable</label><input type="text" placeholder="Nombre o puesto" id="res-${c.id}" oninput="saveField('${c.id}')"></div>`;
+    const fFec  = `<div class="detail-row"><label>Fecha límite</label><input type="date" id="fec-${c.id}" oninput="saveField('${c.id}')"></div>`;
+    let body = fHal;
+    if      (c.foco === 'AI') body += fAI;
+    else if (c.foco === 'CM') body += fCM;
+    else                      body += fAI + fCM + fResp + fFec; // foco:true o sin foco: campos completos
+    return `<div class="crit-detail" id="detail-${c.id}">${body}</div>`;
+  })();
 
   w.innerHTML = `<div class="crit-row"><div class="crit-num">${num}</div><div class="crit-body"><div class="crit-title">${c.t}${af}${nsTag}${focoTag}${del}</div>${c.h ? `<div class="crit-hint">${c.h}</div>` : ''}<div class="score-btns">${btns}</div></div><div class="crit-icon" id="icon-${c.id}">·</div></div>${detail}`;
   return w;
@@ -814,14 +829,20 @@ async function exportTrackerRowCore() {
   const halHdr = wsHal.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','Sección','Criterio / Punto evaluado','Score','Descripción del hallazgo','Acción inmediata','Acción C/M plazo','Responsable','Fecha límite','Estatus']);
   styleHdr(halHdr);
   let halN = 1;
+  const halRows = [];
   blocks.forEach(b => {
     DEFS[b].forEach(c => {
       if (!c.scored) return;
       const s = state[c.id];
       if (!s||s.score===undefined||s.score===2) return;
-      const r = wsHal.addRow([halN++,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',secLabel[b],c.t,s.score===0?'No cumple (0)':'Parcialmente (1)',s.hallazgo||'',s.accion||'',s.accion2||'',s.resp||'',s.fechalim||'','🔴 Abierto']);
-      r.height = 40; styleData(r);
+      halRows.push({ sortKey: c.foco === true ? 0 : 1, c, s, b });
     });
+  });
+  // AI: solo en reporte, no en tracker
+  halRows.sort((a, b) => a.sortKey - b.sortKey);
+  halRows.filter(({c}) => c.foco !== 'AI').forEach(({c, s, b}) => {
+    const r = wsHal.addRow([halN++,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',secLabel[b],c.t,s.score===0?'No cumple (0)':'Parcialmente (1)',s.hallazgo||'',s.accion||'',s.accion2||'',s.resp||'',s.fechalim||'','🔴 Abierto']);
+    r.height = 40; styleData(r);
   });
   wsHal.views = [{state:'frozen',ySplit:1}];
 
@@ -933,8 +954,8 @@ function openReportCore() {
     culinario: {label:'Est. Culinarios',        color:'#c0310f', bg:'#fff3ef'},
     practicas: {label:'Prácticas de Cocina',   color:'#15803d', bg:'#f0fdf4'},
   };
-  let allFindings = '';
   let totalHallazgos = 0;
+  const findingsArr = [];
   blocks.forEach(b => {
     DEFS[b.key].forEach(c => {
       if (!c.scored) return;
@@ -944,24 +965,47 @@ function openReportCore() {
       const cls   = s.score === 0 ? 's0' : 's1';
       const lbl   = s.score === 0 ? '🔴 No cumple' : '⚠️ Parcialmente';
       const af    = c.autofail && s.score === 0 ? ' <span class="af-tag">AUTOFAIL</span>' : '';
-      const foco  = c.foco ? ' <span class="foco-tag">⭐ Foco</span>' : '';
+      const focoSpan = c.foco === true  ? ' <span class="foco-tag">⭐ Foco</span>'
+                     : c.foco === 'AI' ? ' <span class="foco-tag-ai">⚡ AI</span>'
+                     : c.foco === 'CM' ? ' <span class="foco-tag-cm">🔧 CM</span>'
+                     : '';
       const badge = secBadge[b.key];
       const sub   = subgroupMap[c.id] || '';
-      allFindings += `<div class="finding ${c.autofail && s.score===0?'af':cls}" style="position:relative;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;">
-          <div style="flex:1">
-            ${sub?`<div style="font-size:10px;font-weight:600;color:var(--gray-500);margin-bottom:2px;">${sub}</div>`:''}
-            <div class="ft">${c.t}${af}${foco} — ${lbl}</div>
+      // Build detail lines based on foco type
+      let detailLines = s.hallazgo ? `<div class="fd">📝 <b>Hallazgo:</b> ${s.hallazgo}</div>` : '';
+      if (c.foco === 'AI') {
+        detailLines += s.accion  ? `<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>`  : '';
+      } else if (c.foco === 'CM') {
+        detailLines += s.accion2 ? `<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>` : '';
+      } else {
+        detailLines += s.accion  ? `<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>`  : '';
+        detailLines += s.accion2 ? `<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>` : '';
+        detailLines += (s.resp||s.fechalim) ? `<div class="fd" style="display:flex;gap:16px;flex-wrap:wrap;">${s.resp?`<span>👤 <b>Responsable:</b> ${s.resp}</span>`:''}${s.fechalim?`<span>📅 <b>Fecha límite:</b> ${s.fechalim}</span>`:''}</div>` : '';
+      }
+      findingsArr.push({
+        sortKey: c.foco === true ? 0 : 1,
+        isAI: c.foco === 'AI',
+        html: `<div class="finding ${c.autofail && s.score===0?'af':cls}" style="position:relative;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;">
+            <div style="flex:1">
+              ${sub?`<div style="font-size:10px;font-weight:600;color:var(--gray-500);margin-bottom:2px;">${sub}</div>`:''}
+              <div class="ft">${c.t}${af}${focoSpan} — ${lbl}</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:${badge.bg};color:${badge.color};white-space:nowrap;">${badge.label}</span>
           </div>
-          <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:${badge.bg};color:${badge.color};white-space:nowrap;">${badge.label}</span>
-        </div>
-        ${s.hallazgo?`<div class="fd">📝 <b>Hallazgo:</b> ${s.hallazgo}</div>`:''}
-        ${s.accion?`<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>`:''}
-        ${s.accion2?`<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>`:''}
-        ${s.resp||s.fechalim?`<div class="fd" style="display:flex;gap:16px;flex-wrap:wrap;">${s.resp?`<span>👤 <b>Responsable:</b> ${s.resp}</span>`:''}${s.fechalim?`<span>📅 <b>Fecha límite:</b> ${s.fechalim}</span>`:''}</div>`:''}
-      </div>`;
+          ${detailLines}
+        </div>`
+      });
     });
   });
+  // Separar AI (solo reporte, sin seguimiento) del resto (con seguimiento)
+  const mainFindings = findingsArr.filter(f => !f.isAI).sort((a, b) => a.sortKey - b.sortKey);
+  const aiFindings   = findingsArr.filter(f =>  f.isAI);
+  const allFindings  = mainFindings.map(f => f.html).join('')
+    + (aiFindings.length > 0
+      ? `<div style="margin-top:14px;padding:10px 14px;background:#f0fdf4;border-radius:8px;border-left:3px solid #22c55e;font-size:11px;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:.4px;">✅ Acciones inmediatas tomadas durante la visita</div>`
+        + aiFindings.map(f => f.html).join('')
+      : '');
 
   // ── Build desglose completo ──────────────────────────────────────────────
   const blockMeta = [
@@ -1036,7 +1080,7 @@ function openReportCore() {
     ${anyAF?'<div style="background:#1f2937;color:#fff;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:700;margin-bottom:14px;">⛔ AUTOFAIL — Cocina No Aprobada. Notificación inmediata al área operativa.</div>':''}
 
     <div class="r-sec">
-      <h3 style="color:var(--gray-700);border-color:var(--gray-300);">📋 Hallazgos consolidados ${totalHallazgos>0?`<span style="font-size:11px;font-weight:400;color:var(--gray-500)">(${totalHallazgos} criterio${totalHallazgos!==1?'s':''})</span>`:''}</h3>
+      <h3 style="color:var(--gray-700);border-color:var(--gray-300);">📋 Hallazgos consolidados ${mainFindings.length>0?`<span style="font-size:11px;font-weight:400;color:var(--gray-500)">(${mainFindings.length} con seguimiento${aiFindings.length>0?' · '+aiFindings.length+' inmediata'+(aiFindings.length!==1?'s':''):''})</span>`:''}</h3>
       ${totalHallazgos > 0 ? allFindings : '<p style="font-size:12px;color:var(--gray-400)">✅ Sin hallazgos. Todos los criterios cumplidos.</p>'}
     </div>
 
