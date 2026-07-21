@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MHA CP · Evaluación Sanitaria · Foodology</title>
+<title>VIC · Auditoría · Foodology</title>
 <script>
 (function(){
-  var KEY = 'mha_cp_auth';
+  var KEY = 'vic_auth';
   var PASS = 'QualityFoodology';
   if(sessionStorage.getItem(KEY) !== '1'){
     document.addEventListener('DOMContentLoaded', function(){
@@ -16,14 +16,14 @@
       overlay.innerHTML = `
         <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f0f2f5;font-family:'Segoe UI',system-ui,sans-serif;">
           <div style="background:#fff;border-radius:16px;padding:40px 36px;max-width:360px;width:90%;box-shadow:0 4px 24px rgba(0,0,0,.10);text-align:center;">
-            <div style="background:#0f766e;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px;">🏭</div>
-            <div style="font-size:20px;font-weight:800;color:#1f2937;margin-bottom:4px;">MHA · Centro de Producción</div>
-            <div style="font-size:13px;color:#6b7280;margin-bottom:28px;">Foodology · Auditoría Sanitaria CP</div>
+            <div style="background:#E8401C;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:26px;">🔒</div>
+            <div style="font-size:20px;font-weight:800;color:#1f2937;margin-bottom:4px;">VIC · Auditoría</div>
+            <div style="font-size:13px;color:#6b7280;margin-bottom:28px;">Foodology · Área de Calidad</div>
             <input id="auth-input" type="password" placeholder="Contraseña de acceso"
               style="width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:15px;outline:none;margin-bottom:12px;"/>
             <div id="auth-error" style="color:#dc2626;font-size:13px;margin-bottom:10px;display:none;">Contraseña incorrecta</div>
             <button id="auth-btn"
-              style="width:100%;background:#0f766e;color:#fff;border:none;border-radius:10px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;">
+              style="width:100%;background:#E8401C;color:#fff;border:none;border-radius:10px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;">
               Ingresar
             </button>
           </div>
@@ -49,7 +49,7 @@
 </script>
 <style>
 :root {
-  --brand:#0f766e;--brand-dark:#0d6461;--brand-light:#f0fdfa;
+  --brand:#E8401C;--brand-dark:#c0310f;--brand-light:#fff3ef;
   --green:#16a34a;--yellow:#d97706;--orange:#ea580c;--red:#dc2626;
   --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;
   --gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;
@@ -57,7 +57,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;color:var(--gray-800);}
-.app-header{background:var(--brand);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(15,118,110,.35);}
+.app-header{background:var(--brand);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(232,64,28,.35);}
 .app-header .logo{font-size:20px;font-weight:800;letter-spacing:-.5px;}
 .app-header .logo span{opacity:.7;font-weight:400;font-size:13px;display:block;margin-top:-2px;}
 .global-pill{margin-left:auto;display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.18);border-radius:50px;padding:4px 16px;min-width:80px;text-align:center;}
@@ -74,32 +74,16 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden;}
 .sec-hdr{padding:13px 18px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-weight:700;font-size:14px;border-bottom:2px solid transparent;transition:background .15s;}
 .sec-hdr:hover{filter:brightness(.97);}
-.sec-hdr.sa{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
-.sec-hdr.et{background:#f0fdf4;color:#15803d;border-color:#bbf7d0;}
-.sec-hdr.lp{background:#f0fdfa;color:#0f766e;border-color:#99f6e4;}
-.sec-hdr.mt{background:#faf5ff;color:#7c3aed;border-color:#ddd6fe;}
-.sec-hdr.pa{background:#fff5f5;color:#dc2626;border-color:#fecaca;}
-.sec-hdr.si{background:#fffbeb;color:#b45309;border-color:#fde68a;}
+.sec-hdr.equipos{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe;}
+.sec-hdr.culinario{background:var(--brand-light);color:var(--brand);border-color:#fecaca;}
+.sec-hdr.practicas{background:#f0fdf4;color:#15803d;border-color:#bbf7d0;}
+.sec-hdr.varios{background:#faf5ff;color:#6d28d9;border-color:#ddd6fe;}
 .sec-hdr.meta-hdr{background:var(--gray-50);color:var(--gray-700);border-color:var(--gray-200);}
 .sec-score{margin-left:auto;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;}
-.sec-score.sa{background:#bfdbfe;color:#1d4ed8;}
-.sec-score.et{background:#bbf7d0;color:#15803d;}
-.sec-score.lp{background:#99f6e4;color:#0f766e;}
-.sec-score.mt{background:#ddd6fe;color:#7c3aed;}
-.sec-score.pa{background:#fecaca;color:#dc2626;}
-.sec-score.si{background:#fde68a;color:#b45309;}
-.prog-fill.sa{background:#3b82f6;}
-.prog-fill.et{background:#22c55e;}
-.prog-fill.lp{background:#14b8a6;}
-.prog-fill.mt{background:#8b5cf6;}
-.prog-fill.pa{background:#ef4444;}
-.prog-fill.si{background:#d97706;}
-.r-sec h3.sa{border-color:#bfdbfe;color:#1d4ed8;}
-.r-sec h3.et{border-color:#bbf7d0;color:#15803d;}
-.r-sec h3.lp{border-color:#99f6e4;color:#0f766e;}
-.r-sec h3.mt{border-color:#ddd6fe;color:#7c3aed;}
-.r-sec h3.pa{border-color:#fecaca;color:#dc2626;}
-.r-sec h3.si{border-color:#fde68a;color:#b45309;}
+.sec-score.equipos{background:#bfdbfe;color:#1d4ed8;}
+.sec-score.culinario{background:#fecaca;color:var(--brand-dark);}
+.sec-score.practicas{background:#bbf7d0;color:#15803d;}
+.sec-score.varios{background:#ddd6fe;color:#5b21b6;}
 .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 18px;}
 @media(max-width:580px){.meta-grid{grid-template-columns:1fr;}}
 .fld{display:flex;flex-direction:column;gap:4px;}
@@ -107,19 +91,31 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 .fld input,.fld select,.fld textarea{border:1.5px solid var(--gray-200);border-radius:7px;padding:8px 10px;font-size:13px;color:var(--gray-800);background:var(--gray-50);transition:border-color .15s;}
 .fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--brand);background:#fff;}
 .fld textarea{resize:vertical;min-height:60px;}
+
+/* Subgroup headers */
 .subgroup-hdr{padding:7px 18px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;background:var(--gray-100);color:var(--gray-600);border-bottom:1px solid var(--gray-200);border-top:2px solid var(--gray-200);}
+
+/* Criteria rows */
 .crit-wrap{border-bottom:1px solid var(--gray-100);}
 .crit-wrap:last-child{border-bottom:none;}
 .crit-row{display:grid;grid-template-columns:26px 1fr auto;min-height:52px;}
 .crit-num{background:var(--gray-50);border-right:1px solid var(--gray-100);display:flex;align-items:flex-start;justify-content:center;padding-top:14px;font-size:10px;font-weight:700;color:var(--gray-400);}
 .crit-body{padding:10px 14px 8px;}
 .crit-title{font-size:13px;font-weight:600;margin-bottom:2px;}
+.crit-hint{font-size:11px;color:var(--gray-400);margin-bottom:8px;line-height:1.4;}
 .score-btns{display:flex;gap:6px;flex-wrap:wrap;}
 .sc-btn{border:1.5px solid var(--gray-200);background:#fff;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;cursor:pointer;color:var(--gray-500);transition:all .15s;}
 .sc-btn:hover{border-color:var(--gray-400);}
 .sc-btn[data-v="0"].active{background:#fee2e2;border-color:var(--red);color:var(--red);}
+.sc-btn[data-v="1"].active{background:#fef9c3;border-color:var(--yellow);color:var(--yellow);}
 .sc-btn[data-v="2"].active{background:#dcfce7;border-color:var(--green);color:var(--green);}
+.prod-eval-btn{border-radius:8px;padding:7px 12px;font-size:12px;opacity:.55;transition:all .15s;}
+.prod-eval-btn.active{opacity:1;box-shadow:0 0 0 2px currentColor;}
 .af-tag{display:inline-block;font-size:10px;font-weight:700;background:#1f2937;color:#fff;border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:middle;}
+.no-score-tag{display:inline-block;font-size:9px;font-weight:700;background:var(--gray-200);color:var(--gray-500);border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;text-transform:uppercase;letter-spacing:.3px;}
+.foco-tag{display:inline-block;font-size:9px;font-weight:700;background:#fef9c3;color:#92400e;border:1px solid #fcd34d;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
+.foco-tag-ai{display:inline-block;font-size:9px;font-weight:700;background:#e0f2fe;color:#075985;border:1px solid #7dd3fc;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
+.foco-tag-cm{display:inline-block;font-size:9px;font-weight:700;background:#f0fdf4;color:#166534;border:1px solid #86efac;border-radius:4px;padding:1px 5px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;}
 .crit-detail{display:none;padding:10px 14px 14px;background:var(--gray-50);border-top:1px solid var(--gray-100);flex-direction:column;gap:8px;}
 .crit-detail.open{display:flex;}
 .detail-row{display:flex;gap:8px;align-items:flex-start;}
@@ -128,19 +124,52 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 .detail-row textarea{min-height:48px;resize:vertical;}
 .detail-row input:focus,.detail-row textarea:focus{outline:none;border-color:var(--brand);}
 .crit-icon{width:38px;border-left:1px solid var(--gray-100);background:var(--gray-50);display:flex;align-items:center;justify-content:center;font-size:16px;}
+
+/* Inline text/textarea field rows (for campo corto / campo largo) */
+.fld-row-inner{display:grid;grid-template-columns:26px 1fr;min-height:48px;}
+.fld-row-body{padding:9px 14px 10px;}
+.fld-inline{width:100%;border:1.5px solid var(--gray-200);border-radius:7px;padding:6px 10px;font-size:13px;background:var(--gray-50);transition:border-color .15s;margin-top:4px;}
+.fld-inline:focus{outline:none;border-color:var(--brand);background:#fff;}
+.fld-inline-ta{width:100%;border:1.5px solid var(--gray-200);border-radius:7px;padding:6px 10px;font-size:13px;background:var(--gray-50);transition:border-color .15s;resize:vertical;min-height:52px;margin-top:4px;}
+.fld-inline-ta:focus{outline:none;border-color:var(--brand);background:#fff;}
+
 .prog-wrap{padding:0 18px 14px;}
 .prog-top{display:flex;justify-content:space-between;font-size:11px;color:var(--gray-500);margin-bottom:4px;}
 .prog-bar{height:7px;background:var(--gray-200);border-radius:10px;overflow:hidden;}
 .prog-fill{height:100%;border-radius:10px;transition:width .3s;}
+.prog-fill.equipos{background:#3b82f6;}
+.prog-fill.culinario{background:var(--brand);}
+.prog-fill.practicas{background:#22c55e;}
+.prog-fill.varios{background:#8b5cf6;}
+.varios-add{padding:10px 18px;border-top:1px dashed var(--gray-200);display:flex;gap:8px;align-items:center;}
+.varios-add input{flex:1;border:1.5px solid var(--gray-200);border-radius:7px;padding:7px 10px;font-size:13px;background:var(--gray-50);}
+.varios-add input:focus{outline:none;border-color:#8b5cf6;background:#fff;}
+.btn-add{background:#8b5cf6;color:#fff;border:none;border-radius:7px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;}
+.btn-add:hover{background:#7c3aed;}
+.del-btn{background:none;border:none;cursor:pointer;font-size:14px;color:var(--gray-400);padding:4px;}
+.del-btn:hover{color:var(--red);}
 .legend{display:flex;gap:14px;flex-wrap:wrap;padding:10px 18px;background:var(--gray-50);border-top:1px solid var(--gray-100);font-size:11px;color:var(--gray-500);}
 .lg{display:flex;align-items:center;gap:5px;}
 .ld{width:10px;height:10px;border-radius:50%;}
-.score-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 18px;}
+.score-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:14px 18px;}
 @media(max-width:600px){.score-summary{grid-template-columns:1fr 1fr;}}
 .sc-card{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:8px;padding:12px;text-align:center;}
 .sc-card .num{font-size:28px;font-weight:800;line-height:1;}
 .sc-card .lbl{font-size:10px;color:var(--gray-500);margin-top:3px;}
 .pts-lbl{font-size:11px;font-weight:600;color:var(--gray-500);margin-top:2px;}
+/* Calculated result rows */
+.calc-row{display:flex;align-items:center;gap:8px;padding:5px 14px 7px 40px;background:#f0f9ff;border-top:1px solid #bae6fd;font-size:12px;color:var(--gray-600);}
+.calc-lbl{flex:1;}
+.calc-val{font-size:15px;font-weight:800;min-width:44px;text-align:right;}
+.calc-val.good{color:#16a34a;}
+.calc-val.warn{color:#d97706;}
+.calc-val.bad{color:#dc2626;}
+.calc-val.none{color:var(--gray-400);}
+.prod-entry{background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:8px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;}
+.prod-num{font-size:22px;font-weight:800;color:var(--gray-300);min-width:22px;padding-top:6px;line-height:1;}
+.prod-fields{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;}
+.prod-fields .fld-full{grid-column:1/-1;}
+@media(max-width:640px){.prod-fields{grid-template-columns:1fr 1fr;}}
 .sc-card .semrow{margin-top:5px;}
 .sc-card.total-card{border-color:var(--brand);}
 .sc-card.total-card .num{color:var(--brand);}
@@ -152,30 +181,47 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 .btn-outline:hover{background:var(--gray-50);}
 .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:300;align-items:flex-start;justify-content:center;padding:20px 12px;overflow-y:auto;}
 .modal-bg.open{display:flex;}
-.modal{background:#fff;border-radius:12px;width:100%;max-width:720px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.2);margin:auto;}
+.modal{background:#fff;border-radius:12px;width:100%;max-width:700px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.2);margin:auto;}
 .modal h2{font-size:18px;color:var(--brand);margin-bottom:3px;}
 .modal .sub{font-size:12px;color:var(--gray-500);margin-bottom:18px;}
 .report-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
 .rm{font-size:12px;}
 .rm strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--gray-500);}
 .r-scores{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
-.r-sc{flex:1;min-width:100px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:8px;padding:12px;text-align:center;}
-.r-sc .n{font-size:26px;font-weight:800;}
+.r-sc{flex:1;min-width:120px;background:var(--gray-50);border:1.5px solid var(--gray-200);border-radius:8px;padding:12px;text-align:center;}
+.r-sc .n{font-size:30px;font-weight:800;}
 .r-sc .l{font-size:10px;color:var(--gray-500);margin-top:2px;}
 .r-sc .s{margin-top:5px;}
 .r-sec{margin-bottom:16px;}
 .r-sec h3{font-size:13px;font-weight:700;border-bottom:2px solid var(--gray-200);padding-bottom:5px;margin-bottom:8px;}
+.r-sec h3.equipos{border-color:#bfdbfe;color:#1d4ed8;}
+.r-sec h3.culinario{border-color:#fecaca;color:var(--brand);}
+.r-sec h3.practicas{border-color:#bbf7d0;color:#15803d;}
+.r-sec h3.varios{border-color:#ddd6fe;color:#5b21b6;}
 .finding{padding:9px 11px;border-radius:6px;margin-bottom:7px;border-left:3px solid var(--gray-300);background:var(--gray-50);}
 .finding.s0{border-color:var(--red);background:#fff5f5;}
+.finding.s1{border-color:var(--yellow);background:#fefce8;}
 .finding.af{border-color:#1f2937;background:#f1f5f9;}
 .finding .ft{font-size:12px;font-weight:600;}
 .finding .fd{font-size:11px;color:var(--gray-600);margin-top:3px;}
 .modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:18px;padding-top:14px;border-top:1px solid var(--gray-200);}
 .print-hint{font-size:11px;color:var(--gray-400);text-align:center;margin-top:10px;}
+/* desglose completo */
+.desglose-block{border:1.5px solid var(--gray-200);border-radius:8px;overflow:hidden;margin-bottom:14px;}
+.dr-subgroup{padding:5px 14px;background:var(--gray-100);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--gray-500);border-bottom:1px solid var(--gray-200);}
+.dr{display:grid;grid-template-columns:18px 1fr auto;gap:6px;align-items:baseline;padding:6px 14px;border-bottom:1px solid var(--gray-100);font-size:12px;}
+.dr:last-child{border-bottom:none;}
+.dr.ok{background:#fff;}.dr.warn{background:#fefce8;}.dr.fail{background:#fff5f5;}
+.dr.info-row,.dr.text-row{background:#fff;}
+.dr-icon{font-size:11px;text-align:center;}.dr-txt{color:var(--gray-700);line-height:1.4;}.dr-val{font-size:11px;font-weight:700;white-space:nowrap;text-align:right;}
+.dr-val.ok{color:#16a34a;}.dr-val.warn{color:#d97706;}.dr-val.fail{color:#dc2626;}
+.dr-val.info{color:var(--gray-400);}.dr-val.text-v{color:var(--gray-600);font-weight:400;}
+.info-tag{display:inline-block;font-size:9px;font-weight:700;padding:1px 5px;border-radius:10px;background:#f1f5f9;color:var(--gray-500);margin-left:4px;vertical-align:middle;}
 @media print{
   .app-header,.bottom-bar,.modal-bg{display:none!important;}
   body{background:#fff;}
   .card{box-shadow:none;border:1px solid #ddd;}
+  /* Modo reporte: ocultar formulario, mostrar solo el modal */
   body.printing-report header.app-header,
   body.printing-report .bottom-bar,
   body.printing-report main{display:none!important;}
@@ -188,358 +234,273 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 </head>
 <body>
 <header class="app-header">
-  <div class="logo">🏭 Foodology · MHA CP<span>Auditoría Sanitaria — Centro de Producción · v.07/2026</span></div>
+  <div class="logo">🍽 Foodology · VIC<span>Auditoría — Operativa / Culinaria · v.06/07/2026</span></div>
   <div class="global-pill"><div class="pct" id="g-pct">—</div><div class="lbl" id="g-pts" style="font-size:10px;opacity:.65;margin-top:1px;">— pts</div><div class="lbl" id="g-sem">Sin evaluar</div></div>
 </header>
 <main>
-
-<!-- DATOS DE LA VISITA -->
 <div class="card">
   <div class="sec-hdr meta-hdr" onclick="toggleSec('meta')">📋 Datos de la visita</div>
   <div id="sec-meta">
     <div class="meta-grid">
-      <div class="fld"><label>Centro de Producción</label>
-        <select id="m-cp" onchange="autoFillCiudad()">
-          <option value="">Selecciona CP…</option>
-          <optgroup label="Ciudad de México"><option data-ciudad="Ciudad de México">CP México</option></optgroup>
-          <optgroup label="Guadalajara"><option data-ciudad="Guadalajara">CP Guadalajara</option></optgroup>
-          <optgroup label="Monterrey"><option data-ciudad="Monterrey">CP Monterrey</option></optgroup>
-        </select>
-      </div>
+      <div class="fld"><label>Cocina</label><select id="m-cocina" onchange="autoFillCiudad()"><option value="">Selecciona cocina…</option><optgroup label="Ciudad de México"><option data-ciudad="Ciudad de México">Satélite</option><option data-ciudad="Ciudad de México">Coapa</option><option data-ciudad="Ciudad de México">Azcapotzalco</option><option data-ciudad="Ciudad de México">Santa Fe</option><option data-ciudad="Ciudad de México">Iztapalapa</option><option data-ciudad="Ciudad de México">Polanco</option><option data-ciudad="Ciudad de México">Samara</option><option data-ciudad="Ciudad de México">Esmeralda</option><option data-ciudad="Ciudad de México">Churubusco</option><option data-ciudad="Ciudad de México">Pedregal</option><option data-ciudad="Ciudad de México">Doctores</option><option data-ciudad="Ciudad de México">Del Valle</option><option data-ciudad="Ciudad de México">San Ángel</option><option data-ciudad="Ciudad de México">Lindavista</option><option data-ciudad="Ciudad de México">Manacar</option><option data-ciudad="Ciudad de México">Interlomas</option></optgroup><optgroup label="Zona Centro"><option data-ciudad="Zona Centro">Metepec</option></optgroup><optgroup label="Guadalajara"><option data-ciudad="Guadalajara">Tlaquepaque</option><option data-ciudad="Guadalajara">Jardines</option><option data-ciudad="Guadalajara">Tabachines</option><option data-ciudad="Guadalajara">Jardines del Valle</option><option data-ciudad="Guadalajara">Estadio</option><option data-ciudad="Guadalajara">Santa Teresita</option><option data-ciudad="Guadalajara">La Calma</option></optgroup><optgroup label="Mérida"><option data-ciudad="Mérida">Montejo</option><option data-ciudad="Mérida">Canek</option></optgroup><optgroup label="Monterrey"><option data-ciudad="Monterrey">Monterrey Centro</option><option data-ciudad="Monterrey">Lincoln</option><option data-ciudad="Monterrey">Carretera Nacional</option><option data-ciudad="Monterrey">Santa Catarina</option><option data-ciudad="Monterrey">Cumbres</option><option data-ciudad="Monterrey">Tec</option><option data-ciudad="Monterrey">San Nicolás</option><option data-ciudad="Monterrey">San Jerónimo</option><option data-ciudad="Monterrey">Saltillo Centro</option></optgroup><optgroup label="Puebla"><option data-ciudad="Puebla">Ciudad Judicial</option><option data-ciudad="Puebla">Volcanes</option></optgroup></select></div>
       <div class="fld"><label>Ciudad</label><input type="text" id="m-ciudad" placeholder="Se llena automáticamente" readonly style="background:var(--gray-100);color:var(--gray-500);cursor:default;"></div>
       <div class="fld"><label>Fecha de visita</label><input type="date" id="m-fecha"></div>
       <div class="fld"><label>Trimestre</label><select id="m-trimestre"><option>Q1 2026</option><option>Q2 2026</option><option selected>Q3 2026</option><option>Q4 2026</option><option>Q1 2027</option></select></div>
-      <div class="fld"><label>Auditor / Quality</label><select id="m-auditor"><option value="">Selecciona…</option><option>Arturo García</option><option>Itzia Diaz</option><option>Ilia Sandoval</option><option>Yoritzel Rosales</option></select></div>
+      <div class="fld"><label>Auditor / Quality</label><select id="m-auditor"><option value="">Selecciona…</option><option>Itzia Diaz</option><option>Ilia Sandoval</option><option>Yoritzel Rosales</option></select></div>
     </div>
   </div>
 </div>
-
-<!-- SECCIÓN SA — Seguridad Alimentaria -->
 <div class="card">
-  <div class="sec-hdr sa" onclick="toggleSec('sa')">🛡️ Seguridad Alimentaria (SA)<span class="semaforo sem-pending" id="sem-sa" style="margin-left:auto">Sin evaluar</span><span class="sec-score sa" id="score-sa">—</span></div>
-  <div id="sec-sa">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-sa-lbl">—</span></div><div class="prog-bar"><div class="prog-fill sa" id="prog-sa" style="width:0%"></div></div></div>
-    <div id="crit-sa"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div></div>
+  <div class="sec-hdr equipos" onclick="toggleSec('equipos')">🔧 Sección 1 · Equipos Críticos<span class="semaforo sem-pending" id="sem-equipos" style="margin-left:auto">Sin evaluar</span><span class="sec-score equipos" id="score-equipos">—</span></div>
+  <div id="sec-equipos">
+    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios con puntaje evaluados</span><span id="prog-eq-lbl">—</span></div><div class="prog-bar"><div class="prog-fill equipos" id="prog-eq" style="width:0%"></div></div></div>
+    <div id="crit-equipos"></div>
+    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>2 · Cumple / Sí</div><div class="lg"><div class="ld" style="background:#fef9c3;border:1px solid #d97706"></div>1 · Cumple parcialmente</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>0 · No cumple / No</div><div class="lg"><div class="ld" style="background:var(--gray-200);border:1px solid var(--gray-400)"></div>Informativo (sin puntaje)</div></div>
   </div>
 </div>
-
-<!-- SECCIÓN ET — Entrenamiento -->
 <div class="card">
-  <div class="sec-hdr et" onclick="toggleSec('et')">📚 Entrenamiento (ET)<span class="semaforo sem-pending" id="sem-et" style="margin-left:auto">Sin evaluar</span><span class="sec-score et" id="score-et">—</span></div>
-  <div id="sec-et">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-et-lbl">—</span></div><div class="prog-bar"><div class="prog-fill et" id="prog-et" style="width:0%"></div></div></div>
-    <div id="crit-et"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div></div>
+  <div class="sec-hdr culinario" onclick="toggleSec('culinario')">🧑‍🍳 Sección 2 · Estándares Culinarios<span class="semaforo sem-pending" id="sem-culinario" style="margin-left:auto">Sin evaluar</span><span class="sec-score culinario" id="score-culinario">—</span></div>
+  <div id="sec-culinario">
+    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios con puntaje evaluados</span><span id="prog-cul-lbl">—</span></div><div class="prog-bar"><div class="prog-fill culinario" id="prog-cul" style="width:0%"></div></div></div>
+    <div id="crit-culinario"></div>
+    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>2 · Cumple / Sí</div><div class="lg"><div class="ld" style="background:#fef9c3;border:1px solid #d97706"></div>1 · Cumple parcialmente</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>0 · No cumple / No</div><div class="lg"><div class="ld" style="background:var(--gray-200);border:1px solid var(--gray-400)"></div>Informativo (sin puntaje)</div></div>
   </div>
 </div>
-
-<!-- SECCIÓN LP — Limpieza y Prevención -->
 <div class="card">
-  <div class="sec-hdr lp" onclick="toggleSec('lp')">🧹 Limpieza y Prevención (LP)<span class="semaforo sem-pending" id="sem-lp" style="margin-left:auto">Sin evaluar</span><span class="sec-score lp" id="score-lp">—</span></div>
-  <div id="sec-lp">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-lp-lbl">—</span></div><div class="prog-bar"><div class="prog-fill lp" id="prog-lp" style="width:0%"></div></div></div>
-    <div id="crit-lp"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div></div>
+  <div class="sec-hdr practicas" onclick="toggleSec('practicas')">⚙️ Sección 3 · Prácticas de Cocina<span class="semaforo sem-pending" id="sem-practicas" style="margin-left:auto">Sin evaluar</span><span class="sec-score practicas" id="score-practicas">—</span></div>
+  <div id="sec-practicas">
+    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios con puntaje evaluados</span><span id="prog-pr-lbl">—</span></div><div class="prog-bar"><div class="prog-fill practicas" id="prog-pr" style="width:0%"></div></div></div>
+    <div id="crit-practicas"></div>
+<div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>2 · Cumple / Sí</div><div class="lg"><div class="ld" style="background:#fef9c3;border:1px solid #d97706"></div>1 · Cumple parcialmente</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>0 · No cumple / No</div></div>
   </div>
 </div>
-
-<!-- SECCIÓN MT — Mantenimiento -->
-<div class="card">
-  <div class="sec-hdr mt" onclick="toggleSec('mt')">🔧 Mantenimiento (MT)<span class="semaforo sem-pending" id="sem-mt" style="margin-left:auto">Sin evaluar</span><span class="sec-score mt" id="score-mt">—</span></div>
-  <div id="sec-mt">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-mt-lbl">—</span></div><div class="prog-bar"><div class="prog-fill mt" id="prog-mt" style="width:0%"></div></div></div>
-    <div id="crit-mt"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div></div>
-  </div>
-</div>
-
-<!-- SECCIÓN PA — Plagas -->
-<div class="card">
-  <div class="sec-hdr pa" onclick="toggleSec('pa')">🦟 Control de Plagas (PA)<span class="semaforo sem-pending" id="sem-pa" style="margin-left:auto">Sin evaluar</span><span class="sec-score pa" id="score-pa">—</span></div>
-  <div id="sec-pa">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-pa-lbl">—</span></div><div class="prog-bar"><div class="prog-fill pa" id="prog-pa" style="width:0%"></div></div></div>
-    <div id="crit-pa"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div><div class="lg"><div class="ld" style="background:#1f2937;border:1px solid #374151"></div>Cualquier No = AUTOFAIL</div></div>
-  </div>
-</div>
-
-<!-- SECCIÓN SI — Seguridad Industrial -->
-<div class="card">
-  <div class="sec-hdr si" onclick="toggleSec('si')">⛑️ Seguridad Industrial (SI)<span class="semaforo sem-pending" id="sem-si" style="margin-left:auto">Sin evaluar</span><span class="sec-score si" id="score-si">—</span></div>
-  <div id="sec-si">
-    <div class="prog-wrap" style="padding-top:12px"><div class="prog-top"><span>Criterios evaluados</span><span id="prog-si-lbl">—</span></div><div class="prog-bar"><div class="prog-fill si" id="prog-si" style="width:0%"></div></div></div>
-    <div id="crit-si"></div>
-    <div class="legend"><div class="lg"><div class="ld" style="background:#dcfce7;border:1px solid #16a34a"></div>Sí / Cumple</div><div class="lg"><div class="ld" style="background:#fee2e2;border:1px solid #dc2626"></div>No / No cumple</div></div>
-  </div>
-</div>
-
-<!-- RESUMEN -->
 <div class="card">
   <div class="sec-hdr meta-hdr" onclick="toggleSec('resumen')">📊 Resumen de puntajes</div>
   <div id="sec-resumen">
     <div class="score-summary">
-      <div class="sc-card total-card" style="grid-column:1/-1"><div class="num" id="rs-total">—</div><div class="pts-lbl" id="rs-total-pts">— pts</div><div class="lbl">Total</div><div class="semrow" id="rs-total-sem"><span class="semaforo sem-pending">Sin evaluar</span></div></div>
+      <div class="sc-card total-card"><div class="num" id="rs-total">—</div><div class="pts-lbl" id="rs-total-pts">— pts</div><div class="lbl">Total</div><div class="semrow" id="rs-total-sem"><span class="semaforo sem-pending">Sin evaluar</span></div></div>
+      <div class="sc-card"><div class="num" style="color:#1d4ed8" id="rs-eq">—</div><div class="pts-lbl" id="rs-eq-pts">— pts</div><div class="lbl">Equipos Críticos</div><div class="semrow" id="rs-eq-sem"><span class="semaforo sem-pending">—</span></div></div>
+      <div class="sc-card"><div class="num" style="color:var(--brand)" id="rs-cul">—</div><div class="pts-lbl" id="rs-cul-pts">— pts</div><div class="lbl">Est. Culinarios</div><div class="semrow" id="rs-cul-sem"><span class="semaforo sem-pending">—</span></div></div>
+      <div class="sc-card"><div class="num" style="color:#15803d" id="rs-pr">—</div><div class="pts-lbl" id="rs-pr-pts">— pts</div><div class="lbl">Prácticas Cocina</div><div class="semrow" id="rs-pr-sem"><span class="semaforo sem-pending">—</span></div></div>
     </div>
-    <div class="score-summary" style="padding-top:0">
-      <div class="sc-card"><div class="num" style="color:#1d4ed8" id="rs-sa">—</div><div class="pts-lbl" id="rs-sa-pts">—</div><div class="lbl">Seg. Alimentaria</div><div class="semrow" id="rs-sa-sem"><span class="semaforo sem-pending">—</span></div></div>
-      <div class="sc-card"><div class="num" style="color:#15803d" id="rs-et">—</div><div class="pts-lbl" id="rs-et-pts">—</div><div class="lbl">Entrenamiento</div><div class="semrow" id="rs-et-sem"><span class="semaforo sem-pending">—</span></div></div>
-      <div class="sc-card"><div class="num" style="color:#0f766e" id="rs-lp">—</div><div class="pts-lbl" id="rs-lp-pts">—</div><div class="lbl">Limpieza</div><div class="semrow" id="rs-lp-sem"><span class="semaforo sem-pending">—</span></div></div>
-      <div class="sc-card"><div class="num" style="color:#7c3aed" id="rs-mt">—</div><div class="pts-lbl" id="rs-mt-pts">—</div><div class="lbl">Mantenimiento</div><div class="semrow" id="rs-mt-sem"><span class="semaforo sem-pending">—</span></div></div>
-      <div class="sc-card"><div class="num" style="color:#dc2626" id="rs-pa">—</div><div class="pts-lbl" id="rs-pa-pts">—</div><div class="lbl">Plagas</div><div class="semrow" id="rs-pa-sem"><span class="semaforo sem-pending">—</span></div></div>
-      <div class="sc-card"><div class="num" style="color:#b45309" id="rs-si">—</div><div class="pts-lbl" id="rs-si-pts">—</div><div class="lbl">Seg. Industrial</div><div class="semrow" id="rs-si-sem"><span class="semaforo sem-pending">—</span></div></div>
-    </div>
-    <div style="padding:0 18px 14px;"><p style="font-size:11px;color:var(--gray-500);">🟢 Ejemplar ≥91% &nbsp;|&nbsp; 🟡 Aprobado 81–90% &nbsp;|&nbsp; 🟠 Aprobado Cond. 71–80% &nbsp;|&nbsp; 🔴 No Aprobado ≤70% &nbsp;|&nbsp; ⛔ Autofail: PA1 (Plaga) o SA4.3 (Caducado)</p></div>
+    <div style="padding:0 18px 14px;"><p style="font-size:11px;color:var(--gray-500);">🟢 Ejemplar ≥91% &nbsp;|&nbsp; 🟡 Aprobado 81–90% &nbsp;|&nbsp; 🟠 Aprobado Condicionado 71–80% &nbsp;|&nbsp; 🔴 No Aprobado ≤70% &nbsp;|&nbsp; ⛔ Autofail independiente del %</p></div>
   </div>
 </div>
-
-<!-- OBSERVACIONES -->
 <div class="card">
   <div class="sec-hdr meta-hdr" onclick="toggleSec('obs')">💬 Observaciones y compromisos</div>
   <div id="sec-obs" style="padding:16px 18px;display:flex;flex-direction:column;gap:12px;">
-    <div class="fld"><label>Fortalezas observadas</label><textarea id="obs-fortalezas" placeholder="¿Qué está haciendo bien el centro de producción?"></textarea></div>
+    <div class="fld"><label>Fortalezas observadas</label><textarea id="obs-fortalezas" placeholder="¿Qué está haciendo bien la cocina?"></textarea></div>
     <div class="fld"><label>Riesgos o urgencias adicionales</label><textarea id="obs-riesgos" placeholder="Temas que requieren escalada fuera de los criterios anteriores"></textarea></div>
-    <div class="fld"><label>Acuerdos tomados con el encargado</label><textarea id="obs-acuerdos" placeholder="Compromisos verbales del día de la visita"></textarea></div>
+    <div class="fld"><label>Otras Acciones Inmediatas realizadas</label><textarea id="obs-acuerdos" placeholder="Acciones inmediatas tomadas durante la visita"></textarea></div>
+  </div>
+</div>
+<div class="card">
+  <div class="sec-hdr meta-hdr" onclick="toggleSec('producciones')">🧪 Producciones — Información para Calidad</div>
+  <div id="sec-producciones">
+    <div style="padding:12px 18px 4px;font-size:11px;color:var(--gray-500);">Registra las producciones observadas durante la visita (hasta 6).</div>
+    <div style="padding:10px 18px 18px;display:flex;flex-direction:column;gap:10px;" id="prod-list">
+      <!-- se genera por JS -->
+    </div>
   </div>
 </div>
 </main>
-
 <div class="bottom-bar">
   <button class="btn btn-outline" style="color:#dc2626;border-color:#fca5a5;" onclick="resetForm()">🔄 Nueva evaluación</button>
   <button class="btn btn-outline" onclick="saveJSON()">💾 Guardar borrador</button>
-  <button class="btn btn-outline" style="background:#f0fdf4;border-color:#bbf7d0;color:#15803d;" onclick="exportTrackerRow()">📥 Descargar fila tracker</button>
-  <button class="btn btn-primary" onclick="openReport()">📄 Ver reporte</button>
+  <button class="btn btn-outline" style="background:#f0fdf4;border-color:#bbf7d0;color:#15803d;" onclick="exportTrackerRow()">📥 Descargar fila para tracker</button>
+  <button class="btn btn-primary" onclick="openReport()">📄 Ver reporte final</button>
 </div>
 <div class="modal-bg" id="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal" id="modal-content"></div></div>
-
 <script>
-// ─── SECTION METADATA ─────────────────────────────────────────────────────────
-const SECTION_META = [
-  {key:'sa', label:'🛡️ Seguridad Alimentaria', short:'Seg. Alimentaria', color:'#1d4ed8'},
-  {key:'et', label:'📚 Entrenamiento',          short:'Entrenamiento',   color:'#15803d'},
-  {key:'lp', label:'🧹 Limpieza y Prevención',  short:'Limpieza',        color:'#0f766e'},
-  {key:'mt', label:'🔧 Mantenimiento',           short:'Mantenimiento',   color:'#7c3aed'},
-  {key:'pa', label:'🦟 Control de Plagas',       short:'Plagas',          color:'#dc2626'},
-  {key:'si', label:'⛑️ Seguridad Industrial',   short:'Seg. Industrial', color:'#b45309'},
-];
-
-// ─── QUESTION DEFINITIONS ─────────────────────────────────────────────────────
+// ─── QUESTION DEFINITIONS ───────────────────────────────────────────────────
+// types: 'subgroup' | 'scored3' | 'scored2' | 'info3' | 'info2' | 'text' | 'textarea'
+// scored: true = contributes to section score
+// scored3/info3 => Cumple(2) / Parcialmente(1) / No cumple(0)
+// scored2/info2 => Sí(2) / No(0)
+// text/textarea => free text, no score
 const DEFS = {
-  sa: [
-    // ── SA1 · Higiene Personal ──────────────────────────────────────────────
-    {type:'subgroup', label:'🧼 SA1 · Higiene Personal'},
-    {id:'sa1_1',  code:'SA1.1',  type:'scored2', t:'El lavado de manos se realiza cuando es necesario.', scored:true},
-    {id:'sa1_2',  code:'SA1.2',  type:'scored2', t:'Los procedimientos de lavado de manos son ejecutados apropiadamente.', scored:true},
-    {id:'sa1_3',  code:'SA1.3',  type:'scored2', t:'Los dispensadores están abastecidos y dispensan fácilmente en todos los fregaderos de lavado de manos.', scored:true},
-    {id:'sa1_4',  code:'SA1.4',  type:'scored2', t:'El fregadero para el lavado de manos está operativo y se emplea sólo para su función.', scored:true},
-    {id:'sa1_5',  code:'SA1.5',  type:'scored2', t:'El fregadero para lavado de manos está accesible.', scored:true},
-    {id:'sa1_6',  code:'SA1.6',  type:'scored2', t:'El procedimiento de lavado de manos está publicado en todos los fregaderos de lavado de manos.', scored:true},
-    {id:'sa1_7',  code:'SA1.7',  type:'scored2', t:'Los miembros del equipo no trabajan mientras están enfermos.', scored:true},
-    {id:'sa1_8',  code:'SA1.8',  type:'scored2', t:'Un miembro del equipo tiene una cortada expuesta o con costra cubierta en la mano/el brazo.', scored:true},
-    {id:'sa1_9',  code:'SA1.9',  type:'scored2', t:'Los miembros del equipo protegen su cabello.', scored:true},
-    {id:'sa1_10', code:'SA1.10', type:'scored2', t:'Las uñas cumplen con el estándar y no representan un riesgo.', scored:true},
-    {id:'sa1_11', code:'SA1.11', type:'scored2', t:'Los colaboradores no portan accesorios.', scored:true},
-    // ── SA2 · Temperatura Inicial ───────────────────────────────────────────
-    {type:'subgroup', label:'🌡️ SA2 · Temperatura Inicial'},
-    {id:'sa2_1',  code:'SA2.1',  type:'scored2', t:'Procedimiento de toma de temperatura inicial completado según estándar.', scored:true},
-    // ── SA3 · Contaminación Cruzada ─────────────────────────────────────────
-    {type:'subgroup', label:'⚠️ SA3 · Inocuidad y Contaminación Cruzada'},
-    {id:'sa3_1',  code:'SA3.1',  type:'scored2', t:'Los procedimientos de lavado de vegetales son ejecutados apropiadamente.', scored:true},
-    {id:'sa3_2',  code:'SA3.2',  type:'scored2', t:'Alimentos contaminados se descartan inmediatamente.', scored:true},
-    {id:'sa3_3',  code:'SA3.3',  type:'scored2', t:'Todos los químicos se almacenan apropiadamente.', scored:true},
-    {id:'sa3_4',  code:'SA3.4',  type:'scored2', t:'Las directrices y los procedimientos sobre alérgenos se cumplen correctamente.', scored:true},
-    {id:'sa3_5',  code:'SA3.5',  type:'scored2', t:'No hay goteras en el área de producción.', scored:true},
-    {id:'sa3_6',  code:'SA3.6',  type:'scored2', t:'No hay obstrucción en el drenaje.', scored:true},
-    {id:'sa3_7',  code:'SA3.7',  type:'scored2', t:'El área de preparación de alimentos está libre de contaminantes potenciales.', scored:true},
-    {id:'sa3_8',  code:'SA3.8',  type:'scored2', t:'Los productos cocinados y crudos se mantienen separados, sin riesgo potencial de contaminación.', scored:true},
-    {id:'sa3_9',  code:'SA3.9',  type:'scored2', t:'El celular personal no es usado en la cocina.', scored:true},
-    {id:'sa3_10', code:'SA3.10', type:'scored2', t:'La comida de miembros del equipo se almacena adecuadamente y no se prepara en equipos de producto.', scored:true},
-    {id:'sa3_11', code:'SA3.11', type:'scored2', t:'El proceso de descongelación cumple con el estándar.', scored:true},
-    {id:'sa3_12', code:'SA3.12', type:'scored2', t:'Las latas están en buenas condiciones.', scored:true},
-    {id:'sa3_13', code:'SA3.13', type:'scored2', t:'El sistema PEPS se cumple.', scored:true},
-    {id:'sa3_14', code:'SA3.14', type:'scored2', t:'Alimentos y material de empaque no tienen contacto directo con el suelo.', scored:true},
-    {id:'sa3_15', code:'SA3.15', type:'scored2', t:'Los alimentos están protegidos contra contaminación.', scored:true},
-    // ── SA4 · PPP / Temperaturas ────────────────────────────────────────────
-    {type:'subgroup', label:'🌡️ SA4 · PPP / Temperaturas de Retención'},
-    {id:'sa4_1',  code:'SA4.1',  type:'scored2', t:'Los PPP cocidos se mantienen a temperatura correcta (≥60 °C).', scored:true},
-    {id:'sa4_2',  code:'SA4.2',  type:'scored2', t:'Los PPP fríos se retienen a 4 °C o menos.', scored:true},
-    {id:'sa4_3',  code:'SA4.3',  type:'scored2', t:'No hay alimentos caducados.', scored:true, autofail:true, afLabel:'Caducado'},
-    {id:'sa4_4',  code:'SA4.4',  type:'scored2', t:'Todos los alimentos están marcados apropiadamente (nombre + fecha caducidad).', scored:true},
-    {id:'sa4_5',  code:'SA4.5',  type:'scored2', t:'Los alimentos viejos y los nuevos no se mezclan (PEPS / FEFO).', scored:true},
-    // ── SA5 · Sanitización y Utensilios ────────────────────────────────────
-    {type:'subgroup', label:'🧴 SA5 · Sanitización y Utensilios'},
-    {id:'sa5_1',  code:'SA5.1',  type:'scored2', t:'Los retenes sanitarios y recipientes para utensilios en uso cumplen con la correcta concentración.', scored:true},
-    {id:'sa5_2',  code:'SA5.2',  type:'scored2', t:'Las soluciones sanitizantes tienen la concentración adecuada.', scored:true},
-    {id:'sa5_3',  code:'SA5.3',  type:'scored2', t:'Los trapos están limpios y en buenas condiciones.', scored:true},
-    {id:'sa5_4',  code:'SA5.4',  type:'scored2', t:'Los trapos se encuentran sumergidos en solución sanitizante.', scored:true},
-    {id:'sa5_5',  code:'SA5.5',  type:'scored2', t:'Existe retén sanitario en cada área.', scored:true},
-    {id:'sa5_6',  code:'SA5.6',  type:'scored2', t:'El almacenamiento de contenedores de alimentos y utensilios es adecuado.', scored:true},
-    {id:'sa5_7',  code:'SA5.7',  type:'scored2', t:'Los contenedores de alimentos y utensilios se mantienen limpios y en buenas condiciones.', scored:true},
-    {id:'sa5_8',  code:'SA5.8',  type:'scored2', t:'Los cucharones se encuentran almacenados correctamente y están en buenas condiciones.', scored:true},
-    {id:'sa5_9',  code:'SA5.9',  type:'scored2', t:'Todas las superficies en contacto con los alimentos se mantienen limpias y en buenas condiciones.', scored:true},
-    {id:'sa5_10', code:'SA5.10', type:'scored2', t:'El procedimiento de lavar, enjuagar y sanitizar se sigue correctamente en los utensilios.', scored:true},
-    {id:'sa5_11', code:'SA5.11', type:'scored2', t:'Los equipos que tengan superficies en contacto con alimentos están libres de moho.', scored:true},
-    {id:'sa5_12', code:'SA5.12', type:'scored2', t:'Todos los fregaderos de preparación y equipos funcionan correctamente.', scored:true},
-    // ── SA6 · Registros y Supervisión ───────────────────────────────────────
-    {type:'subgroup', label:'📋 SA6 · Registros y Supervisión'},
-    {id:'sa6_1',  code:'SA6.1',  type:'scored2', t:'Las infracciones críticas han sido corregidas.', scored:true},
-    {id:'sa6_2',  code:'SA6.2',  type:'scored2', t:'Todos los registros revisados están completados correctamente.', scored:true},
-    {id:'sa6_3',  code:'SA6.3',  type:'scored2', t:'Al menos se tiene un termómetro calibrado y funcionando en el sitio.', scored:true},
-    {id:'sa6_4',  code:'SA6.4',  type:'scored2', t:'Hay tiras de prueba para verificar concentración de sanitizantes.', scored:true},
-    {id:'sa6_5',  code:'SA6.5',  type:'scored2', t:'Se realiza recorrido de supervisión sanitaria.', scored:true},
+  equipos: [
+    // ── Refrigeradores ──────────────────────────────────────────────────────
+    {type:'subgroup', label:'❄️ Refrigeradores'},
+    {id:'eq_r1', type:'text',    t:'¿Cuántos refrigeradores tiene la cocina?'},
+    {id:'eq_r2', type:'text',    t:'¿Cuántos se encuentran en rango de 0 °C a 4 °C?', h:'Tomar temperatura con termómetro de aguja dentro del equipo.'},
+    {type:'calc', id:'calc_ref', t:'Refrigeradores funcionando correctamente', num:'eq_r2', den:'eq_r1'},
+    {id:'eq_r3', type:'scored3', t:'Funcionamiento del equipo de refrigeración', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true, foco:'CM'},
+    {id:'eq_r4', type:'text',    t:'¿Cuántos refrigeradores tienen completos los empaques?'},
+    {id:'eq_r5', type:'textarea',t:'Comentarios de refrigeradores'},
+
+    // ── Congeladores ────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🧊 Congeladores'},
+    {id:'eq_c1', type:'text',    t:'¿Cuántos congeladores tiene la cocina?'},
+    {id:'eq_c2', type:'text',    t:'¿Cuántos se encuentran a -18 °C?', h:'Tomar temperatura con termómetro de aguja dentro del equipo.'},
+    {type:'calc', id:'calc_con', t:'Congeladores funcionando correctamente', num:'eq_c2', den:'eq_c1'},
+    {id:'eq_c3', type:'scored3', t:'Funcionamiento del equipo de congelación', h:'Cumple: todos los equipos dieron la temperatura. Cumple parcialmente: al menos 1 da la temperatura. No cumple: ninguno da la temperatura.', scored:true, foco:'CM'},
+    {id:'eq_c4', type:'text',    t:'¿Cuántos congeladores tienen completos los empaques?'},
+    {id:'eq_c5', type:'textarea',t:'Comentarios de congeladores'},
+
+    // ── Baño María ──────────────────────────────────────────────────────────
+    {type:'subgroup', label:'♨️ Baño María'},
+    {id:'eq_b1', type:'scored3', t:'¿Cuenta con baño maría?', h:'Cumple: sí cuenta y da la temperatura correcta (60-80°C). Cumple parcialmente: tienen uno improvisado en estufa. No cumple: no tienen (o el que tienen no funciona).', scored:true, foco:'CM'},
+    {id:'eq_b2', type:'textarea',t:'¿Por qué no cuenta con baño maría?', h:'Responder solo si la pregunta anterior es No. (si no aplica colocar "Na")'},
+    {id:'eq_b5', type:'textarea',t:'Notas de baño maría'},
+
+    // ── Plancha ─────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🔥 Plancha'},
+    {id:'eq_p1', type:'text',    t:'¿Cuántas planchas tiene la cocina?'},
+    {id:'eq_p2', type:'text',    t:'¿Cuántas planchas funcionan correctamente?'},
+    {type:'calc', id:'calc_plan', t:'Planchas funcionando correctamente', num:'eq_p2', den:'eq_p1'},
+    {id:'eq_p3', type:'textarea',t:'Notas de plancha'},
+
+    // ── Estufa ──────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍳 Estufa'},
+    {id:'eq_e4', type:'scored3', t:'Funcionamiento de la estufa', h:'Cumple: todas las hornillas son fáciles de regular. Cumple parcialmente: al menos 1 hornilla se puede regular. No cumple: ninguna hornilla se puede calibrar.', scored:true, foco:'CM'},
+    {id:'eq_e5', type:'textarea',t:'Notas de estufa'},
+
+    // ── Freidor ─────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍟 Freidor'},
+    {id:'eq_f1', type:'text',    t:'¿Cuántos freidores tiene?'},
+    {id:'eq_f2', type:'text',    t:'¿Cuántos funcionan correctamente?'},
+    {type:'calc', id:'calc_frei', t:'Freidores funcionando correctamente', num:'eq_f2', den:'eq_f1'},
+    {id:'eq_f3', type:'text',    t:'¿Cuántos utilizan para la operación?'},
+    {id:'eq_f4', type:'textarea',t:'Comentarios del funcionamiento / uso de los freidores'},
+    {id:'eq_f5', type:'scored2', t:'¿Cuenta con timer funcionando?', scored:true, foco:'CM'},
+    {id:'eq_f6', type:'scored2', t:'¿Cuenta con termómetro para medir continuamente la temperatura del aceite?', scored:true, foco:'CM'},
+    {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true, foco:'CM'},
   ],
-  et: [
-    // ── ET1 · Capacitación ──────────────────────────────────────────────────
-    {type:'subgroup', label:'📖 ET1 · Capacitación del Equipo'},
-    {id:'et1_1',  code:'ET1.1',  type:'scored2', t:'Finalización de la capacitación de miembros del equipo.', scored:true},
-    {id:'et1_2',  code:'ET1.2',  type:'scored2', t:'El jefe de cocina puede acceder a los documentos principales de entrenamiento.', scored:true},
-    {id:'et1_3',  code:'ET1.3',  type:'scored2', t:'Los colaboradores tienen el conocimiento necesario de MHA.', scored:true},
+
+  culinario: [
+    // ── Pollo ensalada ───────────────────────────────────────────────────────
+    {type:'subgroup', label:'🐔 Pollo Ensalada'},
+    {id:'cu_po1', type:'scored2', t:'¿Regenera las pechugas en su bolsa y en agua caliente?', scored:true, foco:true},
+    {id:'cu_po3', type:'scored2', t:'¿Mantienen el pollo correctamente en baño maría?', h:'Asegurar que todas las pechugas estén humectadas en todo momento.', scored:true, foco:true},
+    {id:'cu_po5', type:'scored2', t:'¿Sellan el pollo en plancha de un sólo lado?', scored:true, foco:true},
+    {id:'cu_po6', type:'scored2', t:'¿Cortan la pechuga en tiras para colocar sobre el producto y mantienen forma?', scored:true, foco:true},
+    {id:'cu_po7', type:'textarea',t:'Comentarios adicionales del pollo ensalada', foco:true},
+
+    // ── Huevo ────────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🥚 Huevo'},
+    {id:'cu_h1', type:'scored2', t:'¿Colocan sal al batir los huevos?', scored:true, foco:true},
+    {id:'cu_h2', type:'scored2', t:'¿Cocinan el huevo revuelto en sartén?', scored:true, foco:'AI'},
+    {id:'cu_h3', type:'scored2', t:'¿Mueven constantemente el huevo para no hacer omelette?', scored:true, foco:'AI'},
+    {id:'cu_h4', type:'scored2', t:'¿Usan aro para hacer huevo estrellado?', scored:true, foco:'AI'},
+    {id:'cu_h5', type:'scored2', t:'¿Le ponen sal al huevo estrellado?', scored:true, foco:'AI'},
+    {id:'cu_h6', type:'textarea',t:'Comentarios adicionales sobre el huevo'},
+
+    // ── Arroz ────────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍚 Arroz'},
+    {id:'cu_a1', type:'scored2', t:'¿Regeneran arroz conforme al proceso definido?', scored:true, foco:true},
+    {id:'cu_a2', type:'scored3', t:'¿Mantienen el arroz en baño maría y tapado?', h:'Cumple: sí en baño maría y tapado. Cumple parcialmente: no está en baño maría porque no cuentan con el equipo, pero sí regeneran al momento con fondo. No cumple: no está en baño maría ni regeneran bien.', scored:true, foco:true},
+    {id:'cu_a3', type:'textarea',t:'Comentarios adicionales sobre el arroz'},
+
+    // ── Carne hamburguesa ────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍔 Carne Hamburguesa'},
+    {id:'cu_ca1', type:'info2', t:'¿Colocan aceite en plancha antes de smashear la carne?', scored:false},
+    {id:'cu_ca2', type:'scored2', t:'¿Smashean correctamente la carne?', h:'Dar más peso al resultado final de la carne que a la técnica.', scored:true, foco:'AI'},
+    {id:'cu_ca3', type:'scored2', t:'¿La carne está correctamente almacenada?', scored:true, foco:'AI'},
+    {id:'cu_ca4', type:'textarea',t:'Comentarios adicionales sobre la carne de hamburguesa'},
+
+    // ── Corte lechuga orejona ────────────────────────────────────────────────
+    {type:'subgroup', label:'🥬 Corte Lechuga Orejona'},
+    {id:'cu_le1', type:'scored2', t:'¿El corte de la lechuga orejona es el correcto?', scored:true, foco:'AI'},
+    {id:'cu_le2', type:'textarea',t:'Comentarios adicionales sobre la lechuga'},
+
+    // ── Fruta (para porción) ─────────────────────────────────────────────────
+    {type:'subgroup', label:'🍓 Fruta (para porción)'},
+    {id:'cu_fr1', type:'scored2', t:'¿El corte de la fruta de la porción es correcto?', scored:true, foco:'AI'},
+    {id:'cu_fr2', type:'textarea',t:'Comentarios adicionales sobre la porción de fruta'},
+
+    // ── Pescado ──────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🐟 Pescado'},
+    {id:'cu_pe1', type:'scored2', t:'¿Los pescados se cocinan en sartén?', scored:true, foco:'AI'},
+    {id:'cu_pe2', type:'textarea',t:'Comentarios adicionales sobre el pescado'},
+
+    // ── Mezcla Pancakes ──────────────────────────────────────────────────────
+    {type:'subgroup', label:'🥞 Mezcla Pancakes'},
+    {id:'cu_mp1', type:'scored2', t:'¿La almacenan en refrigeración mientras no está en uso?', scored:true, foco:'AI'},
+    {id:'cu_mp3', type:'info2',   t:'¿El envase en donde se encuentra es hermético?', scored:false},
+    {id:'cu_mp4', type:'textarea',t:'Comentarios adicionales sobre las mezclas de pancakes'},
+
+    // ── Cebolla Mr. Beast ────────────────────────────────────────────────────
+    {type:'subgroup', label:'🧅 Cebolla Mr. Beast'},
+    {id:'cu_cb1', type:'info2', t:'¿Tiene el corte correcto?', scored:false},
+    {id:'cu_cb2', type:'info2', t:'¿El proceso de caramelización se realizó correctamente?', scored:false},
+
+    // ── Burritos ─────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🌯 Burritos'},
+    {id:'cu_bu1', type:'info2', t:'¿Sellan correctamente la tortilla en burritos y wraps?', scored:false},
+
+    // ── Frituras ─────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍗 Frituras'},
+    {id:'cu_ft1', type:'scored2', t:'¿Revisan la temperatura interna de la pechuga Nashville después de cocción?', scored:true, foco:true},
+    {id:'cu_ft2', type:'info2', t:'¿En el timer tienen programados los tiempos definidos de fritura de los distintos productos?', scored:false},
+    {id:'cu_ft3', type:'info2', t:'¿Utilizan el timer para medir el tiempo de fritura?', h:'Si no tienen timer, evaluar como No.', scored:false},
+
+    // ── Tocino ───────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🥓 Tocino'},
+    {id:'cu_to1', type:'info2', t:'¿El tocino tiene la textura correcta en el MEP?', scored:false},
+
+    // ── General ──────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'📝 General'},
+    {id:'cu_gen1',  type:'textarea', t:'CORRECCIONES INMEDIATAS CULINARIAS', h:'Adicionar todas las acciones inmediatas que se corrigieron que no estén indicadas en ningún rubro anterior.'},
   ],
-  lp: [
-    // ── LP1 · Basura ────────────────────────────────────────────────────────
-    {type:'subgroup', label:'🗑️ LP1 · Manejo de Basura'},
-    {id:'lp1_1',  code:'LP1.1',  type:'scored2', t:'Los botes de basura no se desbordan.', scored:true},
-    {id:'lp1_2',  code:'LP1.2',  type:'scored2', t:'Todas las tapas, rampas y los exteriores de los botes de basura están limpios y sin acumulación.', scored:true},
-    {id:'lp1_3',  code:'LP1.3',  type:'scored2', t:'Los botes de basura no tienen mal olor.', scored:true},
-    {id:'lp1_4',  code:'LP1.4',  type:'scored2', t:'Los botes de basura tienen bolsas de basura.', scored:true},
-    {id:'lp1_5',  code:'LP1.5',  type:'scored2', t:'Los botes de basura respetan la separación de residuos orgánicos e inorgánicos.', scored:true},
-    {id:'lp1_6',  code:'LP1.6',  type:'scored2', t:'Las puertas del basurero y las tapas están cerradas.', scored:true},
-    {id:'lp1_7',  code:'LP1.7',  type:'scored2', t:'El exterior del basurero está limpio y libre de grasa.', scored:true},
-    {id:'lp1_8',  code:'LP1.8',  type:'scored2', t:'El área de basurero no tiene alimentos expuestos.', scored:true},
-    // ── LP2 · Accesos ───────────────────────────────────────────────────────
-    {type:'subgroup', label:'🚪 LP2 · Accesos y Ventanas'},
-    {id:'lp2_1',  code:'LP2.1',  type:'scored2', t:'Manijas y perillas de las puertas están limpias y libres de acumulación.', scored:true},
-    {id:'lp2_2',  code:'LP2.2',  type:'scored2', t:'Umbrales de las ventanas están libres de insectos y acumulación.', scored:true},
-    // ── LP3 · Pisos y Paredes ───────────────────────────────────────────────
-    {type:'subgroup', label:'🏗️ LP3 · Pisos, Paredes y Rodapiés'},
-    {id:'lp3_1',  code:'LP3.1',  type:'scored2', t:'Las hawaianas están limpias y no son un riesgo de contaminación.', scored:true},
-    {id:'lp3_2',  code:'LP3.2',  type:'scored2', t:'Paredes están limpias y libres de acumulación.', scored:true},
-    {id:'lp3_3',  code:'LP3.3',  type:'scored2', t:'Pisos están limpios y libres de acumulación y basura.', scored:true},
-    {id:'lp3_4',  code:'LP3.4',  type:'scored2', t:'Rodapiés están limpios y libres de acumulación.', scored:true},
-    // ── LP4 · Techo y Ventilación ───────────────────────────────────────────
-    {type:'subgroup', label:'🌀 LP4 · Techo, Iluminación y Ventilación'},
-    {id:'lp4_1',  code:'LP4.1',  type:'scored2', t:'Placas del techo y rejillas están limpias y libres de polvo y acumulación.', scored:true},
-    {id:'lp4_2',  code:'LP4.2',  type:'scored2', t:'Las luces accesibles están limpias y libres de insectos y acumulación.', scored:true},
-    {id:'lp4_3',  code:'LP4.3',  type:'scored2', t:'Las ventilaciones están limpias y libres de polvo y acumulación.', scored:true},
-    {id:'lp4_4',  code:'LP4.4',  type:'scored2', t:'Todas las ventilaciones y ventiladores (si están presentes) están funcionando y en buenas condiciones.', scored:true},
-    // ── LP5 · Equipos de Cocina ─────────────────────────────────────────────
-    {type:'subgroup', label:'🍳 LP5 · Equipos de Cocina'},
-    {id:'lp5_1',  code:'LP5.1',  type:'scored2', t:'Todos los hornos (UNOX) están limpios y libres de acumulación.', scored:true},
-    {id:'lp5_2',  code:'LP5.2',  type:'scored2', t:'Los hornos de microondas están limpios y libres de acumulación.', scored:true},
-    {id:'lp5_3',  code:'LP5.3',  type:'scored2', t:'Las parrillas, estufas y estufones están limpias y libres de acumulación.', scored:true},
-    {id:'lp5_4',  code:'LP5.4',  type:'scored2', t:'La plancha está limpia y libre de acumulación.', scored:true},
-    {id:'lp5_5',  code:'LP5.5',  type:'scored2', t:'La máquina de alto vacío está limpia y libre de acumulaciones.', scored:true},
-    {id:'lp5_6',  code:'LP5.6',  type:'scored2', t:'Las freidoras están limpias y libres de acumulación.', scored:true},
-    {id:'lp5_7',  code:'LP5.7',  type:'scored2', t:'Las campanas están limpias y libres de acumulación (grasa).', scored:true},
-    {id:'lp5_8',  code:'LP5.8',  type:'scored2', t:'El baño maría está limpio y libre de acumulación.', scored:true},
-    {id:'lp5_9',  code:'LP5.9',  type:'scored2', t:'Las mesas de trabajo están limpias y libres de acumulación.', scored:true},
-    {id:'lp5_10', code:'LP5.10', type:'scored2', t:'Equipos en desuso están limpios, emplayados y con rótulo.', scored:true},
-    // ── LP6 · Cámaras de Frío ───────────────────────────────────────────────
-    {type:'subgroup', label:'❄️ LP6 · Cámaras de Refrigeración y Congelación'},
-    {id:'lp6_1',  code:'LP6.1',  type:'scored2', t:'El exterior de las cámaras de refrigeración y congelación están limpios y libres de acumulación.', scored:true},
-    {id:'lp6_2',  code:'LP6.2',  type:'scored2', t:'Pisos, paredes y techos de la cámara de refrigeración e interior de refrigeradores portátiles están limpios y libres de acumulación y moho.', scored:true},
-    {id:'lp6_3',  code:'LP6.3',  type:'scored2', t:'Los estantes, taras y espigueros están limpios y libres de acumulación.', scored:true},
-    {id:'lp6_4',  code:'LP6.4',  type:'scored2', t:'Los empaques están limpios y libres de acumulación.', scored:true},
-    {id:'lp6_5',  code:'LP6.5',  type:'scored2', t:'Luces, accesorios, unidades de ventilación y guardas de ventiladores de la cámara están limpios y libres de acumulación.', scored:true},
-    {id:'lp6_6',  code:'LP6.6',  type:'scored2', t:'El difusor está limpio y libre de acumulación.', scored:true},
-    {id:'lp6_7',  code:'LP6.7',  type:'scored2', t:'La luminaria del equipo está limpia y libre de acumulación.', scored:true},
-    // ── LP7 · Tarjas ────────────────────────────────────────────────────────
-    {type:'subgroup', label:'🚿 LP7 · Tarjas'},
-    {id:'lp7_1',  code:'LP7.1',  type:'scored2', t:'Las manijas, cuello y pulverizador están limpios y libres de acumulación.', scored:true},
-    {id:'lp7_2',  code:'LP7.2',  type:'scored2', t:'Las tuberías están limpias y libres de acumulación.', scored:true},
-    {id:'lp7_3',  code:'LP7.3',  type:'scored2', t:'Tarjas libres de acumulaciones o residuos orgánicos después de realizar el método de lavar / enjuagar / sanitizar.', scored:true},
-    // ── LP8 · Estanterías ───────────────────────────────────────────────────
-    {type:'subgroup', label:'📦 LP8 · Estanterías y Taras'},
-    {id:'lp8_1',  code:'LP8.1',  type:'scored2', t:'Las estanterías están limpias y libres de acumulación.', scored:true},
-    {id:'lp8_2',  code:'LP8.2',  type:'scored2', t:'Las taras están limpias y libres de acumulación.', scored:true},
-    // ── LP9 · Cárcamo y Utensilios de Limpieza ──────────────────────────────
-    {type:'subgroup', label:'💧 LP9 · Cárcamo y Utensilios de Limpieza'},
-    {id:'lp9_1',  code:'LP9.1',  type:'scored2', t:'El área del cárcamo se encuentra limpia y sin acumulaciones.', scored:true},
-    {id:'lp9_2',  code:'LP9.2',  type:'scored2', t:'Los utensilios de limpieza se encuentran limpios.', scored:true},
+
+  practicas: [
+    // ── MEP ──────────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'📋 MEP'},
+    {id:'pr_m1', type:'scored3', t:'¿La estación de pase cumple con el archivo de MEP?', h:'Cumple: tienen todo y como se indica. Cumple parcialmente: algunas oportunidades de producto faltante, acomodo o preparación incorrecta. No cumple: no siguen el archivo de MEP.', scored:true, foco:true},
+    {id:'pr_m2', type:'scored3', t:'¿La estación de ensaladas cumple con el archivo de MEP?', h:'Cumple: tienen todo y como se indica. Cumple parcialmente: algunas oportunidades de producto faltante, acomodo o preparación incorrecta. No cumple: no siguen el archivo de MEP.', scored:true, foco:true},
+    {id:'pr_m3', type:'scored3', t:'¿La estación de caliente (baño maría) cumple con el archivo de MEP?', h:'Cumple: tienen todo y como se indica. Cumple parcialmente: algunas oportunidades de producto faltante, acomodo o preparación incorrecta. No cumple: no siguen el archivo de MEP.', scored:true, foco:true},
+    {id:'pr_m4', type:'scored3', t:'¿La estación de hamburguesas cumple con el archivo de MEP?', h:'Cumple: tienen todo y como se indica. Cumple parcialmente: algunas oportunidades de producto faltante, acomodo o preparación incorrecta. No cumple: no siguen el archivo de MEP.', scored:true, foco:true},
+    {id:'pr_m5', type:'scored3', t:'¿La estación de comidas cumple con el archivo de MEP?', h:'Cumple: tienen todo y como se indica. Cumple parcialmente: algunas oportunidades de producto faltante, acomodo o preparación incorrecta. No cumple: no siguen el archivo de MEP.', scored:true, foco:true},
+
+    // ── Panadería ────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍞 Panadería'},
+    {id:'pr_pan1', type:'scored3', t:'¿La cocina procura acomodar el pan para evitar que se aplaste?', h:'Cumple: ningún pan se aplasta. Cumple parcialmente: buscan la manera pero los espacios/volumen/herramientas no lo logran. No cumple: no se preocupan por el pan.', scored:true, foco:'AI'},
+
+    // ── Prueba de Calidad ────────────────────────────────────────────────────
+    {type:'subgroup', label:'🔬 Prueba de Calidad'},
+    {id:'pr_pc6', type:'scored2', t:'¿Todos los insumos que están para servicio están en buenas condiciones?', h:'Con encontrar 1 insumo que no está en buenas condiciones selecciona No. En hallazgo indica todos los insumos que no estén bien (toma evidencia).', scored:true, foco:'AI'},
+    {id:'pr_pc7', type:'scored2', t:'¿Encontraste algún insumo caduco?', h:'En hallazgos indicar todos los insumos que se encontraron caducos durante la visita.', scored:true, foco:'AI'},
+
+    // ── Ensamblaje ───────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🥗 Ensamblaje'},
+    {id:'pr_en1', type:'scored3', t:'¿Los Foodies utilizan las cucharas para porcionar los ingredientes?', h:'Cumple: sí, siempre. Cumple parcialmente: de repente se observó que algunos ingredientes no. No cumple: nunca se usan.', scored:true, foco:'AI'},
+
+    // ── Fruver ───────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🥦 Fruver'},
+    {id:'pr_fv1', type:'scored2', t:'¿No almacenan fruver demasiado maduro que ya no es óptimo para el servicio?', h:'Sí = no almacenan producto en mal estado (cumple). No = almacenan producto en mal estado (no cumple).', scored:true},
+
+    // ── Menaje ───────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'🍳 Menaje'},
+    {id:'pr_mn1', type:'scored2',  t:'¿Utilizan el desmenuzador para desmenuzar pollo?', scored:true},
+    {id:'pr_mn2', type:'info2', t:'¿Utilizan el cortador de fruver?', scored:false},
+    {id:'pr_mn3', type:'text',     t:'¿Cuántos sartenes en total tienen/usan?', h:'No contabilizar los que no usan.'},
+    {id:'pr_mn4', type:'text',     t:'¿Cuántos sartenes están en buen estado?', h:'Revisar ayuda visual de sartenes en buenas condiciones.'},
+    {type:'calc', id:'calc_sart', t:'Sartenes en buen estado', num:'pr_mn4', den:'pr_mn3'},
+    {id:'pr_mn5', type:'textarea', t:'¿Aros de pancakes en buen estado? — Observaciones'},
+    {id:'pr_mn6', type:'textarea', t:'¿Aros de huevo en buen estado? — Observaciones'},
+    {id:'pr_mn7', type:'textarea', t:'Comentarios o acciones inmediatas realizadas conforme a las prácticas observadas.'},
   ],
-  mt: [
-    // ── MT1 · Botes de Basura (Mantenimiento) ───────────────────────────────
-    {type:'subgroup', label:'🗑️ MT1 · Botes de Basura — Estado'},
-    {id:'mt1_1',  code:'MT1.1',  type:'scored2', t:'Los botes de basura tienen tapa.', scored:true},
-    {id:'mt1_2',  code:'MT1.2',  type:'scored2', t:'Los botes de basura y tapas se encuentran en buenas condiciones y evitan derrames.', scored:true},
-    {id:'mt1_3',  code:'MT1.3',  type:'scored2', t:'Los botes de basura están colocados de manera efectiva a lo largo de la cocina.', scored:true},
-    {id:'mt1_4',  code:'MT1.4',  type:'scored2', t:'El área del basurero y el contenedor (si está presente) está en buen estado.', scored:true},
-    // ── MT2 · Puertas y Ventanas ────────────────────────────────────────────
-    {type:'subgroup', label:'🚪 MT2 · Puertas y Ventanas'},
-    {id:'mt2_1',  code:'MT2.1',  type:'scored2', t:'Puertas, marcos, manijas y umbrales están en buenas condiciones y funcionan apropiadamente.', scored:true},
-    {id:'mt2_2',  code:'MT2.2',  type:'scored2', t:'Ventanas en buenas condiciones.', scored:true},
-    {id:'mt2_3',  code:'MT2.3',  type:'scored2', t:'Las hawaianas están completas y no están rotas.', scored:true},
-    // ── MT3 · Paredes y Drenajes ────────────────────────────────────────────
-    {type:'subgroup', label:'🏗️ MT3 · Paredes, Drenajes y Cárcamo'},
-    {id:'mt3_1',  code:'MT3.1',  type:'scored2', t:'Paredes están en buenas condiciones.', scored:true},
-    {id:'mt3_2',  code:'MT3.2',  type:'scored2', t:'Losetas y rodapiés están en buenas condiciones.', scored:true},
-    {id:'mt3_3',  code:'MT3.3',  type:'scored2', t:'Los drenajes de piso están en buenas condiciones.', scored:true},
-    {id:'mt3_4',  code:'MT3.4',  type:'scored2', t:'Los drenajes están libres de olores y agua estancada.', scored:true},
-    {id:'mt3_5',  code:'MT3.5',  type:'scored2', t:'Los drenajes tienen algún dispositivo que evita el ingreso de plagas.', scored:true},
-    {id:'mt3_6',  code:'MT3.6',  type:'scored2', t:'El área del cárcamo no presenta orificios que permitan el alojamiento de plagas.', scored:true},
-    // ── MT4 · Iluminación y Techo ───────────────────────────────────────────
-    {type:'subgroup', label:'💡 MT4 · Iluminación y Techo'},
-    {id:'mt4_1',  code:'MT4.1',  type:'scored2', t:'Los focos están funcionando y tienen un color uniforme.', scored:true},
-    {id:'mt4_2',  code:'MT4.2',  type:'scored2', t:'Las cubiertas están presentes y no están dañadas. Los focos son de material inastillable.', scored:true},
-    {id:'mt4_3',  code:'MT4.3',  type:'scored2', t:'El techo no está roto, no tiene desprendible ni presenta manchas de agua.', scored:true},
-    {id:'mt4_4',  code:'MT4.4',  type:'scored2', t:'El techo es de material higiénico y no representa un riesgo de contaminación.', scored:true},
-    // ── MT5 · Equipos Generales ─────────────────────────────────────────────
-    {type:'subgroup', label:'⚙️ MT5 · Equipos Generales'},
-    {id:'mt5_1',  code:'MT5.1',  type:'scored2', t:'El equipo está funcionando apropiadamente sin piezas rotas o faltantes.', scored:true},
-    {id:'mt5_2',  code:'MT5.2',  type:'scored2', t:'Los equipos no tienen cables expuestos.', scored:true},
-    {id:'mt5_3',  code:'MT5.3',  type:'scored2', t:'Los equipos cuentan con reparaciones adecuadas.', scored:true},
-    // ── MT6 · Cámaras y Refrigeración ───────────────────────────────────────
-    {type:'subgroup', label:'❄️ MT6 · Cámaras y Refrigeración — Estado'},
-    {id:'mt6_1',  code:'MT6.1',  type:'scored2', t:'Todas las cámaras, mesas de trabajo y refrigeradores portátiles cumplen con la temperatura adecuada.', scored:true},
-    {id:'mt6_2',  code:'MT6.2',  type:'scored2', t:'Todas las cámaras, mesas de trabajo y refrigeradores portátiles sin piezas rotas o faltantes.', scored:true},
-    {id:'mt6_3',  code:'MT6.3',  type:'scored2', t:'Estantes y rejillas en óptimas condiciones.', scored:true},
-    {id:'mt6_4',  code:'MT6.4',  type:'scored2', t:'El difusor está en buenas condiciones.', scored:true},
-    {id:'mt6_5',  code:'MT6.5',  type:'scored2', t:'La luminaria del equipo funciona de forma correcta.', scored:true},
-    // ── MT7 · Tarjas — Estado ───────────────────────────────────────────────
-    {type:'subgroup', label:'🚿 MT7 · Tarjas — Estado'},
-    {id:'mt7_1',  code:'MT7.1',  type:'scored2', t:'Las tarjas no presentan ningún componente con fuga.', scored:true},
-    {id:'mt7_2',  code:'MT7.2',  type:'scored2', t:'Las tarjas no presentan ningún componente dañado u oxidado.', scored:true},
-    {id:'mt7_3',  code:'MT7.3',  type:'scored2', t:'Las tarjas están identificadas correctamente.', scored:true},
-    // ── MT8 · Infraestructura y Herramientas de Limpieza ────────────────────
-    {type:'subgroup', label:'🧱 MT8 · Infraestructura y Utensilios de Limpieza'},
-    {id:'mt8_1',  code:'MT8.1',  type:'scored2', t:'Las paredes y losetas están en buenas condiciones y sin orificios.', scored:true},
-    {id:'mt8_2',  code:'MT8.2',  type:'scored2', t:'Los utensilios de limpieza tienen todos sus componentes en buen estado.', scored:true},
-    {id:'mt8_3',  code:'MT8.3',  type:'scored2', t:'El drenaje cuenta con dispositivo para evitar ingreso de plagas.', scored:true},
-    {id:'mt8_4',  code:'MT8.4',  type:'scored2', t:'El drenaje no tiene reflujo o estancamiento de agua.', scored:true},
-  ],
-  pa: [
-    // ── PA1 · Control de Plagas — AUTOFAIL ──────────────────────────────────
-    {type:'subgroup', label:'🦟 PA1 · Control de Plagas (AUTOFAIL)'},
-    {id:'pa1_1',  code:'PA1.1',  type:'scored2', t:'No hay evidencia de plaga mayor (roedores, cucarachas grandes, aves).', scored:true, autofail:true, afLabel:'Plaga'},
-    {id:'pa1_2',  code:'PA1.2',  type:'scored2', t:'No hay evidencia de plaga menor (moscas, mosquitos, cucarachas pequeñas).', scored:true, autofail:true, afLabel:'Plaga'},
-    {id:'pa1_3',  code:'PA1.3',  type:'scored2', t:'No hay evidencias de plaga (heces, restos, mordeduras, nidos).', scored:true, autofail:true, afLabel:'Plaga'},
-    {id:'pa1_4',  code:'PA1.4',  type:'scored2', t:'Los últimos 3 servicios de fumigación están documentados.', scored:true, autofail:true, afLabel:'Plaga'},
-    {id:'pa1_5',  code:'PA1.5',  type:'scored2', t:'Los dispositivos de control de plagas están en buen estado y colocados correctamente.', scored:true, autofail:true, afLabel:'Plaga'},
-  ],
-  si: [
-    // ── SI1 · Seguridad Industrial ──────────────────────────────────────────
-    {type:'subgroup', label:'⛑️ SI1 · Seguridad Industrial'},
-    {id:'si1_1',  code:'SI1.1',  type:'scored2', t:'No existen riesgos de seguridad en el área de producción.', scored:true},
-    {id:'si1_2',  code:'SI1.2',  type:'scored2', t:'El botiquín de primeros auxilios está presente y en un lugar accesible.', scored:true},
-    {id:'si1_3',  code:'SI1.3',  type:'scored2', t:'Los extinguidores de fuego están presentes, accesibles y no están vencidos.', scored:true},
-  ],
+
 };
 
 const state = {};
 
-// ─── RENDER ───────────────────────────────────────────────────────────────────
-function renderBlock(secKey) {
-  const container = document.getElementById('crit-' + secKey);
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+function renderBlock(b) {
+  const container = document.getElementById('crit-' + b);
   container.innerHTML = '';
   let qNum = 0;
-  DEFS[secKey].forEach(item => {
+  DEFS[b].forEach(item => {
     if (item.type === 'subgroup') {
       container.appendChild(buildSubgroup(item.label));
+    } else if (item.type === 'calc') {
+      container.appendChild(buildRow(item, 0, b));
     } else {
       qNum++;
       if (!state[item.id]) state[item.id] = {};
-      container.appendChild(buildRow(item, qNum, secKey));
-      restoreRow(item.id);
+      container.appendChild(buildRow(item, qNum, b));
+      restoreRow(item.id, item.type);
     }
   });
   updateScores();
@@ -552,25 +513,69 @@ function buildSubgroup(label) {
   return d;
 }
 
-function buildRow(c, num, secKey) {
+function buildRow(c, num, block) {
   const w = document.createElement('div');
   w.className = 'crit-wrap';
   w.id = 'wrap-' + c.id;
-  const af = c.autofail ? `<span class="af-tag">AUTOFAIL</span>` : '';
-  const btns = `<button class="sc-btn" data-v="2" onclick="setScore('${c.id}',2,'${secKey}')">✅ Sí</button><button class="sc-btn" data-v="0" onclick="setScore('${c.id}',0,'${secKey}')">🔴 No</button>`;
-  const detail = `<div class="crit-detail" id="detail-${c.id}">
-    <div class="detail-row"><label>Hallazgo</label><textarea placeholder="Describe el hallazgo…" id="hal-${c.id}" oninput="saveField('${c.id}')"></textarea></div>
-    <div class="detail-row"><label>Acción inmediata</label><textarea placeholder="¿Qué se corrigió durante la visita?" id="acc-${c.id}" oninput="saveField('${c.id}')"></textarea></div>
-    <div class="detail-row"><label>Acción C/M plazo</label><textarea placeholder="Acción correctiva a corto/mediano plazo" id="acc2-${c.id}" oninput="saveField('${c.id}')"></textarea></div>
-    <div class="detail-row"><label>Responsable</label><input type="text" placeholder="Nombre o puesto" id="res-${c.id}" oninput="saveField('${c.id}')"></div>
-    <div class="detail-row"><label>Fecha límite</label><input type="date" id="fec-${c.id}" oninput="saveField('${c.id}')"></div>
-  </div>`;
-  w.innerHTML = `<div class="crit-row"><div class="crit-num">${num}</div><div class="crit-body"><div style="font-size:10px;color:var(--gray-500);font-weight:600;margin-bottom:2px;">${c.code}</div><div class="crit-title">${c.t}${af}</div><div class="score-btns" style="margin-top:6px;">${btns}</div></div><div class="crit-icon" id="icon-${c.id}">·</div></div>${detail}`;
+
+  // ── Calculated result ───────────────────────────────────────────────────
+  if (c.type === 'calc') {
+    const w = document.createElement('div');
+    w.className = 'calc-row';
+    w.id = 'wrap-' + c.id;
+    w.innerHTML = `<span>📊</span><span class="calc-lbl">${c.t}</span><span class="calc-val none" id="cval-${c.id}">—</span>`;
+    return w;
+  }
+
+  // ── Text field (campo corto) ────────────────────────────────────────────
+  if (c.type === 'text') {
+    w.innerHTML = `<div class="fld-row-inner"><div class="crit-num">${num}</div><div class="fld-row-body"><div class="crit-title">${c.t}</div>${c.h ? `<div class="crit-hint">${c.h}</div>` : ''}<input type="text" class="fld-inline" id="val-${c.id}" placeholder="Escribe aquí…" oninput="saveTextField('${c.id}')"></div></div>`;
+    return w;
+  }
+
+  // ── Textarea (campo largo) ──────────────────────────────────────────────
+  if (c.type === 'textarea') {
+    w.innerHTML = `<div class="fld-row-inner"><div class="crit-num">${num}</div><div class="fld-row-body"><div class="crit-title">${c.t}</div>${c.h ? `<div class="crit-hint">${c.h}</div>` : ''}<textarea class="fld-inline-ta" id="val-${c.id}" placeholder="Escribe aquí…" oninput="saveTextField('${c.id}')"></textarea></div></div>`;
+    return w;
+  }
+
+  // ── Scored / info button rows ───────────────────────────────────────────
+  const af      = c.autofail ? '<span class="af-tag">AUTOFAIL</span>' : '';
+  const nsTag   = !c.scored  ? '<span class="no-score-tag">informativo</span>' : '';
+  const focoTag = c.foco === true  ? '<span class="foco-tag">⭐ Foco</span>'
+               : c.foco === 'AI' ? '<span class="foco-tag-ai">⚡ AI</span>'
+               : c.foco === 'CM' ? '<span class="foco-tag-cm">🔧 CM</span>'
+               : '';
+  const del  = block === 'varios' ? `<button class="del-btn" onclick="deleteVarios('${c.id}')" title="Eliminar">✕</button>` : '';
+
+  let btns = '';
+  if (c.type === 'scored3' || c.type === 'info3') {
+    btns = `<button class="sc-btn" data-v="2" onclick="setScore('${c.id}',2,'${block}')">✅ 2 · Cumple</button><button class="sc-btn" data-v="1" onclick="setScore('${c.id}',1,'${block}')">⚠️ 1 · Parcialmente</button><button class="sc-btn" data-v="0" onclick="setScore('${c.id}',0,'${block}')">🔴 0 · No cumple</button>`;
+  } else if (c.type === 'scored2' || c.type === 'info2') {
+    btns = `<button class="sc-btn" data-v="2" onclick="setScore('${c.id}',2,'${block}')">✅ Sí</button><button class="sc-btn" data-v="0" onclick="setScore('${c.id}',0,'${block}')">🔴 No</button>`;
+  }
+
+  // Detail panel — campos según tipo de foco
+  const detail = (() => {
+    if (!c.scored) return '';
+    const fHal  = `<div class="detail-row"><label>Hallazgo</label><textarea placeholder="Describe el hallazgo…" id="hal-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fAI   = `<div class="detail-row"><label>Acción inmediata</label><textarea placeholder="¿Qué se corrigió durante la visita?" id="acc-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fCM   = `<div class="detail-row"><label>Acción C/M plazo</label><textarea placeholder="Acción correctiva a corto / mediano plazo" id="acc2-${c.id}" oninput="saveField('${c.id}')"></textarea></div>`;
+    const fResp = `<div class="detail-row"><label>Responsable</label><input type="text" placeholder="Nombre o puesto" id="res-${c.id}" oninput="saveField('${c.id}')"></div>`;
+    const fFec  = `<div class="detail-row"><label>Fecha límite</label><input type="date" id="fec-${c.id}" oninput="saveField('${c.id}')"></div>`;
+    let body = fHal;
+    if      (c.foco === 'AI') body += fAI;
+    else if (c.foco === 'CM') body += fCM;
+    else                      body += fAI + fCM + fResp + fFec; // foco:true o sin foco: campos completos
+    return `<div class="crit-detail" id="detail-${c.id}">${body}</div>`;
+  })();
+
+  w.innerHTML = `<div class="crit-row"><div class="crit-num">${num}</div><div class="crit-body"><div class="crit-title">${c.t}${af}${nsTag}${focoTag}${del}</div>${c.h ? `<div class="crit-hint">${c.h}</div>` : ''}<div class="score-btns">${btns}</div></div><div class="crit-icon" id="icon-${c.id}">·</div></div>${detail}`;
   return w;
 }
 
-// ─── SCORING ──────────────────────────────────────────────────────────────────
-function setScore(id, score, secKey) {
+// ─── SCORING ────────────────────────────────────────────────────────────────
+function setScore(id, score, block) {
   if (!state[id]) state[id] = {};
   state[id].score = score;
   updateRowUI(id, score);
@@ -583,11 +588,11 @@ function updateRowUI(id, score) {
   row.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
   const btn = row.querySelector(`.sc-btn[data-v="${score}"]`);
   if (btn) btn.classList.add('active');
-  const icons = {2:'✅', 0:'🔴'};
+  const icons = {2:'✅', 1:'⚠️', 0:'🔴'};
   const el = document.getElementById('icon-' + id);
-  if (el) el.textContent = icons[score] !== undefined ? icons[score] : '·';
+  if (el) el.textContent = icons[score] ?? '·';
   const d = document.getElementById('detail-' + id);
-  if (d) { if (score === 0) d.classList.add('open'); else d.classList.remove('open'); }
+  if (d) { if (score === 0 || score === 1) d.classList.add('open'); else d.classList.remove('open'); }
 }
 
 function saveField(id) {
@@ -597,450 +602,680 @@ function saveField(id) {
   const a2 = document.getElementById('acc2-' + id);
   const r  = document.getElementById('res-'  + id);
   const f  = document.getElementById('fec-'  + id);
-  if (h)  state[id].hallazgo = h.value;
-  if (a)  state[id].accion   = a.value;
-  if (a2) state[id].accion2  = a2.value;
-  if (r)  state[id].resp     = r.value;
-  if (f)  state[id].fechalim = f.value;
+  if (h)  state[id].hallazgo  = h.value;
+  if (a)  state[id].accion    = a.value;
+  if (a2) state[id].accion2   = a2.value;
+  if (r)  state[id].resp      = r.value;
+  if (f)  state[id].fechalim  = f.value;
 }
 
-function restoreRow(id) {
+function saveTextField(id) {
+  if (!state[id]) state[id] = {};
+  const el = document.getElementById('val-' + id);
+  if (el) state[id].value = el.value;
+  updateCalcs();
+}
+
+function updateCalcs() {
+  ['equipos','culinario','practicas'].forEach(b => {
+    DEFS[b].forEach(c => {
+      if (c.type !== 'calc') return;
+      const el = document.getElementById('cval-' + c.id);
+      if (!el) return;
+      const numStr = (state[c.num] || {}).value;
+      const denStr = (state[c.den] || {}).value;
+      const num = parseFloat(numStr), den = parseFloat(denStr);
+      if (!isNaN(num) && !isNaN(den) && den > 0) {
+        const pct = Math.round(num / den * 100);
+        el.textContent = pct + '%';
+        el.className = 'calc-val ' + (pct >= 100 ? 'good' : pct >= 75 ? 'warn' : 'bad');
+      } else {
+        el.textContent = '—';
+        el.className = 'calc-val none';
+      }
+    });
+  });
+}
+
+function restoreRow(id, type) {
   const s = state[id];
   if (!s) return;
+  if (type === 'text' || type === 'textarea') {
+    const el = document.getElementById('val-' + id);
+    if (el && s.value) el.value = s.value;
+    return;
+  }
   if (s.score !== undefined) updateRowUI(id, s.score);
-  const h  = document.getElementById('hal-'  + id); if (h  && s.hallazgo) h.value  = s.hallazgo;
-  const a  = document.getElementById('acc-'  + id); if (a  && s.accion)   a.value  = s.accion;
-  const a2 = document.getElementById('acc2-' + id); if (a2 && s.accion2)  a2.value = s.accion2;
-  const r  = document.getElementById('res-'  + id); if (r  && s.resp)     r.value  = s.resp;
-  const f  = document.getElementById('fec-'  + id); if (f  && s.fechalim) f.value  = s.fechalim;
+  const h  = document.getElementById('hal-'  + id); if (h  && s.hallazgo)  h.value  = s.hallazgo;
+  const a  = document.getElementById('acc-'  + id); if (a  && s.accion)    a.value  = s.accion;
+  const a2 = document.getElementById('acc2-' + id); if (a2 && s.accion2)   a2.value = s.accion2;
+  const r  = document.getElementById('res-'  + id); if (r  && s.resp)      r.value  = s.resp;
+  const f  = document.getElementById('fec-'  + id); if (f  && s.fechalim)  f.value  = s.fechalim;
 }
 
-function calcSection(key) {
-  const scored = DEFS[key].filter(i => i.scored === true);
-  let earned = 0, possible = 0, evaluated = 0, hasPlaga = false, hasCaducado = false;
-  scored.forEach(c => {
+// ─── SCORE CALCULATION ──────────────────────────────────────────────────────
+// Only items where scored===true count toward section %
+function calcBlock(b) {
+  const scoredItems = DEFS[b].filter(i => i.scored === true);
+  let earned = 0, possible = 0, evaluated = 0, autofail = false;
+  scoredItems.forEach(c => {
     const s = state[c.id];
     if (!s || s.score === undefined) return;
     evaluated++;
     possible += 2;
-    earned += s.score;
-    if (c.autofail && s.score === 0) {
-      if (c.afLabel === 'Plaga') hasPlaga = true;
-      if (c.afLabel === 'Caducado') hasCaducado = true;
-    }
+    earned   += s.score;
+    if (c.autofail && s.score === 0) autofail = true;
   });
-  const pct = possible > 0 ? parseFloat((earned / possible * 100).toFixed(2)) : null;
-  return { earned, possible, evaluated, total: scored.length, pct, hasPlaga, hasCaducado };
-}
-
-function calcTotal(results) {
-  let earnedAll = 0, possibleAll = 0, hasPlaga = false, hasCaducado = false;
-  SECTION_META.forEach(m => {
-    const r = results[m.key];
-    earnedAll   += r.earned;
-    possibleAll += r.possible;
-    if (r.hasPlaga)    hasPlaga = true;
-    if (r.hasCaducado) hasCaducado = true;
-  });
-  const pct = possibleAll > 0 ? parseFloat((earnedAll / possibleAll * 100).toFixed(2)) : null;
-  let afTipo = 'NO';
-  if (hasPlaga && hasCaducado) afTipo = 'Plaga y Caducado';
-  else if (hasPlaga)    afTipo = 'Plaga';
-  else if (hasCaducado) afTipo = 'Caducado';
-  const autofail = hasPlaga || hasCaducado;
-  return { pct, autofail, afTipo, earnedAll, possibleAll };
+  const pct = possible > 0 ? Math.round(earned / possible * 100) : null;
+  return { earned, possible, evaluated, total: scoredItems.length, pct, autofail };
 }
 
 function semaforo(pct, autofail) {
-  if (autofail)      return {cls:'sem-autofail',   lbl:'⛔ Autofail'};
-  if (pct === null)  return {cls:'sem-pending',     lbl:'Sin evaluar'};
-  if (pct >= 91)     return {cls:'sem-ejemplar',    lbl:'🟢 Ejemplar'};
-  if (pct >= 81)     return {cls:'sem-aprobado',    lbl:'🟡 Aprobado'};
-  if (pct >= 71)     return {cls:'sem-condicion',   lbl:'🟠 Cond.'};
-  return                    {cls:'sem-noAprobado',  lbl:'🔴 No Aprobado'};
+  if (autofail)    return {cls:'sem-autofail',  lbl:'⛔ Autofail'};
+  if (pct === null) return {cls:'sem-pending',  lbl:'Sin evaluar'};
+  if (pct >= 91)   return {cls:'sem-ejemplar',  lbl:'🟢 Ejemplar'};
+  if (pct >= 81)   return {cls:'sem-aprobado',  lbl:'🟡 Aprobado'};
+  if (pct >= 71)   return {cls:'sem-condicion', lbl:'🟠 Cond.'};
+  return                  {cls:'sem-noAprobado',lbl:'🔴 No Aprobado'};
+}
+function semColor(pct) {
+  if (pct === null) return '#6b7280';
+  if (pct >= 91) return '#16a34a';
+  if (pct >= 81) return '#d97706';
+  if (pct >= 71) return '#ea580c';
+  return '#dc2626';
 }
 
 function updateScores() {
-  const results = {};
-  SECTION_META.forEach(m => { results[m.key] = calcSection(m.key); });
-  const total = calcTotal(results);
-
-  SECTION_META.forEach(m => {
-    const r   = results[m.key];
-    const sem = semaforo(r.pct, r.hasPlaga || r.hasCaducado);
-    const sc  = document.getElementById('score-' + m.key);
-    if (sc) sc.textContent = r.pct !== null ? r.earned/2 + '/' + r.possible/2 + ' pts · ' + r.pct.toFixed(2) + '%' : '—';
-    const s = document.getElementById('sem-' + m.key);
-    if (s) { s.className = 'semaforo ' + sem.cls; s.textContent = sem.lbl; }
-    const p   = document.getElementById('prog-' + m.key);
-    const lbl = document.getElementById('prog-' + m.key + '-lbl');
-    if (p)   p.style.width = r.total > 0 ? (r.evaluated / r.total * 100) + '%' : '0%';
-    if (lbl) lbl.textContent = r.evaluated + ' / ' + r.total + ' criterios';
-    const rs  = document.getElementById('rs-' + m.key);
-    const rsp = document.getElementById('rs-' + m.key + '-pts');
-    const rss = document.getElementById('rs-' + m.key + '-sem');
-    if (rs)  rs.textContent  = r.pct !== null ? r.pct.toFixed(2) + '%' : '—';
-    if (rsp) rsp.textContent = r.pct !== null ? r.earned/2 + '/' + r.possible/2 + ' pts' : '—';
-    if (rss) rss.innerHTML   = `<span class="semaforo ${sem.cls}">${sem.lbl}</span>`;
+  const map = {
+    equipos:  {sc:'score-equipos',  sem:'sem-equipos',  prog:'prog-eq',  lbl:'prog-eq-lbl',  rs:'rs-eq',  rss:'rs-eq-sem',  rpts:'rs-eq-pts'},
+    culinario:{sc:'score-culinario',sem:'sem-culinario',prog:'prog-cul', lbl:'prog-cul-lbl', rs:'rs-cul', rss:'rs-cul-sem', rpts:'rs-cul-pts'},
+    practicas:{sc:'score-practicas',sem:'sem-practicas',prog:'prog-pr',  lbl:'prog-pr-lbl',  rs:'rs-pr',  rss:'rs-pr-sem',  rpts:'rs-pr-pts'},
+  };
+  let te = 0, tp = 0, af = false;
+  ['equipos','culinario','practicas'].forEach(b => {
+    const r = calcBlock(b), m = map[b], sem = semaforo(r.pct, r.autofail);
+    if (r.autofail) af = true;
+    te += r.earned; tp += r.possible;
+    // Section header badge: "6/8 pts · 75%"
+    const sc = document.getElementById(m.sc);
+    if (sc) sc.textContent = r.pct !== null ? r.earned + '/' + r.possible + ' pts · ' + r.pct + '%' : '—';
+    const s = document.getElementById(m.sem); if (s) { s.className = 'semaforo ' + sem.cls; s.textContent = sem.lbl; }
+    const p = document.getElementById(m.prog);
+    if (p) p.style.width = r.total > 0 && r.evaluated > 0 ? (r.evaluated / r.total * 100) + '%' : '0%';
+    const l = document.getElementById(m.lbl);
+    if (l) l.textContent = r.total > 0 ? r.evaluated + ' / ' + r.total : '—';
+    if (m.rs)   { const rs   = document.getElementById(m.rs);   if (rs)   rs.textContent = r.pct !== null ? r.pct + '%' : '—'; }
+    if (m.rss)  { const rss  = document.getElementById(m.rss);  if (rss)  rss.innerHTML  = `<span class="semaforo ${sem.cls}">${sem.lbl}</span>`; }
+    if (m.rpts) { const rpts = document.getElementById(m.rpts); if (rpts) rpts.textContent = r.possible > 0 ? r.earned + ' / ' + r.possible + ' pts' : '—'; }
   });
-
-  // Global header
-  const gSem = semaforo(total.pct, total.autofail);
-  document.getElementById('g-pct').textContent = total.pct !== null ? total.pct.toFixed(2) + '%' : '—';
-  document.getElementById('g-pts').textContent = total.possibleAll > 0 ? total.earnedAll/2 + '/' + total.possibleAll/2 + ' pts' : '— pts';
-  document.getElementById('g-sem').textContent = gSem.lbl;
-
-  // Summary total card
-  const rt  = document.getElementById('rs-total');
-  const rtp = document.getElementById('rs-total-pts');
-  const rts = document.getElementById('rs-total-sem');
-  if (rt)  rt.textContent  = total.pct !== null ? total.pct.toFixed(2) + '%' : '—';
-  if (rtp) rtp.textContent = total.pct !== null ? total.earnedAll/2 + '/' + total.possibleAll/2 + ' pts' + (total.autofail ? ' · ⛔ ' + total.afTipo : '') : '—';
-  if (rts) rts.innerHTML   = `<span class="semaforo ${gSem.cls}">${gSem.lbl}</span>`;
+  const tpct = tp > 0 ? Math.round(te / tp * 100) : null, tsem = semaforo(tpct, af);
+  document.getElementById('g-pct').textContent = tpct !== null ? tpct + '%' : '—';
+  document.getElementById('g-pts').textContent = tp > 0 ? te + ' / ' + tp + ' pts' : '— pts';
+  document.getElementById('g-sem').textContent = tsem.lbl;
+  const rt   = document.getElementById('rs-total');     if (rt)   rt.textContent  = tpct !== null ? tpct + '%' : '—';
+  const rts  = document.getElementById('rs-total-sem'); if (rts)  rts.innerHTML   = `<span class="semaforo ${tsem.cls}">${tsem.lbl}</span>`;
+  const rttp = document.getElementById('rs-total-pts'); if (rttp) rttp.textContent = tp > 0 ? te + ' / ' + tp + ' pts' : '—';
 }
 
-// ─── NAVIGATION ───────────────────────────────────────────────────────────────
-function autoFillCiudad() {
-  const sel = document.getElementById('m-cp');
-  const opt = sel.options[sel.selectedIndex];
-  document.getElementById('m-ciudad').value = opt.dataset.ciudad || '';
-}
 
-function toggleSec(key) {
-  const el = document.getElementById('sec-' + key);
+// ─── UI HELPERS ─────────────────────────────────────────────────────────────
+function toggleSec(id) {
+  const el = document.getElementById('sec-' + id);
   if (!el) return;
   el.style.display = el.style.display === 'none' ? '' : 'none';
 }
 
-// ─── MODAL ────────────────────────────────────────────────────────────────────
-function openReport() {
-  const results = {};
-  SECTION_META.forEach(m => { results[m.key] = calcSection(m.key); });
-  const total = calcTotal(results);
-  const gSem  = semaforo(total.pct, total.autofail);
-
-  const cp       = document.getElementById('m-cp').value || '—';
-  const ciudad   = document.getElementById('m-ciudad').value || '—';
-  const fecha    = document.getElementById('m-fecha').value || '—';
-  const trim     = document.getElementById('m-trimestre').value;
-  const auditor  = document.getElementById('m-auditor').value || '—';
-
-  let scoresHtml = '';
-  SECTION_META.forEach(m => {
-    const r   = results[m.key];
-    const sem = semaforo(r.pct, r.hasPlaga || r.hasCaducado);
-    scoresHtml += `<div class="r-sc">
-      <div class="n" style="color:${m.color}">${r.pct !== null ? r.pct.toFixed(2) + '%' : '—'}</div>
-      <div class="l">${m.short}</div>
-      <div class="s"><span class="semaforo ${sem.cls}">${sem.lbl}</span></div>
-    </div>`;
-  });
-
-  // ── Checklist completo (todas las preguntas evaluadas) ──────────────────────
-  let checklistHtml = '';
-  SECTION_META.forEach(m => {
-    const r   = results[m.key];
-    const sem = semaforo(r.pct, r.hasPlaga || r.hasCaducado);
-    const secItems = DEFS[m.key];
-    const scored = secItems.filter(c => c.scored);
-    const nEval  = scored.filter(c => state[c.id] && state[c.id].score !== undefined).length;
-    const nFail  = scored.filter(c => state[c.id] && state[c.id].score === 0).length;
-
-    checklistHtml += `<div class="r-sec" style="margin-bottom:18px;">
-      <h3 class="${m.key}" style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-        ${m.label}
-        <span style="margin-left:auto;font-size:12px;font-weight:700;color:${m.color}">${r.pct !== null ? r.pct.toFixed(2)+'%' : '—'}</span>
-        <span class="semaforo ${sem.cls}" style="font-size:10px">${sem.lbl}</span>
-        ${nFail > 0 ? `<span style="font-size:10px;background:#fee2e2;color:#b91c1c;padding:2px 7px;border-radius:10px;font-weight:700">${nFail} No</span>` : ''}
-        <span style="font-size:10px;color:var(--gray-400);font-weight:400">${nEval}/${scored.length} eval.</span>
-      </h3>`;
-
-    let currentSubgroup = null;
-    secItems.forEach(item => {
-      if (item.type === 'subgroup') {
-        currentSubgroup = item.label;
-        checklistHtml += `<div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-500);background:var(--gray-100);padding:4px 8px;border-radius:4px;margin:8px 0 4px;">${item.label}</div>`;
-        return;
-      }
-      if (!item.scored) return;
-      const s = state[item.id] || {};
-      const scored_val = s.score;
-      let icon, rowBg, codeColor;
-      if (scored_val === 2)         { icon = '✅'; rowBg = '#f0fdf4'; codeColor = '#15803d'; }
-      else if (scored_val === 0)    { icon = '🔴'; rowBg = '#fff5f5'; codeColor = '#b91c1c'; }
-      else                          { icon = '·';  rowBg = 'transparent'; codeColor = 'var(--gray-400)'; }
-
-      const afTag = item.autofail ? `<span style="font-size:9px;font-weight:700;background:#1f2937;color:#fff;border-radius:3px;padding:1px 5px;margin-left:5px;vertical-align:middle">AF</span>` : '';
-      checklistHtml += `<div style="display:grid;grid-template-columns:22px auto 1fr;gap:6px;padding:5px 6px 5px 0;border-bottom:1px solid #f3f4f6;background:${rowBg};border-radius:4px;margin-bottom:2px;align-items:start;">
-        <div style="text-align:center;font-size:13px;padding-top:1px">${icon}</div>
-        <div style="font-size:10px;font-weight:700;color:${codeColor};white-space:nowrap;padding-top:2px">${item.code}${afTag}</div>
-        <div style="font-size:12px;color:var(--gray-700)">${item.t}</div>
-      </div>`;
-
-      // Si es No: mostrar detalles del hallazgo
-      if (scored_val === 0) {
-        const details = [
-          s.hallazgo ? ['Hallazgo', s.hallazgo] : null,
-          s.accion   ? ['Acción inmediata', s.accion] : null,
-          s.accion2  ? ['Acción C/M plazo', s.accion2] : null,
-          s.resp     ? ['Responsable', s.resp] : null,
-          s.fechalim ? ['Fecha límite', s.fechalim] : null,
-        ].filter(Boolean);
-        if (details.length) {
-          checklistHtml += `<div style="margin:0 0 6px 28px;padding:8px 10px;background:#fff;border-left:3px solid ${item.autofail ? '#1f2937' : '#ef4444'};border-radius:0 4px 4px 0;">`;
-          details.forEach(([k,v]) => {
-            checklistHtml += `<div style="font-size:11px;margin-bottom:3px"><strong style="color:var(--gray-600)">${k}:</strong> <span style="color:var(--gray-700)">${v}</span></div>`;
-          });
-          checklistHtml += `</div>`;
-        } else {
-          checklistHtml += `<div style="margin:0 0 6px 28px;font-size:11px;color:var(--gray-400);font-style:italic">Sin detalle registrado</div>`;
-        }
-      }
-    });
-    checklistHtml += `</div>`;
-  });
-
-  // ── Hallazgos (solo No) — sección prominente al inicio ──────────────────────
-  const secBadge = {};
-  SECTION_META.forEach(m => {
-    const bgMap = {sa:'#eff6ff',et:'#f0fdf4',lp:'#f0fdfa',mt:'#faf5ff',pa:'#fff1f2',si:'#fffbeb'};
-    secBadge[m.key] = {label: m.short, color: m.color, bg: bgMap[m.key] || '#f9fafb'};
-  });
-
-  let allFindings = '';
-  let totalHallazgos = 0;
-  SECTION_META.forEach(m => {
-    DEFS[m.key].forEach(c => {
-      if (!c.scored) return;
-      const s = state[c.id];
-      if (!s || s.score === undefined || s.score !== 0) return;
-      totalHallazgos++;
-      const af = c.autofail ? ` <span style="font-size:9px;font-weight:700;background:#1f2937;color:#fff;border-radius:3px;padding:1px 5px;margin-left:5px;">AUTOFAIL${c.afLabel ? ' · ' + c.afLabel : ''}</span>` : '';
-      const badge = secBadge[m.key];
-      allFindings += `<div class="finding ${c.autofail ? 'af' : 's0'}" style="position:relative;">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;">
-          <div style="flex:1">
-            <div style="font-size:10px;color:var(--gray-400);font-weight:600;margin-bottom:1px;">${c.code}</div>
-            <div class="ft">${c.t}${af} — 🔴 No</div>
-          </div>
-          <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:${badge.bg};color:${badge.color};white-space:nowrap;">${badge.label}</span>
-        </div>
-        ${s.hallazgo ? `<div class="fd">📝 <b>Hallazgo:</b> ${s.hallazgo}</div>` : ''}
-        ${s.accion   ? `<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>` : ''}
-        ${s.accion2  ? `<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>` : ''}
-        ${s.resp || s.fechalim ? `<div class="fd" style="display:flex;gap:16px;flex-wrap:wrap;">${s.resp ? `<span>👤 <b>Responsable:</b> ${s.resp}</span>` : ''}${s.fechalim ? `<span>📅 <b>Fecha límite:</b> ${s.fechalim}</span>` : ''}</div>` : ''}
-      </div>`;
-    });
-  });
-
-  const hallazgosSection = totalHallazgos > 0
-    ? `<h3 style="font-size:13px;font-weight:700;margin:16px 0 10px;color:#b91c1c;">🔴 Hallazgos (${totalHallazgos})</h3>${allFindings}`
-    : `<div style="background:#dcfce7;border:1.5px solid #86efac;border-radius:8px;padding:10px 14px;margin:16px 0 10px;font-size:12px;font-weight:700;color:#15803d;">✅ Sin hallazgos — todos los criterios evaluados cumplen</div>`;
-
-  const fortalezas = document.getElementById('obs-fortalezas').value;
-  const riesgos    = document.getElementById('obs-riesgos').value;
-  const acuerdos   = document.getElementById('obs-acuerdos').value;
-
-  document.getElementById('modal-content').innerHTML = `
-    <h2>🏭 Reporte MHA — Centro de Producción</h2>
-    <div class="sub">Foodology · Auditoría Sanitaria CP</div>
-    <div class="report-meta">
-      <div class="rm"><strong>Centro de Producción</strong>${cp}</div>
-      <div class="rm"><strong>Ciudad</strong>${ciudad}</div>
-      <div class="rm"><strong>Fecha</strong>${fecha}</div>
-      <div class="rm"><strong>Trimestre</strong>${trim}</div>
-      <div class="rm"><strong>Auditor</strong>${auditor}</div>
-      <div class="rm"><strong>Resultado</strong><span class="semaforo ${gSem.cls}">${gSem.lbl}</span>${total.autofail ? ' · ' + total.afTipo : ''}</div>
-    </div>
-    <div class="r-scores">
-      <div class="r-sc" style="min-width:100%;background:${total.autofail?'#f1f5f9':'var(--brand-light)'};border-color:${total.autofail?'#1f2937':'var(--brand)'};">
-        <div class="n" style="color:${total.autofail?'#1f2937':'var(--brand)'}">${total.pct !== null ? total.pct.toFixed(2) + '%' : '—'}</div>
-        <div class="l">Total · ${total.earnedAll/2}/${total.possibleAll/2} pts${total.autofail?' · ⛔ AUTOFAIL':''}</div>
-        <div class="s"><span class="semaforo ${gSem.cls}">${gSem.lbl}</span></div>
-      </div>
-      ${scoresHtml}
-    </div>
-    ${hallazgosSection}
-    <h3 style="font-size:13px;font-weight:700;margin:16px 0 10px;color:var(--gray-700);">Checklist de criterios evaluados</h3>
-    ${checklistHtml}
-    ${fortalezas || riesgos || acuerdos ? `
-    <h3 style="font-size:13px;font-weight:700;margin:14px 0 10px;color:var(--gray-700);">Observaciones</h3>
-    ${fortalezas ? `<div class="finding"><div class="ft">💪 Fortalezas</div><div class="fd">${fortalezas}</div></div>` : ''}
-    ${riesgos    ? `<div class="finding"><div class="ft">⚠️ Riesgos/urgencias</div><div class="fd">${riesgos}</div></div>` : ''}
-    ${acuerdos   ? `<div class="finding"><div class="ft">🤝 Acuerdos</div><div class="fd">${acuerdos}</div></div>` : ''}
-    ` : ''}
-    <div class="modal-btns">
-      <button class="btn btn-outline" onclick="closeModal()">Cerrar</button>
-      <button class="btn btn-outline" onclick="printReport()">🖨️ Imprimir</button>
-    </div>
-    <p class="print-hint">Usa Ctrl+P o el botón de imprimir para guardar como PDF</p>`;
-
-  document.getElementById('modal-bg').classList.add('open');
+function getMeta() {
+  return {
+    cocina:    document.getElementById('m-cocina').value,
+    ciudad:    document.getElementById('m-ciudad').value || '',
+    fecha:     document.getElementById('m-fecha').value,
+    trimestre: document.getElementById('m-trimestre').value,
+    auditor:   document.getElementById('m-auditor').value
+  };
 }
 
-function printReport() {
-  document.body.classList.add('printing-report');
-  window.print();
-  document.body.classList.remove('printing-report');
-}
-
-function closeModal() {
-  document.getElementById('modal-bg').classList.remove('open');
-}
-
-// ─── EXPORT TRACKER ROW ───────────────────────────────────────────────────────
-async function exportTrackerRow() {
-  const results = {};
-  SECTION_META.forEach(m => { results[m.key] = calcSection(m.key); });
-  const total = calcTotal(results);
-
-  const cp      = document.getElementById('m-cp').value || '';
-  const ciudad  = document.getElementById('m-ciudad').value || '';
-  const fecha   = document.getElementById('m-fecha').value || '';
-  const trim    = document.getElementById('m-trimestre').value || '';
-  const auditor = document.getElementById('m-auditor').value || '';
-
-
-  const wb = new ExcelJS.Workbook();
-  const wsReg = wb.addWorksheet('Registro');
-  const wsHal = wb.addWorksheet('Hallazgos');
-
-  // Headers — Registro
-  const regHdrs = ['Ciudad','Centro de Producción','Fecha','Trimestre','Auditor',
-    'Score SA (%)','Score ET (%)','Score LP (%)','Score MT (%)','Score PA (%)','Score SI (%)',
-    'Score Total (%)','Autofail','Link Reporte','Link Fotos'];
-  const hRow = wsReg.addRow(regHdrs);
-  hRow.font = {bold:true}; hRow.fill = {type:'pattern',pattern:'solid',fgColor:{argb:'FF0F766E'}};
-  hRow.font = {bold:true, color:{argb:'FFFFFFFF'}};
-
-  const fmt = v => v !== null ? parseFloat(v.toFixed(2)) : '';
-  wsReg.addRow([
-    ciudad, cp, fecha, trim, auditor,
-    fmt(results.sa.pct), fmt(results.et.pct), fmt(results.lp.pct),
-    fmt(results.mt.pct), fmt(results.pa.pct), fmt(results.si.pct),
-    fmt(total.pct), total.afTipo,
-    '', ''  // link reporte, link fotos — el usuario los completa
-  ]);
-  wsReg.columns.forEach(c => { c.width = 20; });
-
-  // Hallazgos sheet (solo No)
-  const halHdrs = ['Sección','Código','Pregunta','Hallazgo','Acción Inmediata','Acción C/M Plazo','Responsable','Fecha Límite','Autofail'];
-  const hh = wsHal.addRow(halHdrs);
-  hh.font = {bold:true}; hh.fill = {type:'pattern',pattern:'solid',fgColor:{argb:'FF0F766E'}};
-  hh.font = {bold:true, color:{argb:'FFFFFFFF'}};
-  SECTION_META.forEach(m => {
-    DEFS[m.key].filter(c => c.scored).forEach(c => {
-      const s = state[c.id];
-      if (!s || s.score !== 0) return;
-      wsHal.addRow([m.short, c.code, c.t, s.hallazgo||'', s.accion||'', s.accion2||'', s.resp||'', s.fechalim||'', c.autofail ? c.afLabel : '']);
-    });
+function flushFields() {
+  document.querySelectorAll('[id^="hal-"],[id^="acc-"],[id^="res-"]').forEach(el => {
+    const id = el.id.split('-').slice(1).join('-');
+    saveField(id);
   });
-  wsHal.columns.forEach(col => { col.width = 30; });
-
-  // Trazabilidad sheet (todos los criterios)
-  const wsTraz = wb.addWorksheet('Trazabilidad');
-  const trazHdrs = ['Sección','Subsección','Código','Pregunta','Resultado','Pts (0/1)','Hallazgo','Acción Inmediata','Acción C/M Plazo','Responsable','Fecha Límite','Autofail'];
-  const th = wsTraz.addRow(trazHdrs);
-  th.font = {bold:true, color:{argb:'FFFFFFFF'}};
-  th.fill = {type:'pattern',pattern:'solid',fgColor:{argb:'FF0F766E'}};
-  th.alignment = {horizontal:'center',vertical:'middle',wrapText:true};
-  wsTraz.row_dimensions = {};
-  wsTraz.getRow(1).height = 28;
-
-  const SEC_COLORS = {sa:'DBEAFE',et:'D1FAE5',lp:'CCFBF1',mt:'EDE9FE',pa:'FEE2E2',si:'FEF3C7'};
-  let currentSubsec = '';
-  SECTION_META.forEach(m => {
-    DEFS[m.key].forEach(item => {
-      if (item.type === 'subgroup') { currentSubsec = item.label; return; }
-      if (!item.scored) return;
-      const s = state[item.id] || {};
-      const scored_val = s.score;
-      const resultado = scored_val === 2 ? 'Sí ✅' : scored_val === 0 ? 'No 🔴' : 'Sin evaluar';
-      const pts = scored_val === 2 ? 1 : scored_val === 0 ? 0 : '';
-      const rowData = [
-        m.short, currentSubsec, item.code, item.t,
-        resultado, pts,
-        s.hallazgo||'', s.accion||'', s.accion2||'', s.resp||'', s.fechalim||'',
-        item.autofail ? item.afLabel : ''
-      ];
-      const tRow = wsTraz.addRow(rowData);
-      // Color row based on result
-      const bgArgb = scored_val === 2 ? 'FFF0FDF4' : scored_val === 0 ? 'FFFFF5F5' : 'FFFAFAFA';
-      tRow.eachCell((cell, colNum) => {
-        if (colNum <= 3) {
-          cell.fill = {type:'pattern',pattern:'solid',fgColor:{argb:'FF'+SEC_COLORS[m.key]}};
-        } else {
-          cell.fill = {type:'pattern',pattern:'solid',fgColor:{argb:bgArgb}};
-        }
-        cell.border = {
-          top:{style:'thin',color:{argb:'FFE5E7EB'}},
-          bottom:{style:'thin',color:{argb:'FFE5E7EB'}},
-          left:{style:'thin',color:{argb:'FFE5E7EB'}},
-          right:{style:'thin',color:{argb:'FFE5E7EB'}}
-        };
-        cell.alignment = {vertical:'middle',wrapText:true};
-      });
-      // Bold the Resultado cell
-      if (scored_val === 0) tRow.getCell(5).font = {bold:true, color:{argb:'FFB91C1C'}};
-      if (scored_val === 2) tRow.getCell(5).font = {bold:true, color:{argb:'FF15803D'}};
-    });
+  document.querySelectorAll('[id^="val-"]').forEach(el => {
+    const id = el.id.split('-').slice(1).join('-');
+    saveTextField(id);
   });
-  const trazWidths = [14, 38, 10, 65, 14, 8, 40, 40, 40, 20, 14, 10];
-  wsTraz.columns.forEach((col, i) => { col.width = trazWidths[i] || 20; });
-  wsTraz.getRow(1).height = 28;
-
-  const buf = await wb.xlsx.writeBuffer();
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([buf], {type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}));
-  a.download = `MHA_CP_${cp.replace(/\s/g,'_')}_${fecha || 'SinFecha'}.xlsx`;
-  a.click();
 }
 
-// ─── SAVE / RESTORE ───────────────────────────────────────────────────────────
+// ─── SAVE / EXPORT ──────────────────────────────────────────────────────────
 function saveJSON() {
+  flushFields();
+  const meta = getMeta();
   const data = {
-    meta: {
-      cp:       document.getElementById('m-cp').value,
-      ciudad:   document.getElementById('m-ciudad').value,
-      fecha:    document.getElementById('m-fecha').value,
-      trim:     document.getElementById('m-trimestre').value,
-      auditor:  document.getElementById('m-auditor').value,
-    },
-    state,
+    meta, state,
     obs: {
       fortalezas: document.getElementById('obs-fortalezas').value,
       riesgos:    document.getElementById('obs-riesgos').value,
-      acuerdos:   document.getElementById('obs-acuerdos').value,
-    }
+      acuerdos:   document.getElementById('obs-acuerdos').value
+    },
+    producciones: getProducciones(),
+    generado: new Date().toISOString()
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  const cp    = document.getElementById('m-cp').value || 'CP';
-  const fecha = document.getElementById('m-fecha').value || 'borrador';
-  a.download = `MHA_CP_${cp.replace(/\s/g,'_')}_${fecha}.json`;
+  a.download = `AUD_CUL_${(meta.cocina||'cocina').replace(/\s+/g,'-')}_${meta.fecha||new Date().toISOString().split('T')[0]}.json`;
   a.click();
 }
 
+function exportTrackerRow() {
+  const missing = checkMissing();
+  if (missing.length > 0) { showValidationWarning(missing, exportTrackerRowCore); return; }
+  exportTrackerRowCore();
+}
+async function exportTrackerRowCore() {
+  flushFields();
+  const meta = getMeta();
+  const blocks = ['equipos','culinario','practicas'];
+  let te = 0, tp = 0, anyAF = false;
+  const bpct = {};
+  blocks.forEach(b => {
+    const r = calcBlock(b);
+    te += r.earned; tp += r.possible;
+    if (r.autofail) anyAF = true;
+    bpct[b] = r.pct !== null ? r.pct / 100 : null;
+  });
+  const totalPct = tp > 0 ? Math.round(te / tp * 100) / 100 : null;
+  function semLabel(pct, af) {
+    if (af) return '⛔ Autofail';
+    if (pct === null) return '—';
+    if (pct >= 0.91) return '🟢 Ejemplar';
+    if (pct >= 0.81) return '🟡 Aprobado';
+    if (pct >= 0.71) return '🟠 Cond.';
+    return '🔴 No Aprobado';
+  }
+  const secLabel = {equipos:'S1 · Equipos Críticos', culinario:'S2 · Est. Culinarios', practicas:'S3 · Prácticas de Cocina'};
+
+  const wb = new ExcelJS.Workbook();
+  wb.creator = 'VIC · Foodology';
+
+  const bord = {top:{style:'thin',color:{argb:'FFE5E7EB'}},left:{style:'thin',color:{argb:'FFE5E7EB'}},bottom:{style:'thin',color:{argb:'FFE5E7EB'}},right:{style:'thin',color:{argb:'FFE5E7EB'}}};
+  function styleHdr(row, bg='1F2937') {
+    row.eachCell(cell => {
+      cell.fill = {type:'pattern',pattern:'solid',fgColor:{argb:'FF'+bg}};
+      cell.font = {color:{argb:'FFFFFFFF'},bold:true,size:10};
+      cell.alignment = {vertical:'middle',horizontal:'center',wrapText:true};
+      cell.border = bord;
+    });
+    row.height = 28;
+  }
+  function styleData(row) {
+    row.eachCell(cell => { cell.alignment = {vertical:'top',wrapText:true}; cell.border = bord; });
+  }
+
+  // ── Hoja 1: Registro ──────────────────────────────────────────────────────
+  const wsReg = wb.addWorksheet('Registro');
+  wsReg.columns = [{width:4},{width:20},{width:12},{width:14},{width:16},{width:12},{width:15},{width:15},{width:15},{width:12},{width:18},{width:10},{width:40}];
+  const regHdr = wsReg.addRow(['#','Cocina / ID','Ciudad','Fecha Visita','Auditor','Trimestre','S1 · Equipos Críticos (%)','S2 · Est. Culinarios (%)','S3 · Prácticas de Cocina (%)','Total B+C (%)','Semáforo','Autofail','Observaciones']);
+  styleHdr(regHdr);
+  const regData = wsReg.addRow([null,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.auditor||'',meta.trimestre||'',bpct['equipos'],bpct['culinario'],bpct['practicas'],totalPct,semLabel(totalPct,anyAF),anyAF?'SÍ':'NO',document.getElementById('obs-acuerdos').value||'']);
+  styleData(regData);
+  [7,8,9,10].forEach(i => { const c=regData.getCell(i); if(c.value!==null&&c.value!==undefined) c.numFmt='0%'; });
+  wsReg.views = [{state:'frozen',ySplit:1}];
+
+  // ── Hoja 2: Hallazgos ─────────────────────────────────────────────────────
+  const wsHal = wb.addWorksheet('Hallazgos');
+  wsHal.columns = [{width:4},{width:16},{width:12},{width:14},{width:12},{width:22},{width:40},{width:18},{width:36},{width:36},{width:36},{width:16},{width:14},{width:14}];
+  const halHdr = wsHal.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','Sección','Criterio / Punto evaluado','Score','Descripción del hallazgo','Acción inmediata','Acción C/M plazo','Responsable','Fecha límite','Estatus']);
+  styleHdr(halHdr);
+  let halN = 1;
+  const halRows = [];
+  blocks.forEach(b => {
+    DEFS[b].forEach(c => {
+      if (!c.scored) return;
+      const s = state[c.id];
+      if (!s||s.score===undefined||s.score===2) return;
+      halRows.push({ sortKey: c.foco === true ? 0 : 1, c, s, b });
+    });
+  });
+  // AI: solo en reporte, no en tracker
+  halRows.sort((a, b) => a.sortKey - b.sortKey);
+  halRows.filter(({c}) => c.foco !== 'AI').forEach(({c, s, b}) => {
+    const r = wsHal.addRow([halN++,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',secLabel[b],c.t,s.score===0?'No cumple (0)':'Parcialmente (1)',s.hallazgo||'',s.accion||'',s.accion2||'',s.resp||'',s.fechalim||'','🔴 Abierto']);
+    r.height = 40; styleData(r);
+  });
+  wsHal.views = [{state:'frozen',ySplit:1}];
+
+  // ── Hoja 3: Producciones ──────────────────────────────────────────────────
+  const wsProd = wb.addWorksheet('Producciones');
+  wsProd.columns = [{width:4},{width:18},{width:12},{width:14},{width:12},{width:14},{width:25},{width:14},{width:16},{width:18},{width:40}];
+  const prodHdr = wsProd.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','SKU','Producto','Lote','Fecha caducidad','Evaluación','Comentario']);
+  styleHdr(prodHdr, '065F46');
+  const prodData = getProducciones();
+  if (prodData.length===0) { wsProd.addRow(['—','','','','','','','','','','']); }
+  else prodData.forEach((p,i) => { const r=wsProd.addRow([i+1,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',p.sku,p.prod,p.lote,p.fecha,p.eval||'',p.com]); styleData(r); });
+  wsProd.views = [{state:'frozen',ySplit:1}];
+
+  // ── Hoja 4: Trazabilidad (vertical con colores) ───────────────────────────
+  const wsTraz = wb.addWorksheet('Trazabilidad');
+  wsTraz.getColumn(1).width = 54;
+  wsTraz.getColumn(2).width = 30;
+
+  function trazRow(pregunta, respuesta, tipo) {
+    const r = wsTraz.addRow([pregunta, respuesta]);
+    const ca=r.getCell(1), cb=r.getCell(2);
+    if (tipo==='title') {
+      r.height=22;
+      [ca,cb].forEach(c=>{c.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF1F2937'}};c.font={color:{argb:'FFFFFFFF'},bold:true,size:10};c.alignment={vertical:'middle'};c.border=bord;});
+    } else if (tipo==='section') {
+      r.height=22;
+      [ca,cb].forEach(c=>{c.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FF1D4ED8'}};c.font={color:{argb:'FFFFFFFF'},bold:true,size:10};c.alignment={vertical:'middle'};c.border=bord;});
+    } else if (tipo==='subgroup') {
+      r.height=18;
+      [ca,cb].forEach(c=>{c.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFF3F4F6'}};c.font={color:{argb:'FF6B7280'},bold:true,size:9};c.alignment={vertical:'middle'};c.border=bord;});
+    } else if (tipo==='meta') {
+      r.height=18;
+      ca.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFF0FDF4'}};ca.font={color:{argb:'FF065F46'},size:9};ca.alignment={vertical:'middle'};ca.border=bord;
+      cb.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFFAFAFA'}};cb.font={size:9};cb.alignment={vertical:'middle',horizontal:'center'};cb.border=bord;
+      if(typeof respuesta==='number') cb.numFmt='0%';
+    } else if (tipo==='sep') {
+      r.height=6;
+    } else {
+      r.height=28;
+      ca.font={color:{argb:'FF374151'},size:9};ca.alignment={vertical:'top',wrapText:true};ca.border=bord;
+      cb.fill={type:'pattern',pattern:'solid',fgColor:{argb:'FFFAFAFA'}};cb.font={size:9};cb.alignment={vertical:'top',horizontal:'center',wrapText:true};cb.border=bord;
+    }
+  }
+
+  trazRow('Campo', `${meta.cocina||'?'} · ${meta.fecha||'?'}`, 'title');
+  [['Cocina',meta.cocina||''],['Ciudad',meta.ciudad||''],['Fecha visita',meta.fecha||''],['Trimestre',meta.trimestre||''],['Auditor',meta.auditor||''],
+   ['% S1 Equipos',bpct['equipos']],['% S2 Culinarios',bpct['culinario']],['% S3 Prácticas',bpct['practicas']],['% Total',totalPct],['Semáforo',semLabel(totalPct,anyAF)]
+  ].forEach(([p,r])=>trazRow(p,r,'meta'));
+  trazRow('','','sep');
+
+  const secTitles={equipos:'🔧 SECCIÓN 1 · EQUIPOS CRÍTICOS',culinario:'🧑‍🍳 SECCIÓN 2 · ESTÁNDARES CULINARIOS',practicas:'⚙️ SECCIÓN 3 · PRÁCTICAS DE COCINA'};
+  blocks.forEach(b=>{
+    trazRow(secTitles[b],'','section');
+    DEFS[b].forEach(c=>{
+      if(c.type==='subgroup'){trazRow(c.label,'','subgroup');}
+      else if(c.type==='calc'){const num=parseFloat((state[c.num]||{}).value),den=parseFloat((state[c.den]||{}).value);trazRow(c.t,(!isNaN(num)&&!isNaN(den)&&den>0)?Math.round(num/den*100)+'%':'—','q');}
+      else if(c.type==='text'||c.type==='textarea'){trazRow(c.t,(state[c.id]||{}).value||'','q');}
+      else{const s=state[c.id]||{};let val='';if(s.score!==undefined){if(c.type==='scored3'||c.type==='info3')val=s.score===2?'Cumple':s.score===1?'Parcialmente':'No cumple';else val=s.score===2?'Sí':'No';}trazRow(c.t,val,'q');}
+    });
+    trazRow('','','sep');
+  });
+  wsTraz.views=[{state:'frozen',xSplit:1,ySplit:1}];
+
+  // ── Descargar ─────────────────────────────────────────────────────────────
+  const buffer = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buffer],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url; a.download=`AUD_CUL_${(meta.cocina||'cocina').replace(/\s+/g,'-')}_${meta.fecha||new Date().toISOString().split('T')[0]}.xlsx`;
+  a.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+// ─── REPORT ─────────────────────────────────────────────────────────────────
+function openReport() {
+  const missing = checkMissing();
+  if (missing.length > 0) { showValidationWarning(missing, openReportCore); return; }
+  openReportCore();
+}
+function openReportCore() {
+  flushFields();
+  const meta = getMeta();
+  const obs  = {
+    fortalezas: document.getElementById('obs-fortalezas').value,
+    riesgos:    document.getElementById('obs-riesgos').value,
+    acuerdos:   document.getElementById('obs-acuerdos').value
+  };
+  const blocks = [
+    {key:'equipos',   label:'🔧 Sección 1 · Equipos Críticos',     cls:'equipos'},
+    {key:'culinario', label:'🧑‍🍳 Sección 2 · Estándares Culinarios', cls:'culinario'},
+    {key:'practicas', label:'⚙️ Sección 3 · Prácticas de Cocina',  cls:'practicas'},
+  ];
+  let te = 0, tp = 0, anyAF = false;
+  const brs = blocks.map(b => { const r = calcBlock(b.key); te += r.earned; tp += r.possible; if (r.autofail) anyAF = true; return {...b,...r}; });
+  const tpct = tp > 0 ? Math.round(te / tp * 100) : null, tsem = semaforo(tpct, anyAF);
+
+  // Build subgroup map: question id → subsection label
+  const subgroupMap = {};
+  ['equipos','culinario','practicas'].forEach(bk => {
+    let curSub = '';
+    DEFS[bk].forEach(c => {
+      if (c.type === 'subgroup') { curSub = c.label; }
+      else if (c.id)             { subgroupMap[c.id] = curSub; }
+    });
+  });
+
+  // Build all findings consolidated, tagged by section
+  const secBadge = {
+    equipos:   {label:'Equipos Críticos',      color:'#1d4ed8', bg:'#eff6ff'},
+    culinario: {label:'Est. Culinarios',        color:'#c0310f', bg:'#fff3ef'},
+    practicas: {label:'Prácticas de Cocina',   color:'#15803d', bg:'#f0fdf4'},
+  };
+  let totalHallazgos = 0;
+  const findingsArr = [];
+  blocks.forEach(b => {
+    DEFS[b.key].forEach(c => {
+      if (!c.scored) return;
+      const s = state[c.id];
+      if (!s || s.score === undefined || s.score === 2) return;
+      totalHallazgos++;
+      const cls   = s.score === 0 ? 's0' : 's1';
+      const lbl   = s.score === 0 ? '🔴 No cumple' : '⚠️ Parcialmente';
+      const af    = c.autofail && s.score === 0 ? ' <span class="af-tag">AUTOFAIL</span>' : '';
+      const focoSpan = c.foco === true  ? ' <span class="foco-tag">⭐ Foco</span>'
+                     : c.foco === 'AI' ? ' <span class="foco-tag-ai">⚡ AI</span>'
+                     : c.foco === 'CM' ? ' <span class="foco-tag-cm">🔧 CM</span>'
+                     : '';
+      const badge = secBadge[b.key];
+      const sub   = subgroupMap[c.id] || '';
+      // Build detail lines based on foco type
+      let detailLines = s.hallazgo ? `<div class="fd">📝 <b>Hallazgo:</b> ${s.hallazgo}</div>` : '';
+      if (c.foco === 'AI') {
+        detailLines += s.accion  ? `<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>`  : '';
+      } else if (c.foco === 'CM') {
+        detailLines += s.accion2 ? `<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>` : '';
+      } else {
+        detailLines += s.accion  ? `<div class="fd">⚡ <b>Acción inmediata:</b> ${s.accion}</div>`  : '';
+        detailLines += s.accion2 ? `<div class="fd">🔧 <b>Acción C/M plazo:</b> ${s.accion2}</div>` : '';
+        detailLines += (s.resp||s.fechalim) ? `<div class="fd" style="display:flex;gap:16px;flex-wrap:wrap;">${s.resp?`<span>👤 <b>Responsable:</b> ${s.resp}</span>`:''}${s.fechalim?`<span>📅 <b>Fecha límite:</b> ${s.fechalim}</span>`:''}</div>` : '';
+      }
+      findingsArr.push({
+        sortKey: c.foco === true ? 0 : 1,
+        isAI: c.foco === 'AI',
+        html: `<div class="finding ${c.autofail && s.score===0?'af':cls}" style="position:relative;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;">
+            <div style="flex:1">
+              ${sub?`<div style="font-size:10px;font-weight:600;color:var(--gray-500);margin-bottom:2px;">${sub}</div>`:''}
+              <div class="ft">${c.t}${af}${focoSpan} — ${lbl}</div>
+            </div>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:${badge.bg};color:${badge.color};white-space:nowrap;">${badge.label}</span>
+          </div>
+          ${detailLines}
+        </div>`
+      });
+    });
+  });
+  // Separar AI (solo reporte, sin seguimiento) del resto (con seguimiento)
+  const mainFindings = findingsArr.filter(f => !f.isAI).sort((a, b) => a.sortKey - b.sortKey);
+  const aiFindings   = findingsArr.filter(f =>  f.isAI);
+  const allFindings  = mainFindings.map(f => f.html).join('')
+    + (aiFindings.length > 0
+      ? `<div style="margin-top:14px;padding:10px 14px;background:#f0fdf4;border-radius:8px;border-left:3px solid #22c55e;font-size:11px;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:.4px;">✅ Acciones inmediatas tomadas durante la visita</div>`
+        + aiFindings.map(f => f.html).join('')
+      : '');
+
+  // ── Build desglose completo ──────────────────────────────────────────────
+  const blockMeta = [
+    {key:'equipos',   label:'🔧 Equipos Críticos',        cls:'equipos'},
+    {key:'culinario', label:'🧑‍🍳 Estándares Culinarios',   cls:'culinario'},
+    {key:'practicas', label:'⚙️ Prácticas de Cocina',      cls:'practicas'},
+  ];
+  function drScoreLabel(type, score) {
+    if (score === undefined || score === null) return {lbl:'—', cls:'text-v'};
+    if (type === 'scored3' || type === 'info3') {
+      const scored = type === 'scored3';
+      if (score === 2) return {lbl: scored ? 'Cumple (2 pts)'     : 'Cumple',         cls:'ok'};
+      if (score === 1) return {lbl: scored ? 'Parcialmente (1 pt)': 'Parcialmente',   cls:'warn'};
+      return             {lbl: scored ? 'No cumple (0 pts)'  : 'No cumple',       cls:'fail'};
+    }
+    if (type === 'scored2' || type === 'info2') {
+      const scored = type === 'scored2';
+      if (score === 2) return {lbl: scored ? 'Sí (2 pts)' : 'Sí', cls:'ok'};
+      return             {lbl: scored ? 'No (0 pts)' : 'No',       cls:'fail'};
+    }
+    return {lbl:'—', cls:'text-v'};
+  }
+  let desgloseHTML = '';
+  blockMeta.forEach(bm => {
+    let blockRows = '';
+    DEFS[bm.key].forEach(c => {
+      if (c.type === 'subgroup') {
+        blockRows += `<div class="dr-subgroup">${c.label}</div>`;
+      } else if (c.type === 'calc') {
+        const numStr = (state[c.num] || {}).value;
+        const denStr = (state[c.den] || {}).value;
+        const num = parseFloat(numStr), den = parseFloat(denStr);
+        const pct = (!isNaN(num) && !isNaN(den) && den > 0) ? Math.round(num/den*100)+'%' : '—';
+        blockRows += `<div class="dr text-row"><span class="dr-icon">📊</span><span class="dr-txt">${c.t}</span><span class="dr-val text-v">${pct}</span></div>`;
+      } else if (c.type === 'text' || c.type === 'textarea') {
+        const val = (state[c.id] || {}).value || '—';
+        blockRows += `<div class="dr text-row"><span class="dr-icon">📝</span><span class="dr-txt">${c.t}</span><span class="dr-val text-v">${val}</span></div>`;
+      } else if (c.type === 'info3' || c.type === 'info2') {
+        const s = state[c.id] || {};
+        const sl = drScoreLabel(c.type, s.score);
+        const icon = s.score === 2 ? '✅' : s.score === 1 ? '⚠️' : s.score === 0 ? '❌' : '○';
+        blockRows += `<div class="dr info-row"><span class="dr-icon">${icon}</span><span class="dr-txt">${c.t} <span class="info-tag">Info</span></span><span class="dr-val ${sl.cls}">${sl.lbl}</span></div>`;
+      } else if (c.type === 'scored3' || c.type === 'scored2') {
+        const s = state[c.id] || {};
+        const sl = drScoreLabel(c.type, s.score);
+        const rowCls = s.score === 2 ? 'ok' : s.score === 1 ? 'warn' : s.score === 0 ? 'fail' : 'ok';
+        const icon   = s.score === 2 ? '✅' : s.score === 1 ? '⚠️' : s.score === 0 ? '❌' : '○';
+        blockRows += `<div class="dr ${rowCls}"><span class="dr-icon">${icon}</span><span class="dr-txt">${c.t}</span><span class="dr-val ${sl.cls}">${sl.lbl}</span></div>`;
+      }
+    });
+    desgloseHTML += `
+    <div class="r-sec">
+      <h3 class="${bm.cls}">${bm.label}</h3>
+      <div class="desglose-block">${blockRows}</div>
+    </div>`;
+  });
+
+  document.getElementById('modal-content').innerHTML = `
+    <h2>📋 Reporte VIC — Auditoría</h2>
+    <p class="sub">Foodology · ${new Date().toLocaleDateString('es-MX',{day:'2-digit',month:'long',year:'numeric'})}</p>
+    <div class="report-meta">
+      <div class="rm"><strong>Cocina</strong>${meta.cocina||'—'}</div><div class="rm"><strong>Ciudad</strong>${meta.ciudad||'—'}</div>
+      <div class="rm"><strong>Fecha visita</strong>${meta.fecha||'—'}</div><div class="rm"><strong>Trimestre</strong>${meta.trimestre}</div>
+      <div class="rm"><strong>Auditor</strong>${meta.auditor||'—'}</div>
+    </div>
+
+    <div class="r-scores">
+      <div class="r-sc" style="border-color:var(--brand)"><div class="n" style="color:${semColor(tpct)}">${tpct!==null?tpct+'%':'—'}</div><div class="l">Total</div><div class="s"><span class="semaforo ${tsem.cls}">${tsem.lbl}</span></div></div>
+      ${brs.slice(0,3).map(b=>{const bs=semaforo(b.pct,b.autofail);return`<div class="r-sc"><div class="n" style="color:${semColor(b.pct)}">${b.pct!==null?b.pct+'%':'—'}</div><div class="l" style="font-size:9px">${b.label.replace(/^[^\·]+·\s*/,'')}</div><div class="pts-lbl">${b.earned}/${b.possible} pts</div><div class="s"><span class="semaforo ${bs.cls}">${bs.lbl}</span></div></div>`;}).join('')}
+    </div>
+
+    ${anyAF?'<div style="background:#1f2937;color:#fff;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:700;margin-bottom:14px;">⛔ AUTOFAIL — Cocina No Aprobada. Notificación inmediata al área operativa.</div>':''}
+
+    <div class="r-sec">
+      <h3 style="color:var(--gray-700);border-color:var(--gray-300);">📋 Hallazgos consolidados ${mainFindings.length>0?`<span style="font-size:11px;font-weight:400;color:var(--gray-500)">(${mainFindings.length} con seguimiento${aiFindings.length>0?' · '+aiFindings.length+' inmediata'+(aiFindings.length!==1?'s':''):''})</span>`:''}</h3>
+      ${totalHallazgos > 0 ? allFindings : '<p style="font-size:12px;color:var(--gray-400)">✅ Sin hallazgos. Todos los criterios cumplidos.</p>'}
+    </div>
+
+    <div class="r-sec" style="margin-top:20px;">
+      <h3 style="color:var(--gray-700);border-color:var(--gray-300);">📊 Desglose completo</h3>
+    </div>
+    ${desgloseHTML}
+
+    ${(obs.fortalezas||obs.riesgos||obs.acuerdos)?`
+    <div class="r-sec">
+      <h3 style="color:var(--gray-700);border-color:var(--gray-300);">💬 Observaciones y compromisos</h3>
+      ${obs.fortalezas?`<div class="finding" style="border-color:#16a34a;background:#f0fdf4"><div class="ft">✅ Fortalezas</div><div class="fd">${obs.fortalezas}</div></div>`:''}
+      ${obs.riesgos?`<div class="finding s0"><div class="ft">⚠️ Riesgos / urgencias</div><div class="fd">${obs.riesgos}</div></div>`:''}
+      ${obs.acuerdos?`<div class="finding s1"><div class="ft">⚡ Otras acciones inmediatas</div><div class="fd">${obs.acuerdos}</div></div>`:''}
+    </div>`:''}
+
+    <p class="print-hint">Para guardar como PDF: Ctrl+P → "Guardar como PDF"</p>
+    <div class="modal-btns"><button class="btn btn-outline" onclick="closeModal()">← Editar</button><button class="btn btn-outline" onclick="saveJSON()">💾 JSON</button><button class="btn btn-primary" onclick="printReport()">🖨️ Imprimir / PDF</button></div>`;
+  document.getElementById('modal-bg').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
+function printReport() {
+  const meta = getMeta();
+  const cocina = (meta.cocina||'cocina').replace(/\s+/g,'-');
+  const fecha  = meta.fecha || new Date().toISOString().split('T')[0];
+  const prevTitle = document.title;
+  document.title = `AUD_CUL_${cocina}_${fecha}`;
+  document.body.classList.add('printing-report');
+  window.print();
+  setTimeout(() => { document.body.classList.remove('printing-report'); document.title = prevTitle; }, 1000);
+}
+
+// ─── PRODUCCIONES ────────────────────────────────────────────────────────────
+function renderProducciones() {
+  const list = document.getElementById('prod-list');
+  list.innerHTML = '';
+  for (let i = 1; i <= 8; i++) {
+    list.innerHTML += `
+      <div class="prod-entry">
+        <div class="prod-num">${i}</div>
+        <div class="prod-fields">
+          <div class="fld"><label>SKU</label><input type="text" id="pd-${i}-sku" placeholder="Ej. FDL-0042"></div>
+          <div class="fld"><label>Producción</label><input type="text" id="pd-${i}-prod" placeholder="Nombre del producto"></div>
+          <div class="fld"><label>Lote</label><input type="text" id="pd-${i}-lote" placeholder="Núm. de lote"></div>
+          <div class="fld"><label>Fecha de producción</label><input type="date" id="pd-${i}-fecha"></div>
+          <div class="fld fld-full" style="display:flex;flex-direction:column;gap:6px;">
+            <label>Evaluación</label>
+            <div style="display:flex;gap:8px;">
+              <button type="button" class="sc-btn prod-eval-btn" id="pd-${i}-eval-ok" onclick="setProdEval(${i},'ok')" style="flex:1;background:#dcfce7;color:#15803d;border:2px solid #86efac;">✅ OK</button>
+              <button type="button" class="sc-btn prod-eval-btn" id="pd-${i}-eval-op" onclick="setProdEval(${i},'op')" style="flex:1;background:#fff7ed;color:#c2410c;border:2px solid #fdba74;">⚠️ Con Oportunidad</button>
+            </div>
+          </div>
+          <div class="fld fld-full"><label>Comentario</label><textarea id="pd-${i}-com" placeholder="Observaciones de calidad, color, textura, sabor, etc." style="min-height:48px;"></textarea></div>
+        </div>
+      </div>`;
+  }
+}
+
+function setProdEval(i, val) {
+  document.getElementById('pd-'+i+'-eval-ok').classList.toggle('active', val==='ok');
+  document.getElementById('pd-'+i+'-eval-op').classList.toggle('active', val==='op');
+  document.getElementById('pd-'+i+'-eval-ok').dataset.selected = val==='ok' ? 'ok' : '';
+  document.getElementById('pd-'+i+'-eval-op').dataset.selected = val==='op' ? 'op' : '';
+}
+
+function getProdEval(i) {
+  if (document.getElementById('pd-'+i+'-eval-ok')?.dataset.selected === 'ok') return 'OK';
+  if (document.getElementById('pd-'+i+'-eval-op')?.dataset.selected === 'op') return 'Con Oportunidad';
+  return '';
+}
+
+function getProducciones() {
+  const rows = [];
+  for (let i = 1; i <= 8; i++) {
+    const sku   = document.getElementById('pd-' + i + '-sku')?.value  || '';
+    const prod  = document.getElementById('pd-' + i + '-prod')?.value || '';
+    const lote  = document.getElementById('pd-' + i + '-lote')?.value || '';
+    const fecha = document.getElementById('pd-' + i + '-fecha')?.value|| '';
+    const com   = document.getElementById('pd-' + i + '-com')?.value  || '';
+    const eval_ = getProdEval(i);
+    if (sku || prod || lote || fecha || com || eval_) rows.push({n:i, sku, prod, lote, fecha, eval:eval_, com});
+  }
+  return rows;
+}
+
+function restoreProducciones(data) {
+  if (!data) return;
+  data.forEach(r => {
+    ['sku','prod','lote','fecha','com'].forEach(f => {
+      const el = document.getElementById('pd-' + r.n + '-' + f);
+      if (el && r[f]) el.value = r[f];
+    });
+    if (r.eval === 'OK') setProdEval(r.n, 'ok');
+    else if (r.eval === 'Con Oportunidad') setProdEval(r.n, 'op');
+  });
+}
+
+// ─── RESET / NUEVA EVALUACIÓN ────────────────────────────────────────────────
 function resetForm() {
-  if (!confirm('¿Iniciar nueva evaluación? Se perderán los datos no guardados.')) return;
+  if (!confirm('¿Iniciar una nueva evaluación? Se borrarán todos los datos actuales.')) return;
+  // Clear state object
   Object.keys(state).forEach(k => delete state[k]);
-  document.getElementById('m-cp').value = '';
+  // Reset metadata
+  document.getElementById('m-cocina').selectedIndex = 0;
   document.getElementById('m-ciudad').value = '';
-  document.getElementById('m-fecha').value = '';
-  document.getElementById('m-auditor').value = '';
-  SECTION_META.forEach(m => renderBlock(m.key));
+  document.getElementById('m-fecha').value = new Date().toISOString().split('T')[0];
+  document.getElementById('m-trimestre').selectedIndex = 0;
+  document.getElementById('m-auditor').selectedIndex = 0;
+  // Reset all score buttons (remove active class, reset icons, close detail panels)
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('[id^="icon-"]').forEach(el => el.textContent = '·');
+  document.querySelectorAll('[id^="detail-"]').forEach(el => el.classList.remove('open'));
+  // Clear all text/textarea fields
+  document.querySelectorAll('[id^="val-"]').forEach(el => el.value = '');
+  document.querySelectorAll('[id^="hal-"],[id^="acc-"],[id^="res-"]').forEach(el => el.value = '');
+  // Clear observations
   document.getElementById('obs-fortalezas').value = '';
   document.getElementById('obs-riesgos').value = '';
   document.getElementById('obs-acuerdos').value = '';
+  // Clear producciones
+  for (let i = 1; i <= 8; i++) {
+    ['sku','prod','lote','fecha','com'].forEach(f => {
+      const el = document.getElementById('pd-' + i + '-' + f);
+      if (el) el.value = '';
+    });
+    ['eval-ok','eval-op'].forEach(k => {
+      const btn = document.getElementById('pd-' + i + '-' + k);
+      if (btn) { btn.classList.remove('active'); btn.dataset.selected = ''; }
+    });
+  }
+  // Reset calc display
+  document.querySelectorAll('[id^="cval-"]').forEach(el => { el.textContent = '—'; el.className = 'calc-val none'; });
+  updateScores();
+  // Scroll to top
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// ─── INIT ─────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  SECTION_META.forEach(m => renderBlock(m.key));
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('m-fecha').value = today;
-});
+// ─── VALIDATION ──────────────────────────────────────────────────────────────
+const BLOCK_LABELS = {
+  equipos:   '🔧 Equipos Críticos',
+  culinario: '🧑‍🍳 Estándares Culinarios',
+  practicas: '⚙️ Prácticas de Cocina',
+};
+
+function checkMissing() {
+  const missing = [];
+  ['equipos','culinario','practicas'].forEach(b => {
+    DEFS[b].filter(c => c.scored === true).forEach(c => {
+      const s = state[c.id];
+      if (!s || s.score === undefined) {
+        missing.push({block: BLOCK_LABELS[b], label: c.t, id: c.id});
+      }
+    });
+  });
+  return missing;
+}
+
+function showValidationWarning(missing, onContinue) {
+  const byBlock = {};
+  missing.forEach(m => {
+    if (!byBlock[m.block]) byBlock[m.block] = [];
+    byBlock[m.block].push(m.label);
+  });
+  let rows = '';
+  Object.entries(byBlock).forEach(([block, items]) => {
+    rows += `<div style="margin-bottom:10px"><div style="font-weight:700;font-size:12px;color:var(--gray-500);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">${block}</div>`;
+    items.forEach(t => { rows += `<div style="font-size:13px;padding:4px 0 4px 12px;border-left:3px solid #f59e0b;margin-bottom:3px;color:var(--gray-700)">${t}</div>`; });
+    rows += `</div>`;
+  });
+  document.getElementById('modal-content').innerHTML = `
+    <h2 style="color:#b45309">⚠️ Criterios sin evaluar</h2>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:16px">Hay <strong>${missing.length} criterio${missing.length>1?'s':''} con puntaje</strong> que aún no se ha${missing.length>1?'n':''} respondido. Puedes continuar de todas formas o volver a completarlos.</p>
+    <div style="max-height:300px;overflow-y:auto;padding-right:4px;margin-bottom:18px">${rows}</div>
+    <div class="modal-btns">
+      <button class="btn btn-outline" onclick="closeModal()">← Volver a editar</button>
+      <button class="btn btn-primary" style="background:#b45309;border-color:#b45309" onclick="closeModal();(${onContinue.toString()})()">Continuar de todos modos →</button>
+    </div>`;
+  document.getElementById('modal-bg').classList.add('open');
+}
+
+// ─── AUTO-FILL CIUDAD ────────────────────────────────────────────────────────
+function autoFillCiudad() {
+  const sel = document.getElementById('m-cocina');
+  const opt = sel.options[sel.selectedIndex];
+  const ciudad = opt ? (opt.getAttribute('data-ciudad') || '') : '';
+  document.getElementById('m-ciudad').value = ciudad;
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+renderBlock('equipos');
+renderBlock('culinario');
+renderBlock('practicas');
+renderProducciones();
+document.getElementById('m-fecha').value = new Date().toISOString().split('T')[0];
 </script>
 </body>
 </html>
