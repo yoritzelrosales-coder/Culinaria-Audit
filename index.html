@@ -234,7 +234,7 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
 </head>
 <body>
 <header class="app-header">
-  <div class="logo">🍽 Foodology · VIC<span>Auditoría — Operativa / Culinaria · v.Q4-2026</span></div>
+  <div class="logo">🍽 Foodology · VIC<span>Auditoría — Operativa / Culinaria · v.06/07/2026</span></div>
   <div class="global-pill"><div class="pct" id="g-pct">—</div><div class="lbl" id="g-pts" style="font-size:10px;opacity:.65;margin-top:1px;">— pts</div><div class="lbl" id="g-sem">Sin evaluar</div></div>
 </header>
 <main>
@@ -245,7 +245,7 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
       <div class="fld"><label>Cocina</label><select id="m-cocina" onchange="autoFillCiudad()"><option value="">Selecciona cocina…</option><optgroup label="Ciudad de México"><option data-ciudad="Ciudad de México">Satélite</option><option data-ciudad="Ciudad de México">Coapa</option><option data-ciudad="Ciudad de México">Azcapotzalco</option><option data-ciudad="Ciudad de México">Santa Fe</option><option data-ciudad="Ciudad de México">Iztapalapa</option><option data-ciudad="Ciudad de México">Polanco</option><option data-ciudad="Ciudad de México">Samara</option><option data-ciudad="Ciudad de México">Esmeralda</option><option data-ciudad="Ciudad de México">Churubusco</option><option data-ciudad="Ciudad de México">Pedregal</option><option data-ciudad="Ciudad de México">Doctores</option><option data-ciudad="Ciudad de México">Del Valle</option><option data-ciudad="Ciudad de México">San Ángel</option><option data-ciudad="Ciudad de México">Lindavista</option><option data-ciudad="Ciudad de México">Manacar</option><option data-ciudad="Ciudad de México">Interlomas</option></optgroup><optgroup label="Zona Centro"><option data-ciudad="Zona Centro">Metepec</option></optgroup><optgroup label="Guadalajara"><option data-ciudad="Guadalajara">Tlaquepaque</option><option data-ciudad="Guadalajara">Jardines</option><option data-ciudad="Guadalajara">Tabachines</option><option data-ciudad="Guadalajara">Jardines del Valle</option><option data-ciudad="Guadalajara">Estadio</option><option data-ciudad="Guadalajara">Santa Teresita</option><option data-ciudad="Guadalajara">La Calma</option></optgroup><optgroup label="Mérida"><option data-ciudad="Mérida">Montejo</option><option data-ciudad="Mérida">Canek</option></optgroup><optgroup label="Monterrey"><option data-ciudad="Monterrey">Monterrey Centro</option><option data-ciudad="Monterrey">Lincoln</option><option data-ciudad="Monterrey">Carretera Nacional</option><option data-ciudad="Monterrey">Santa Catarina</option><option data-ciudad="Monterrey">Cumbres</option><option data-ciudad="Monterrey">Tec</option><option data-ciudad="Monterrey">San Nicolás</option><option data-ciudad="Monterrey">San Jerónimo</option><option data-ciudad="Monterrey">Saltillo Centro</option></optgroup><optgroup label="Puebla"><option data-ciudad="Puebla">Ciudad Judicial</option><option data-ciudad="Puebla">Volcanes</option></optgroup></select></div>
       <div class="fld"><label>Ciudad</label><input type="text" id="m-ciudad" placeholder="Se llena automáticamente" readonly style="background:var(--gray-100);color:var(--gray-500);cursor:default;"></div>
       <div class="fld"><label>Fecha de visita</label><input type="date" id="m-fecha"></div>
-      <div class="fld"><label>Trimestre</label><select id="m-trimestre"><option>Q1 2026</option><option>Q2 2026</option><option>Q3 2026</option><option selected>Q4 2026</option><option>Q1 2027</option></select></div>
+      <div class="fld"><label>Trimestre</label><select id="m-trimestre"><option>Q1 2026</option><option>Q2 2026</option><option selected>Q3 2026</option><option>Q4 2026</option><option>Q1 2027</option></select></div>
       <div class="fld"><label>Auditor / Quality</label><select id="m-auditor"><option value="">Selecciona…</option><option>Itzia Diaz</option><option>Ilia Sandoval</option><option>Yoritzel Rosales</option></select></div>
     </div>
   </div>
@@ -275,13 +275,6 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
   </div>
 </div>
 <div class="card">
-  <div class="sec-hdr" style="background:#f0f9ff;color:#0369a1;border-bottom:2px solid #bae6fd;" onclick="toggleSec('acciones')">⚡ Acciones Inmediatas <span style="font-size:11px;font-weight:400;margin-left:8px;opacity:.7;">Llena solo los espacios que apliquen — aparecen en el reporte</span></div>
-  <div id="sec-acciones">
-    <div style="padding:10px 18px 4px;font-size:11px;color:var(--gray-500);">Registra cada corrección realizada durante la visita. En el reporte sólo aparecen los slots con hallazgo capturado.</div>
-    <div id="ai-list" style="padding:10px 18px 16px;display:flex;flex-direction:column;gap:10px;"></div>
-  </div>
-</div>
-<div class="card">
   <div class="sec-hdr meta-hdr" onclick="toggleSec('resumen')">📊 Resumen de puntajes</div>
   <div id="sec-resumen">
     <div class="score-summary">
@@ -298,13 +291,13 @@ main{max-width:860px;margin:0 auto;padding:20px 16px 96px;}
   <div id="sec-obs" style="padding:16px 18px;display:flex;flex-direction:column;gap:12px;">
     <div class="fld"><label>Fortalezas observadas</label><textarea id="obs-fortalezas" placeholder="¿Qué está haciendo bien la cocina?"></textarea></div>
     <div class="fld"><label>Riesgos o urgencias adicionales</label><textarea id="obs-riesgos" placeholder="Temas que requieren escalada fuera de los criterios anteriores"></textarea></div>
-    <div class="fld"><label>Notas adicionales</label><textarea id="obs-acuerdos" placeholder="Cualquier observación no capturada en las secciones anteriores"></textarea></div>
+    <div class="fld"><label>Otras Acciones Inmediatas realizadas</label><textarea id="obs-acuerdos" placeholder="Acciones inmediatas tomadas durante la visita"></textarea></div>
   </div>
 </div>
 <div class="card">
   <div class="sec-hdr meta-hdr" onclick="toggleSec('producciones')">🧪 Producciones — Información para Calidad</div>
   <div id="sec-producciones">
-    <div style="padding:12px 18px 4px;font-size:11px;color:var(--gray-500);">Q4 2026 — 9 producciones fijas + 2 libres a criterio del auditor. Evalúa lote, fechas y parámetros de calidad definidos.</div>
+    <div style="padding:12px 18px 4px;font-size:11px;color:var(--gray-500);">Registra las producciones observadas durante la visita (hasta 6).</div>
     <div style="padding:10px 18px 18px;display:flex;flex-direction:column;gap:10px;" id="prod-list">
       <!-- se genera por JS -->
     </div>
@@ -372,6 +365,7 @@ const DEFS = {
     {id:'eq_f4', type:'textarea',t:'Comentarios del funcionamiento / uso de los freidores'},
     {id:'eq_f5', type:'scored2', t:'¿Cuenta con timer funcionando?', scored:true, foco:'CM'},
     {id:'eq_f6', type:'scored2', t:'¿Cuenta con termómetro para medir continuamente la temperatura del aceite?', scored:true, foco:'CM'},
+    {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true, foco:'CM'},
   ],
 
   culinario: [
@@ -379,14 +373,17 @@ const DEFS = {
     {type:'subgroup', label:'🐔 Pollo Ensalada'},
     {id:'cu_po1', type:'scored2', t:'¿Regenera las pechugas en su bolsa y en agua caliente?', scored:true, foco:true},
     {id:'cu_po3', type:'scored2', t:'¿Mantienen el pollo correctamente en baño maría?', h:'Asegurar que todas las pechugas estén humectadas en todo momento.', scored:true, foco:true},
+    {id:'cu_po5', type:'scored2', t:'¿Sellan el pollo en plancha de un sólo lado?', scored:true, foco:true},
     {id:'cu_po6', type:'scored2', t:'¿Cortan la pechuga en tiras para colocar sobre el producto y mantienen forma?', scored:true, foco:true},
     {id:'cu_po7', type:'textarea',t:'Comentarios adicionales del pollo ensalada', foco:true},
 
     // ── Huevo ────────────────────────────────────────────────────────────────
     {type:'subgroup', label:'🥚 Huevo'},
-    {id:'cu_h1', type:'scored2', t:'¿Colocan a los huevos estrellados y revueltos previo a la cocción?', scored:true, foco:true},
+    {id:'cu_h1', type:'scored2', t:'¿Colocan sal al batir los huevos?', scored:true, foco:true},
     {id:'cu_h2', type:'scored2', t:'¿Cocinan el huevo revuelto en sartén?', scored:true, foco:'AI'},
     {id:'cu_h3', type:'scored2', t:'¿Mueven constantemente el huevo para no hacer omelette?', scored:true, foco:'AI'},
+    {id:'cu_h4', type:'scored2', t:'¿Usan aro para hacer huevo estrellado?', scored:true, foco:'AI'},
+    {id:'cu_h5', type:'scored2', t:'¿Le ponen sal al huevo estrellado?', scored:true, foco:'AI'},
     {id:'cu_h6', type:'textarea',t:'Comentarios adicionales sobre el huevo'},
 
     // ── Arroz ────────────────────────────────────────────────────────────────
@@ -397,6 +394,7 @@ const DEFS = {
 
     // ── Carne hamburguesa ────────────────────────────────────────────────────
     {type:'subgroup', label:'🍔 Carne Hamburguesa'},
+    {id:'cu_ca1', type:'info2', t:'¿Colocan aceite en plancha antes de smashear la carne?', scored:false},
     {id:'cu_ca2', type:'scored2', t:'¿Smashean correctamente la carne?', h:'Dar más peso al resultado final de la carne que a la técnica.', scored:true, foco:'AI'},
     {id:'cu_ca3', type:'scored2', t:'¿La carne está correctamente almacenada?', scored:true, foco:'AI'},
     {id:'cu_ca4', type:'textarea',t:'Comentarios adicionales sobre la carne de hamburguesa'},
@@ -441,13 +439,9 @@ const DEFS = {
     {type:'subgroup', label:'🥓 Tocino'},
     {id:'cu_to1', type:'info2', t:'¿El tocino tiene la textura correcta en el MEP?', scored:false},
 
-    // ── Horno ────────────────────────────────────────────────────────────────
-    {type:'subgroup', label:'🔲 Horno'},
-    {id:'cu_ho1', type:'scored3', t:'¿Utilizan el horno para: crotones, tocino, muffins, bagels y muffins?', h:'Cumple: para todos los productos mencionados usan horno. Cumple parcialmente: sólo la mitad se cocinan en horno (si no tienen horno, calificar aquí y dejar el motivo muy claro en hallazgo). No cumple: menos de la mitad se cocinan en horno.', scored:true, foco:true},
-
-    // ── Estado del Aceite ────────────────────────────────────────────────────
-    {type:'subgroup', label:'🍟 Estado del Aceite'},
-    {id:'eq_f7', type:'scored3', t:'Estado del aceite', h:'Cumple: transparente. Cumple parcialmente: oscuro. No cumple: demasiado oscuro y con producto quemándose (moronas, papas, otros).', scored:true, foco:'CM'},
+    // ── General ──────────────────────────────────────────────────────────────
+    {type:'subgroup', label:'📝 General'},
+    {id:'cu_gen1',  type:'textarea', t:'CORRECCIONES INMEDIATAS CULINARIAS', h:'Adicionar todas las acciones inmediatas que se corrigieron que no estén indicadas en ningún rubro anterior.'},
   ],
 
   practicas: [
@@ -485,6 +479,7 @@ const DEFS = {
     {type:'calc', id:'calc_sart', t:'Sartenes en buen estado', num:'pr_mn4', den:'pr_mn3'},
     {id:'pr_mn5', type:'textarea', t:'¿Aros de pancakes en buen estado? — Observaciones'},
     {id:'pr_mn6', type:'textarea', t:'¿Aros de huevo en buen estado? — Observaciones'},
+    {id:'pr_mn7', type:'textarea', t:'Comentarios o acciones inmediatas realizadas conforme a las prácticas observadas.'},
   ],
 
 };
@@ -764,7 +759,6 @@ function saveJSON() {
       acuerdos:   document.getElementById('obs-acuerdos').value
     },
     producciones: getProducciones(),
-    acciones: getAcciones(),
     generado: new Date().toISOString()
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
@@ -824,9 +818,7 @@ async function exportTrackerRowCore() {
   wsReg.columns = [{width:4},{width:20},{width:12},{width:14},{width:16},{width:12},{width:15},{width:15},{width:15},{width:12},{width:18},{width:10},{width:40}];
   const regHdr = wsReg.addRow(['#','Cocina / ID','Ciudad','Fecha Visita','Auditor','Trimestre','S1 · Equipos Críticos (%)','S2 · Est. Culinarios (%)','S3 · Prácticas de Cocina (%)','Total B+C (%)','Semáforo','Autofail','Observaciones']);
   styleHdr(regHdr);
-  const _fs=getFocoStats();
-  const _focoCell=anyAF?'SÍ ⛔':(_fs.total>0?_fs.incumplidos+'/'+_fs.total+' incumpl · '+_fs.pct+'% cumpl':'—');
-  const regData = wsReg.addRow([null,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.auditor||'',meta.trimestre||'',bpct['equipos'],bpct['culinario'],bpct['practicas'],totalPct,semLabel(totalPct,anyAF),_focoCell,document.getElementById('obs-acuerdos').value||'']);
+  const regData = wsReg.addRow([null,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.auditor||'',meta.trimestre||'',bpct['equipos'],bpct['culinario'],bpct['practicas'],totalPct,semLabel(totalPct,anyAF),anyAF?'SÍ':'NO',document.getElementById('obs-acuerdos').value||'']);
   styleData(regData);
   [7,8,9,10].forEach(i => { const c=regData.getCell(i); if(c.value!==null&&c.value!==undefined) c.numFmt='0%'; });
   wsReg.views = [{state:'frozen',ySplit:1}];
@@ -854,31 +846,17 @@ async function exportTrackerRowCore() {
   });
   wsHal.views = [{state:'frozen',ySplit:1}];
 
-  // ── Hoja 3: Producciones Q4 ──────────────────────────────────────────────
+  // ── Hoja 3: Producciones ──────────────────────────────────────────────────
   const wsProd = wb.addWorksheet('Producciones');
-  wsProd.columns = [{width:4},{width:18},{width:12},{width:14},{width:12},{width:25},{width:14},{width:14},{width:14},{width:18},{width:48},{width:40}];
-  const prodHdr = wsProd.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','Producción','Lote','Fecha producción','Fecha evaluación','Evaluación','Parámetros evaluados','Observaciones']);
+  wsProd.columns = [{width:4},{width:18},{width:12},{width:14},{width:12},{width:14},{width:25},{width:14},{width:16},{width:18},{width:40}];
+  const prodHdr = wsProd.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','SKU','Producto','Lote','Fecha caducidad','Evaluación','Comentario']);
   styleHdr(prodHdr, '065F46');
   const prodData = getProducciones();
-  if (prodData.length===0) { wsProd.addRow(['—','','','','','','','','','','','']); }
-  else prodData.forEach((p,i) => {
-    const paramsStr = Object.entries(p.params||{}).filter(([k,v])=>v).map(([k,v])=>k+': '+v).join(' | ');
-    const r=wsProd.addRow([i+1,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',p.nombre,p.lote,p.fprod||'',p.feval||'',p.eval||'',paramsStr,p.com]);
-    r.height=36; styleData(r);
-  });
+  if (prodData.length===0) { wsProd.addRow(['—','','','','','','','','','','']); }
+  else prodData.forEach((p,i) => { const r=wsProd.addRow([i+1,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',p.sku,p.prod,p.lote,p.fecha,p.eval||'',p.com]); styleData(r); });
   wsProd.views = [{state:'frozen',ySplit:1}];
 
-  // ── Hoja 4: Acciones Inmediatas ───────────────────────────────────────────
-  const wsAI = wb.addWorksheet('Acciones Inmediatas');
-  wsAI.columns = [{width:4},{width:18},{width:12},{width:14},{width:12},{width:28},{width:48},{width:48}];
-  const aiHdr = wsAI.addRow(['#','Cocina','Ciudad','Fecha Visita','Trimestre','Ingrediente / Proceso','Hallazgo identificado y razón','Acción inmediata realizada']);
-  styleHdr(aiHdr,'0369A1');
-  const aiDataXL = getAcciones();
-  if(aiDataXL.length===0){wsAI.addRow(['—','','','','','','','']);}
-  else aiDataXL.forEach((a,i)=>{const r=wsAI.addRow([i+1,meta.cocina||'',meta.ciudad||'',meta.fecha||'',meta.trimestre||'',a.ing||'',a.hall||'',a.acc||'']);r.height=40;styleData(r);});
-  wsAI.views=[{state:'frozen',ySplit:1}];
-
-  // ── Hoja 5: Trazabilidad (vertical con colores) ───────────────────────────
+  // ── Hoja 4: Trazabilidad (vertical con colores) ───────────────────────────
   const wsTraz = wb.addWorksheet('Trazabilidad');
   wsTraz.getColumn(1).width = 54;
   wsTraz.getColumn(2).width = 30;
@@ -1099,24 +1077,6 @@ function openReportCore() {
       ${brs.slice(0,3).map(b=>{const bs=semaforo(b.pct,b.autofail);return`<div class="r-sc"><div class="n" style="color:${semColor(b.pct)}">${b.pct!==null?b.pct+'%':'—'}</div><div class="l" style="font-size:9px">${b.label.replace(/^[^\·]+·\s*/,'')}</div><div class="pts-lbl">${b.earned}/${b.possible} pts</div><div class="s"><span class="semaforo ${bs.cls}">${bs.lbl}</span></div></div>`;}).join('')}
     </div>
 
-    ${(()=>{
-      const fs=getFocoStats();
-      if(fs.total===0) return '';
-      const color=fs.pct>=90?'#15803d':fs.pct>=75?'#b45309':'#dc2626';
-      const bg=fs.pct>=90?'#f0fdf4':fs.pct>=75?'#fffbeb':'#fef2f2';
-      const bdr=fs.pct>=90?'#86efac':fs.pct>=75?'#fcd34d':'#fca5a5';
-      return `<div style="background:${bg};border:2px solid ${bdr};border-radius:10px;padding:12px 20px;margin-bottom:14px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
-        <div style="display:flex;align-items:baseline;gap:5px;">
-          <span style="font-size:30px;font-weight:900;color:${color};">${fs.pct}%</span>
-          <span style="font-size:11px;font-weight:700;color:${color};text-transform:uppercase;letter-spacing:.4px;">focos</span>
-        </div>
-        <div style="font-size:12px;color:var(--gray-700);flex:1;line-height:1.6;">
-          <b style="color:${color};">${fs.incumplidos} focos incumplidos</b> de <b>${fs.total}</b> evaluados
-          <span style="color:var(--gray-400);font-size:11px;margin-left:6px;">(⭐ Foco · ⚡ AI · 🔧 CM)</span>
-        </div>
-        <div style="font-size:11px;color:var(--gray-500);">${fs.cumplidos}/${fs.total} cumplidos</div>
-      </div>`;
-    })()}
     ${anyAF?'<div style="background:#1f2937;color:#fff;padding:10px 14px;border-radius:8px;font-size:13px;font-weight:700;margin-bottom:14px;">⛔ AUTOFAIL — Cocina No Aprobada. Notificación inmediata al área operativa.</div>':''}
 
     <div class="r-sec">
@@ -1129,13 +1089,12 @@ function openReportCore() {
     </div>
     ${desgloseHTML}
 
-    ${(()=>{const _ai=getAcciones();return _ai.length>0?`<div class="r-sec"><h3 style="color:#0369a1;border-color:#bae6fd;">⚡ Acciones Inmediatas</h3>${_ai.map(a=>`<div class="finding" style="border-color:#0369a1;background:#f0f9ff;"><div class="ft">Acción ${a.n}${a.ing?' — '+a.ing:''}</div>${a.hall?`<div class="fd">📝 <b>Hallazgo:</b> ${a.hall}</div>`:''}${a.acc?`<div class="fd">✅ <b>Acción realizada:</b> ${a.acc}</div>`:''}</div>`).join('')}</div>`:'';})()}
     ${(obs.fortalezas||obs.riesgos||obs.acuerdos)?`
     <div class="r-sec">
       <h3 style="color:var(--gray-700);border-color:var(--gray-300);">💬 Observaciones y compromisos</h3>
       ${obs.fortalezas?`<div class="finding" style="border-color:#16a34a;background:#f0fdf4"><div class="ft">✅ Fortalezas</div><div class="fd">${obs.fortalezas}</div></div>`:''}
       ${obs.riesgos?`<div class="finding s0"><div class="ft">⚠️ Riesgos / urgencias</div><div class="fd">${obs.riesgos}</div></div>`:''}
-      ${obs.acuerdos?`<div class="finding s1"><div class="ft">📌 Notas adicionales</div><div class="fd">${obs.acuerdos}</div></div>`:''}
+      ${obs.acuerdos?`<div class="finding s1"><div class="ft">⚡ Otras acciones inmediatas</div><div class="fd">${obs.acuerdos}</div></div>`:''}
     </div>`:''}
 
     <p class="print-hint">Para guardar como PDF: Ctrl+P → "Guardar como PDF"</p>
@@ -1155,119 +1114,68 @@ function printReport() {
   setTimeout(() => { document.body.classList.remove('printing-report'); document.title = prevTitle; }, 1000);
 }
 
-// ─── PRODUCCIONES Q4 ─────────────────────────────────────────────────────────
-const PRODS_Q4 = [
-  {id:'p01', label:'Pollo ensalada',          params:['Sabor','Textura / humedad','Forma (tiras correctas y derechas — foto 10 pechugas)','Peso promedio 10 pechugas (g)']},
-  {id:'p02', label:'Pollo en cubos',          params:['Tamaño del cubo','Sabor y textura']},
-  {id:'p03', label:'Arroz blanco',            params:['Sabor y textura']},
-  {id:'p04', label:'Arroz integral',          params:['Sabor y textura']},
-  {id:'p05', label:'Brownie',                 params:['Tamaño','Peso (g)','Sabor y textura']},
-  {id:'p06', label:'Hummus',                  params:['Textura','Consistencia','Sabor']},
-  {id:'p07', label:'Galleta',                 params:['Tamaño','Peso (g)','Sabor y textura']},
-  {id:'p08', label:'Fondo de pollo',          params:['Consistencia','Color','Olor'], nueva:true},
-  {id:'p09', label:'Base sopa tortilla',      params:['Consistencia','Color','Olor'], nueva:true},
-];
-
-function pkey(s){ return s.replace(/[^a-z0-9]/gi,'_'); }
-
+// ─── PRODUCCIONES ────────────────────────────────────────────────────────────
 function renderProducciones() {
   const list = document.getElementById('prod-list');
   list.innerHTML = '';
-  PRODS_Q4.forEach((prod, idx) => {
-    const isN = prod.nueva;
-    const paramF = prod.params.map(p =>
-      `<div class="fld fld-full"><label>${p}</label><input type="text" id="pd-${prod.id}-p-${pkey(p)}" placeholder="Describe el resultado…"></div>`
-    ).join('');
-    list.innerHTML += `<div class="prod-entry" style="${isN?'border-color:#86efac;background:#f0fdf4;':''}">
-        <div class="prod-num" style="color:${isN?'#15803d':'var(--gray-300)'};font-size:14px;font-weight:800;min-width:22px;">${idx+1}</div>
+  for (let i = 1; i <= 8; i++) {
+    list.innerHTML += `
+      <div class="prod-entry">
+        <div class="prod-num">${i}</div>
         <div class="prod-fields">
-          <div class="fld fld-full"><label style="color:${isN?'#15803d':'var(--gray-600)'};font-size:12px;">📦 ${prod.label}${isN?' <span style="font-size:9px;background:#dcfce7;color:#15803d;padding:1px 6px;border-radius:4px;vertical-align:middle;margin-left:4px;">NUEVA Q4</span>':''}</label></div>
-          <div class="fld"><label>Lote</label><input type="text" id="pd-${prod.id}-lote" placeholder="Núm. de lote"></div>
-          <div class="fld"><label>Fecha producción</label><input type="date" id="pd-${prod.id}-fprod"></div>
-          <div class="fld"><label>Fecha evaluación</label><input type="date" id="pd-${prod.id}-feval"></div>
-          <div class="fld fld-full" style="display:flex;flex-direction:column;gap:6px;"><label>Evaluación general</label>
+          <div class="fld"><label>SKU</label><input type="text" id="pd-${i}-sku" placeholder="Ej. FDL-0042"></div>
+          <div class="fld"><label>Producción</label><input type="text" id="pd-${i}-prod" placeholder="Nombre del producto"></div>
+          <div class="fld"><label>Lote</label><input type="text" id="pd-${i}-lote" placeholder="Núm. de lote"></div>
+          <div class="fld"><label>Fecha de producción</label><input type="date" id="pd-${i}-fecha"></div>
+          <div class="fld fld-full" style="display:flex;flex-direction:column;gap:6px;">
+            <label>Evaluación</label>
             <div style="display:flex;gap:8px;">
-              <button type="button" class="sc-btn prod-eval-btn" id="pd-${prod.id}-eval-ok" onclick="setProdEvalQ4('${prod.id}','ok')" style="flex:1;background:#dcfce7;color:#15803d;border:2px solid #86efac;">✅ OK</button>
-              <button type="button" class="sc-btn prod-eval-btn" id="pd-${prod.id}-eval-op" onclick="setProdEvalQ4('${prod.id}','op')" style="flex:1;background:#fff7ed;color:#c2410c;border:2px solid #fdba74;">⚠️ Con Oportunidad</button>
+              <button type="button" class="sc-btn prod-eval-btn" id="pd-${i}-eval-ok" onclick="setProdEval(${i},'ok')" style="flex:1;background:#dcfce7;color:#15803d;border:2px solid #86efac;">✅ OK</button>
+              <button type="button" class="sc-btn prod-eval-btn" id="pd-${i}-eval-op" onclick="setProdEval(${i},'op')" style="flex:1;background:#fff7ed;color:#c2410c;border:2px solid #fdba74;">⚠️ Con Oportunidad</button>
             </div>
           </div>
-          ${paramF}
-          <div class="fld fld-full"><label>Observaciones adicionales</label><textarea id="pd-${prod.id}-com" placeholder="Observaciones generales…" style="min-height:40px;"></textarea></div>
-        </div>
-      </div>`;
-  });
-  for (let n=1;n<=2;n++){
-    list.innerHTML+=`<div class="prod-entry" style="border-style:dashed;">
-        <div class="prod-num" style="color:#8b5cf6;font-size:14px;font-weight:800;min-width:22px;">${PRODS_Q4.length+n}</div>
-        <div class="prod-fields">
-          <div class="fld fld-full"><label style="color:#6d28d9;font-size:12px;">🔓 Producción libre ${n} — a criterio del auditor</label></div>
-          <div class="fld fld-full"><label>Nombre del producto</label><input type="text" id="pd-libre${n}-nombre" placeholder="Nombre del producto evaluado…"></div>
-          <div class="fld"><label>Lote</label><input type="text" id="pd-libre${n}-lote" placeholder="Núm. de lote"></div>
-          <div class="fld"><label>Fecha producción</label><input type="date" id="pd-libre${n}-fprod"></div>
-          <div class="fld"><label>Fecha evaluación</label><input type="date" id="pd-libre${n}-feval"></div>
-          <div class="fld fld-full" style="display:flex;flex-direction:column;gap:6px;"><label>Evaluación general</label>
-            <div style="display:flex;gap:8px;">
-              <button type="button" class="sc-btn prod-eval-btn" id="pd-libre${n}-eval-ok" onclick="setProdEvalQ4('libre${n}','ok')" style="flex:1;background:#dcfce7;color:#15803d;border:2px solid #86efac;">✅ OK</button>
-              <button type="button" class="sc-btn prod-eval-btn" id="pd-libre${n}-eval-op" onclick="setProdEvalQ4('libre${n}','op')" style="flex:1;background:#fff7ed;color:#c2410c;border:2px solid #fdba74;">⚠️ Con Oportunidad</button>
-            </div>
-          </div>
-          <div class="fld fld-full"><label>Observaciones y parámetros evaluados</label><textarea id="pd-libre${n}-com" placeholder="Describe los parámetros y resultado…" style="min-height:60px;"></textarea></div>
+          <div class="fld fld-full"><label>Comentario</label><textarea id="pd-${i}-com" placeholder="Observaciones de calidad, color, textura, sabor, etc." style="min-height:48px;"></textarea></div>
         </div>
       </div>`;
   }
 }
 
-function setProdEvalQ4(pid, val) {
-  const ok=document.getElementById('pd-'+pid+'-eval-ok'), op=document.getElementById('pd-'+pid+'-eval-op');
-  if(!ok||!op) return;
-  ok.classList.toggle('active',val==='ok'); op.classList.toggle('active',val==='op');
-  ok.dataset.selected=val==='ok'?'ok':''; op.dataset.selected=val==='op'?'op':'';
+function setProdEval(i, val) {
+  document.getElementById('pd-'+i+'-eval-ok').classList.toggle('active', val==='ok');
+  document.getElementById('pd-'+i+'-eval-op').classList.toggle('active', val==='op');
+  document.getElementById('pd-'+i+'-eval-ok').dataset.selected = val==='ok' ? 'ok' : '';
+  document.getElementById('pd-'+i+'-eval-op').dataset.selected = val==='op' ? 'op' : '';
 }
-function getProdEvalQ4(pid) {
-  if(document.getElementById('pd-'+pid+'-eval-ok')?.dataset.selected==='ok') return 'OK';
-  if(document.getElementById('pd-'+pid+'-eval-op')?.dataset.selected==='op') return 'Con Oportunidad';
+
+function getProdEval(i) {
+  if (document.getElementById('pd-'+i+'-eval-ok')?.dataset.selected === 'ok') return 'OK';
+  if (document.getElementById('pd-'+i+'-eval-op')?.dataset.selected === 'op') return 'Con Oportunidad';
   return '';
 }
+
 function getProducciones() {
-  const rows=[];
-  PRODS_Q4.forEach(prod=>{
-    const lote=document.getElementById('pd-'+prod.id+'-lote')?.value||'';
-    const fprod=document.getElementById('pd-'+prod.id+'-fprod')?.value||'';
-    const feval=document.getElementById('pd-'+prod.id+'-feval')?.value||'';
-    const com=document.getElementById('pd-'+prod.id+'-com')?.value||'';
-    const ev=getProdEvalQ4(prod.id);
-    const params={};
-    prod.params.forEach(p=>{params[p]=document.getElementById('pd-'+prod.id+'-p-'+pkey(p))?.value||'';});
-    if(lote||fprod||feval||com||ev||Object.values(params).some(v=>v))
-      rows.push({id:prod.id,nombre:prod.label,lote,fprod,feval,eval:ev,params,com});
-  });
-  for(let n=1;n<=2;n++){
-    const nombre=document.getElementById('pd-libre'+n+'-nombre')?.value||'';
-    const lote=document.getElementById('pd-libre'+n+'-lote')?.value||'';
-    const fprod=document.getElementById('pd-libre'+n+'-fprod')?.value||'';
-    const feval=document.getElementById('pd-libre'+n+'-feval')?.value||'';
-    const com=document.getElementById('pd-libre'+n+'-com')?.value||'';
-    const ev=getProdEvalQ4('libre'+n);
-    if(nombre||lote||fprod||feval||com||ev)
-      rows.push({id:'libre'+n,nombre:nombre||'(libre '+n+')',lote,fprod,feval,eval:ev,params:{},com});
+  const rows = [];
+  for (let i = 1; i <= 8; i++) {
+    const sku   = document.getElementById('pd-' + i + '-sku')?.value  || '';
+    const prod  = document.getElementById('pd-' + i + '-prod')?.value || '';
+    const lote  = document.getElementById('pd-' + i + '-lote')?.value || '';
+    const fecha = document.getElementById('pd-' + i + '-fecha')?.value|| '';
+    const com   = document.getElementById('pd-' + i + '-com')?.value  || '';
+    const eval_ = getProdEval(i);
+    if (sku || prod || lote || fecha || com || eval_) rows.push({n:i, sku, prod, lote, fecha, eval:eval_, com});
   }
   return rows;
 }
+
 function restoreProducciones(data) {
-  if(!data) return;
-  data.forEach(r=>{
-    if(r.id&&r.id.startsWith('libre')){
-      const n=r.id.replace('libre','');
-      const en=document.getElementById('pd-libre'+n+'-nombre'); if(en&&r.nombre)en.value=r.nombre;
-      ['lote','fprod','feval','com'].forEach(f=>{const el=document.getElementById('pd-libre'+n+'-'+f);if(el&&r[f])el.value=r[f];});
-      if(r.eval==='OK')setProdEvalQ4('libre'+n,'ok');
-      else if(r.eval==='Con Oportunidad')setProdEvalQ4('libre'+n,'op');
-    } else {
-      ['lote','fprod','feval','com'].forEach(f=>{const el=document.getElementById('pd-'+r.id+'-'+f);if(el&&r[f])el.value=r[f];});
-      if(r.params)Object.entries(r.params).forEach(([p,v])=>{const el=document.getElementById('pd-'+r.id+'-p-'+pkey(p));if(el&&v)el.value=v;});
-      if(r.eval==='OK')setProdEvalQ4(r.id,'ok');
-      else if(r.eval==='Con Oportunidad')setProdEvalQ4(r.id,'op');
-    }
+  if (!data) return;
+  data.forEach(r => {
+    ['sku','prod','lote','fecha','com'].forEach(f => {
+      const el = document.getElementById('pd-' + r.n + '-' + f);
+      if (el && r[f]) el.value = r[f];
+    });
+    if (r.eval === 'OK') setProdEval(r.n, 'ok');
+    else if (r.eval === 'Con Oportunidad') setProdEval(r.n, 'op');
   });
 }
 
@@ -1293,20 +1201,16 @@ function resetForm() {
   document.getElementById('obs-fortalezas').value = '';
   document.getElementById('obs-riesgos').value = '';
   document.getElementById('obs-acuerdos').value = '';
-  // Clear producciones Q4
-  if(typeof PRODS_Q4 !== 'undefined') PRODS_Q4.forEach(prod=>{
-    ['lote','fprod','feval','com'].forEach(f=>{const el=document.getElementById('pd-'+prod.id+'-'+f);if(el)el.value='';});
-    ['eval-ok','eval-op'].forEach(k=>{const btn=document.getElementById('pd-'+prod.id+'-'+k);if(btn){btn.classList.remove('active');btn.dataset.selected='';}});
-    prod.params.forEach(p=>{const el=document.getElementById('pd-'+prod.id+'-p-'+pkey(p));if(el)el.value='';});
-  });
-  for(let n=1;n<=2;n++){
-    ['nombre','lote','fprod','feval','com'].forEach(f=>{const el=document.getElementById('pd-libre'+n+'-'+f);if(el)el.value='';});
-    ['eval-ok','eval-op'].forEach(k=>{const btn=document.getElementById('pd-libre'+n+'-'+k);if(btn){btn.classList.remove('active');btn.dataset.selected='';}});
-  }
-  // Clear acciones inmediatas
-  if(typeof AI_COUNT !== 'undefined') for(let i=1;i<=AI_COUNT;i++){
-    ['ing','hall','acc'].forEach(f=>{const el=document.getElementById('ai-'+i+'-'+f);if(el)el.value='';});
-    if(typeof aiState !== 'undefined') delete aiState[i];
+  // Clear producciones
+  for (let i = 1; i <= 8; i++) {
+    ['sku','prod','lote','fecha','com'].forEach(f => {
+      const el = document.getElementById('pd-' + i + '-' + f);
+      if (el) el.value = '';
+    });
+    ['eval-ok','eval-op'].forEach(k => {
+      const btn = document.getElementById('pd-' + i + '-' + k);
+      if (btn) { btn.classList.remove('active'); btn.dataset.selected = ''; }
+    });
   }
   // Reset calc display
   document.querySelectorAll('[id^="cval-"]').forEach(el => { el.textContent = '—'; el.className = 'calc-val none'; });
@@ -1366,78 +1270,11 @@ function autoFillCiudad() {
   document.getElementById('m-ciudad').value = ciudad;
 }
 
-
-// ─── FOCO STATS ─────────────────────────────────────────────────────────────
-function getFocoStats() {
-  let total = 0, incumplidos = 0;
-  ['equipos','culinario','practicas'].forEach(bk => {
-    DEFS[bk].forEach(c => {
-      if (!c.foco || !c.scored || !c.id) return;
-      const s = state[c.id];
-      if (!s || s.score === undefined) return;
-      total++;
-      if (s.score === 0) incumplidos++;
-    });
-  });
-  const pct = total > 0 ? Math.round((total - incumplidos) / total * 100) : null;
-  return { total, incumplidos, cumplidos: total - incumplidos, pct };
-}
-
-// ─── ACCIONES INMEDIATAS ────────────────────────────────────────────────────
-const AI_COUNT = 10;
-const aiState = {};
-
-function renderAcciones() {
-  const list = document.getElementById('ai-list');
-  if (!list) return;
-  list.innerHTML = '';
-  for (let i = 1; i <= AI_COUNT; i++) {
-    const div = document.createElement('div');
-    div.style.cssText = 'background:var(--gray-50);border:1.5px solid #bae6fd;border-radius:8px;padding:12px 14px;';
-    div.innerHTML = `<div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px;">⚡ Acción Inmediata ${i}</div>
-      <div style="display:grid;gap:8px;">
-        <div class="fld"><label>Ingrediente / Proceso</label><input type="text" id="ai-${i}-ing" placeholder="Ej: Mezcla pancakes, Regeneración pollo…" oninput="saveAI(${i})"></div>
-        <div class="fld"><label>Hallazgo identificado y razón</label><textarea id="ai-${i}-hall" placeholder="Describe el hallazgo y por qué es un problema…" oninput="saveAI(${i})" style="min-height:52px;"></textarea></div>
-        <div class="fld"><label>Acción inmediata realizada</label><textarea id="ai-${i}-acc" placeholder="Describe la corrección hecha en el momento…" oninput="saveAI(${i})" style="min-height:52px;"></textarea></div>
-      </div>`;
-    list.appendChild(div);
-  }
-}
-
-function saveAI(i) {
-  aiState[i] = {
-    ing:  document.getElementById('ai-'+i+'-ing')?.value  || '',
-    hall: document.getElementById('ai-'+i+'-hall')?.value || '',
-    acc:  document.getElementById('ai-'+i+'-acc')?.value  || '',
-  };
-}
-
-function getAcciones() {
-  const out = [];
-  for (let i = 1; i <= AI_COUNT; i++) {
-    saveAI(i);
-    const a = aiState[i] || {};
-    if (a.hall && a.hall.trim()) out.push({n:i, ing:a.ing||'', hall:a.hall||'', acc:a.acc||''});
-  }
-  return out;
-}
-
-function restoreAcciones(data) {
-  if (!data) return;
-  data.forEach(r => {
-    ['ing','hall','acc'].forEach(f => {
-      const el = document.getElementById('ai-'+r.n+'-'+f);
-      if (el && r[f]) el.value = r[f];
-    });
-  });
-}
-
 // ─── INIT ────────────────────────────────────────────────────────────────────
 renderBlock('equipos');
 renderBlock('culinario');
 renderBlock('practicas');
 renderProducciones();
-renderAcciones();
 document.getElementById('m-fecha').value = new Date().toISOString().split('T')[0];
 </script>
 </body>
